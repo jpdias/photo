@@ -1,0 +1,20 @@
+{
+  "name": "photo-portfolio",
+  "version": "1.0.0",
+  "description": "Photography portfolio generated with EJS",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && npx http-server dist",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["photography", "portfolio", "ejs", "github-pages"],
+  "author": "JP Dias",
+  "license": "MIT"
+}
