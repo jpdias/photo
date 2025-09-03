@@ -65,7 +65,7 @@ function copyAssets() {
   // Copy CSS and JS files
   const staticFiles = ['style.css', 'fade_in.js', 'menu.js'];
   staticFiles.forEach(file => {
-    const srcPath = path.join(__dirname, file);
+    const srcPath = path.join(__dirname, 'lib', file);
     const distPath = path.join(distDir, file);
     
     if (fs.existsSync(srcPath)) {
