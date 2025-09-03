@@ -34,17 +34,6 @@ async function buildAboutMe() {
   }
 }
 
-async function buildContact() {
-  try {
-    const template = fs.readFileSync(path.join(__dirname, 'templates/contact.ejs'), 'utf8');
-    const html = await ejs.render(template, portfolioData);
-    fs.writeFileSync(path.join(distDir, 'contact.html'), html);
-    console.log('✅ Built contact.html');
-  } catch (error) {
-    console.error('❌ Error building contact.html:', error);
-  }
-}
-
 // Copy static assets
 function copyAssets() {
   const assetsDir = path.join(__dirname, 'assets');
@@ -93,11 +82,6 @@ function generateSitemap() {
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://jpdias.me/photo/contact.html</loc>
-    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <priority>0.8</priority>
-  </url>
 </urlset>`;
   
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
@@ -121,7 +105,7 @@ async function build() {
   
   await buildIndex();
   await buildAboutMe();
-  await buildContact();
+
   copyAssets();
   generateSitemap();
   generateRobots();
