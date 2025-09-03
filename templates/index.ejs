@@ -118,7 +118,7 @@
                     class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
                     src="<%= photo.url %>" />
                   <!-- Photo Info Overlay -->
-                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end justify-start p-4">
+                  <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end justify-start p-4 mb-2">
                     <div class="text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <p class="text-sm font-semibold"><%= photo.location %></p>
                       <p class="text-xs opacity-75"><%= new Date(photo.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
