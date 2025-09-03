@@ -23,6 +23,28 @@ async function buildIndex() {
   }
 }
 
+async function buildAboutMe() {
+  try {
+    const template = fs.readFileSync(path.join(__dirname, 'templates/about_me.ejs'), 'utf8');
+    const html = await ejs.render(template, portfolioData);
+    fs.writeFileSync(path.join(distDir, 'about_me.html'), html);
+    console.log('✅ Built about_me.html');
+  } catch (error) {
+    console.error('❌ Error building about_me.html:', error);
+  }
+}
+
+async function buildContact() {
+  try {
+    const template = fs.readFileSync(path.join(__dirname, 'templates/contact.ejs'), 'utf8');
+    const html = await ejs.render(template, portfolioData);
+    fs.writeFileSync(path.join(distDir, 'contact.html'), html);
+    console.log('✅ Built contact.html');
+  } catch (error) {
+    console.error('❌ Error building contact.html:', error);
+  }
+}
+
 // Copy static assets
 function copyAssets() {
   const assetsDir = path.join(__dirname, 'assets');
@@ -50,124 +72,11 @@ function copyAssets() {
       fs.copyFileSync(srcPath, distPath);
       console.log(`✅ Copied ${file}`);
     } else {
-      console.warn(`⚠️ ${file} not found, creating placeholder...`);
-      createPlaceholderFile(file, distPath);
+      console.warn(`⚠️ ${file} not found`);
+
+      process.exit(1);
     }
   });
-}
-
-function createPlaceholderFile(filename, distPath) {
-  if (filename === 'style.css') {
-    const css = `
-/* Custom styles for Sophia Williams Portfolio */
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.tap-highlight-transparent {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Custom scrollbar for dark mode */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.5);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.8);
-}
-
-/* Photo hover effects */
-.group:hover .group-hover\\:translate-y-0 {
-  transform: translateY(0);
-}
-
-/* Responsive improvements */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-    `;
-    fs.writeFileSync(distPath, css);
-  } else if (filename === 'fade_in.js') {
-    const js = `
-// Fade in animation for images
-document.addEventListener('DOMContentLoaded', function() {
-  const images = document.querySelectorAll('img');
-  
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.style.opacity = '1';
-        observer.unobserve(img);
-      }
-    });
-  });
-
-  images.forEach(img => {
-    imageObserver.observe(img);
-  });
-
-  // Body fade in
-  document.body.style.opacity = '1';
-});
-    `;
-    fs.writeFileSync(distPath, js);
-  } else if (filename === 'menu.js') {
-    const js = `
-// Mobile menu toggle
-function menuToggle() {
-  const menu = document.getElementById('menu');
-  const ulMenu = document.getElementById('ulMenu');
-  
-  if (menu.style.height === '0px' || menu.style.height === '') {
-    menu.style.height = 'auto';
-    const height = menu.scrollHeight;
-    menu.style.height = '0px';
-    
-    setTimeout(() => {
-      menu.style.height = height + 'px';
-    }, 10);
-    
-    ulMenu.style.paddingTop = '1rem';
-  } else {
-    menu.style.height = '0px';
-    ulMenu.style.paddingTop = '0px';
-  }
-}
-
-// Close mobile menu when clicking on a link
-document.addEventListener('DOMContentLoaded', function() {
-  const menuLinks = document.querySelectorAll('#ulMenu a');
-  
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth < 768) {
-        menuToggle();
-      }
-    });
-  });
-});
-    `;
-    fs.writeFileSync(distPath, js);
-  }
 }
 
 // Generate sitemap.xml
@@ -175,17 +84,17 @@ function generateSitemap() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-username.github.io/repository-name/</loc>
+    <loc>https://jpdias.me/photo/</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://your-username.github.io/repository-name/about_me.html</loc>
+    <loc>https://jpdias.me/photo/about_me.html</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-username.github.io/repository-name/contact.html</loc>
+    <loc>https://jpdias.me/photo/contact.html</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
     <priority>0.8</priority>
   </url>
@@ -200,7 +109,7 @@ function generateRobots() {
   const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://your-username.github.io/repository-name/sitemap.xml`;
+Sitemap: https://jpdias.me/photo/sitemap.xml`;
   
   fs.writeFileSync(path.join(distDir, 'robots.txt'), robots);
   console.log('✅ Generated robots.txt');
@@ -211,6 +120,8 @@ async function build() {
   console.log('🚀 Building Sophia Williams Portfolio...\n');
   
   await buildIndex();
+  await buildAboutMe():
+  await buildContact();
   copyAssets();
   generateSitemap();
   generateRobots();
@@ -225,6 +136,7 @@ async function build() {
   console.log(`   Featured: ${portfolioData.photos.filter(p => p.featured).length}`);
   console.log(`   Categories: ${[...new Set(portfolioData.photos.map(p => p.category))].length}`);
   console.log(`   Locations: ${[...new Set(portfolioData.photos.map(p => p.location))].length}`);
+  console.log(`   Pages: index.html, contact.html`);
 }
 
 // Run build

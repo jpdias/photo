@@ -5,7 +5,9 @@
     "author": "Sophia Williams",
     "contact": {
       "address": "929 Sycamore Street San Francisco CA",
-      "phone": "(415) 208- 2116"
+      "phone": "(415) 208- 2116",
+      "email": "sophia.williams@example.com",
+      "profileImage": "https://images.unsplash.com/reserve/yZfr4jmxQyuaE132MWZm_stagnes.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80"
     },
     "social": {
       "facebook": "https://www.facebook.com",
@@ -28,6 +30,14 @@
       "title": "CONTACT",
       "description": "Get in touch for collaborations"
     }
+  },
+  "about": {
+    "profileImage": "assets/Avatar.png",
+    "bio": [
+      "I'm a San Francisco-based photographer with over 6 years of experience in capturing unforgettable moments. I specialize in creating images that are both visually striking and emotionally impactful, and I have developed a signature style that blends natural beauty with vibrant colors and bold compositions.",
+      "When I'm not behind the camera, you can find me exploring the city's diverse neighborhoods, trying out new restaurants, or spending time with my family and friends. I believe that every moment is an opportunity to experience something new and to create memories that will last a lifetime.",
+      "Thank you for taking the time to learn a little bit about me and my work. If you're interested in collaborating or would like to see more of my portfolio, please don't hesitate to get in touch. Let's work together to bring your vision to life!"
+    ]
   },
   "photos": [
     {
