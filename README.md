@@ -1,184 +1,221 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+# Photography Portfolio
 
-<a name="readme-top"></a>
+A dynamic photography portfolio website built with EJS templates and deployed automatically to GitHub Pages.
 
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
+## 🌟 Features
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+- **Dynamic Content**: Portfolio generated from JSON data
+- **Responsive Design**: Works perfectly on desktop and mobile devices
+- **Photo Information**: Location and date metadata for each photo
+- **Featured Photos**: Highlight your best work
+- **Lightbox Gallery**: Beautiful photo viewing experience with Fancybox
+- **Statistics**: Automatic calculation of portfolio stats
+- **SEO Optimized**: Includes sitemap, robots.txt, and meta tags
+- **Auto Deployment**: GitHub Actions automatically builds and deploys
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+## 🚀 Quick Start
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/JoaoFranco03/photography-portfolio">
-    <img src="dist/assets/Logo.jpg" alt="Logo" width="80" height="80">
-  </a>
+1. **Clone or fork this repository**
+   ```bash
+   git clone https://github.com/jpdias/photo.git
+   cd photo
+   ```
 
-  <h3 align="center">Photography Portfolio</h3>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-  <p align="center">
-    A Website created using Tailwind CSS, HTML, CSS <br /> and JavaScript that can be used as a Photography Portfolio.
-    <br />
-    <br />
-    <a href="https://photography-portfolio-joaofranco03.netlify.app/">View Demo</a>
-    <br />
-    <br />
-    
-  </p>
-</div>
+3. **Customize your portfolio**
+   - Edit `data/portfolio.json` with your information and photos
+   - Add any custom assets to the `assets/` folder
+   - Modify styling in `style.css` if needed
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li>
-      <a href="#built-with">Built With</a>
-      <ul>
-        <li><a href="#html-badge">HTML</a></li>
-        <li><a href="#css-badge">CSS</a></li>
-        <li><a href="#js-badge">JavaScript</a></li>
-        <li><a href="#tailwind-badge">Tailwind CSS</a></li>
-      </ul>
-    </li>
-    <li><a href="#quick-start">Quick Start</a></li>
-    <li><a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+4. **Build locally**
+   ```bash
+   npm run build
+   ```
 
-<!-- ABOUT THE PROJECT -->
+5. **Test locally**
+   ```bash
+   npm run dev
+   ```
 
-# 📋 About The Project <a name="about-the-project"></a>
+6. **Deploy to GitHub Pages**
+   - Push to the `main` branch
+   - Enable GitHub Pages in repository settings
+   - The GitHub Action will automatically build and deploy
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/JoaoFranco03/photography-portfolio)
+## 📁 Project Structure
 
-This project is a web-based portfolio that beautifully showcases the photography work of Sophia Williams, a fictional photographer. The portfolio was skillfully built using a combination of powerful front-end technologies, including Tailwind CSS, CSS, HTML, and JavaScript.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🛠️ Built With <a name="built-with"></a>
-
-- [![HTML][html-badge]][html-url]
-- [![CSS][css-badge]][css-url]
-- [![JavaScript][js-badge]][js-url]
-- [![Tailwind][tailwind-badge]][tailwind-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Quick Start <a name="quick-start"></a>
-
-Create your own page with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/JoaoFranco03/photography-portfolio)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🎯 Getting Started <a name="getting-started"></a>
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### 🏗️ Installation <a name="installation"></a>
-
-1. Clone the repo
-
-```sh
- git clone https://github.com/JoaoFranco03/photography-portfolio/.git
+```
+├── .github/workflows/
+│   └── deploy.yml          # GitHub Actions deployment workflow
+├── data/
+│   └── portfolio.json      # Your portfolio data and photos
+├── templates/
+│   └── index.ejs          # Main page template
+├── assets/                # Static assets (favicon, etc.)
+├── dist/                  # Generated site (auto-created)
+├── build.js              # Build script
+├── package.json          # Dependencies and scripts
+└── README.md            # This file
 ```
 
-2.  Run the following command:
+## 🎨 Customizing Your Portfolio
 
-```sh
- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+### Adding Photos
+
+Edit `data/portfolio.json` and add your photos to the `photos` array:
+
+```json
+{
+  "id": "unique-photo-id",
+  "url": "https://your-image-url.com/photo.jpg",
+  "alt": "Description of the photo",
+  "location": "City, Country",
+  "date": "2023-12-01",
+  "category": "landscape",
+  "featured": true
+}
 ```
-3.  Run the Project in a Server
 
-4.  Change it with your own photos, about me and contact info.
+### Photo Categories
 
-5.  Publish it using your preferred hosting platform.
+Available categories include:
+- `landscape`
+- `portrait`  
+- `street`
+- `nature`
+- `wildlife`
+- `architecture`
+- `urban`
+- `cultural`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Updating Site Information
 
-<!-- Ko-fi -->
+Modify the `site` section in `data/portfolio.json`:
 
-## ☕ Support Me on Ko-fi
+```json
+{
+  "site": {
+    "title": "Your Name - Portfolio",
+    "description": "Your bio and description",
+    "author": "Your Name",
+    "contact": {
+      "address": "Your Address",
+      "phone": "Your Phone"
+    },
+    "social": {
+      "facebook": "https://facebook.com/yourprofile",
+      "instagram": "https://instagram.com/yourprofile",
+      // ... other social links
+    }
+  }
+}
+```
 
-If you find this project useful, consider supporting me on Ko-fi. Thanks for checking it out!  
+## 🔧 Development
 
-<a href="https://ko-fi.com/joaofranco03" target="_blank">
-    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" style="height:40px;">
-</a>
+### Local Development
+```bash
+npm run dev
+```
+This builds the site and starts a local server at `http://localhost:8080`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Build Only
+```bash
+npm run build
+```
 
-<!-- LICENSE -->
+### Clean Build
+```bash
+npm run clean
+npm run build
+```
 
-## 📜 License <a name="license"></a>
+## 🚀 Deployment
 
-Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
+### GitHub Pages (Recommended)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+1. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Source: GitHub Actions
 
-<!-- CONTACT -->
+2. **Push to main branch**:
+   ```bash
+   git add .
+   git commit -m "Update portfolio"
+   git push origin main
+   ```
 
-## 📧 Contact <a name="contact"></a>
+3. **Automatic deployment**: The GitHub Action will build and deploy automatically
 
-João Franco - https://www.linkedin.com/in/joão-franco-452161195/
+### Manual Deployment
 
-Project Link: [https://github.com/JoaoFranco03/photography-portfolio/](https://github.com/JoaoFranco03/photography-portfolio/)
+You can also deploy the `dist/` folder to any static hosting service:
+- Netlify
+- Vercel
+- Firebase Hosting
+- AWS S3
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 📊 Features Explained
 
-<!-- ACKNOWLEDGMENTS -->
+### Responsive Gallery Layout
+The gallery automatically arranges photos in a responsive masonry-style layout with hover effects showing location and date information.
 
-## 🌟 Acknowledgments <a name="acknowledgments"></a>
+### Featured Photos
+Photos marked with `"featured": true` display a yellow "Featured" badge and are highlighted in the portfolio statistics.
 
-- [FancyBox](https://fancyapps.com/fancybox/)
-- [Unsplash](https://unsplash.com/)
-- [Tailwind Documentation](https://tailwindcss.com/docs/installation)
+### SEO Optimization
+- Automatic sitemap generation
+- Meta tags for social sharing
+- Semantic HTML structure
+- Performance optimized images
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Statistics Dashboard
+Automatically calculates and displays:
+- Total number of photos
+- Number of featured photos  
+- Countries/locations visited
+- Photo categories
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+## 🎯 Customization Tips
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[tailwind-badge]: https://img.shields.io/badge/Tailwind_CSS-62BAF3?style=for-the-badge&logo=tailwind-css&logoColor=white
-[tailwind-url]: https://tailwindcss.com
-[html-badge]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
-[html-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
-[css-badge]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
-[css-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
-[js-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
-[js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[license-url]: https://github.com/JoaoFranco03/photography-portfolio/blob/main/LICENSE.md
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/joão-franco-452161195/
-[product-screenshot]: dist/assets/mockup.png
+1. **Colors**: Modify Tailwind classes in the EJS template
+2. **Layout**: Adjust the grid layout logic in `templates/index.ejs`
+3. **Fonts**: Change fonts in the `<head>` section and Tailwind config
+4. **Animations**: Customize CSS animations in `style.css`
+
+## 🐛 Troubleshooting
+
+### Build Errors
+- Ensure `data/portfolio.json` is valid JSON
+- Check that all required fields are present in photo objects
+- Verify Node.js version compatibility (18+ recommended)
+
+### Deployment Issues
+- Confirm GitHub Pages is enabled with "GitHub Actions" as source
+- Check GitHub Actions logs for detailed error messages
+- Ensure repository is public (or you have GitHub Pro for private repos)
+
+### Image Issues
+- Use high-quality images with appropriate dimensions
+- Ensure image URLs are accessible and properly formatted
+- Consider using a CDN for better performance
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Support
+
+If you encounter any issues or need help customizing your portfolio, please open an issue on GitHub.
+
+---
+
+**Built with ❤️ for photographers who want a beautiful, maintainable portfolio website.**
