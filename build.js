@@ -120,7 +120,7 @@ async function build() {
   console.log('🚀 Building Sophia Williams Portfolio...\n');
   
   await buildIndex();
-  await buildAboutMe():
+  await buildAboutMe();
   await buildContact();
   copyAssets();
   generateSitemap();
