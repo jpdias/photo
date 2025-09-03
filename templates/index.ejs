@@ -23,7 +23,7 @@
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <!-- End - Fancybox Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body
@@ -119,7 +119,7 @@
                     src="<%= photo.url %>" />
                   <!-- Photo Info Overlay -->
                   <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-end justify-start p-4">
-                    <div class="text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 mb-2">
+                    <div class="text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300  mb-2">
                       <p class="text-sm font-semibold"><%= photo.location %></p>
                       <p class="text-xs opacity-75"><%= new Date(photo.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></p>
                       <% if (photo.featured) { %>
