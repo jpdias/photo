@@ -8,7 +8,6 @@
     "preview": "astro preview",
     "seed": "node scripts/seed.js",
     "sync": "node scripts/sync.js",
-    "onramp": "node scripts/onramp.js",
     "discover": "node scripts/discover.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

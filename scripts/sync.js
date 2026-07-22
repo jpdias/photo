@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-import { readFile, writeFile, readdir, mkdir, unlink } from 'node:fs/promises';
+import { readFile, writeFile, readdir, mkdir, unlink, rename } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, parse } from 'node:path';
+import { execFile } from 'node:child_process';
+import { createInterface } from 'node:readline';
 import {
   S3Client,
   PutObjectCommand,
@@ -23,6 +25,9 @@ const R2_THUMB_PREFIX = 'thumbnails/';
 const VALIDATE_ONLY = process.argv.includes('--validate-only');
 const NO_UPLOAD = process.argv.includes('--no-upload');
 const FORCE = process.argv.includes('--force');
+
+const rl = createInterface({ input: process.stdin, output: process.stdout });
+const ask = q => new Promise(r => rl.question(q, r));
 
 function slugify(text) {
   return (
@@ -167,6 +172,125 @@ async function validateJPGs(files) {
   return { valid, invalid };
 }
 
+async function geocodePlace(query) {
+  const https = await import('node:https');
+  const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
+  return new Promise(resolve => {
+    https
+      .get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, res => {
+        let data = '';
+        res.on('data', c => (data += c));
+        res.on('end', () => {
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.length > 0)
+              resolve({
+                lat: parseFloat(parsed[0].lat),
+                lng: parseFloat(parsed[0].lon),
+                name: parsed[0].display_name,
+              });
+            else resolve(null);
+          } catch {
+            resolve(null);
+          }
+        });
+      })
+      .on('error', () => resolve(null));
+  });
+}
+
+async function writeExif(filePath, updates) {
+  const args = ['-overwrite_original'];
+  for (const [tag, val] of Object.entries(updates)) {
+    if (tag === 'GPSLatitude') args.push(`-GPSLatitude=${val}`);
+    else if (tag === 'GPSLatitudeRef') args.push(`-GPSLatitudeRef=${val}`);
+    else if (tag === 'GPSLongitude') args.push(`-GPSLongitude=${val}`);
+    else if (tag === 'GPSLongitudeRef') args.push(`-GPSLongitudeRef=${val}`);
+    else if (tag === 'DateTimeOriginal') args.push(`-DateTimeOriginal=${val}`);
+    else if (tag === 'Make') args.push(`-Make=${val}`);
+    else if (tag === 'Model') args.push(`-Model=${val}`);
+  }
+  args.push(filePath);
+  return new Promise(resolve => {
+    execFile('exiftool', args, (err, stdout, stderr) => {
+      if (err) resolve(false);
+      else resolve(true);
+    });
+  });
+}
+
+async function promptForMissing(filePath, slug, exif) {
+  console.log(`\n  ⚠ ${slug} is missing required EXIF data\n`);
+
+  const make = exif?.Make || '';
+  const model = exif?.Model || '';
+  const camera = [make, model].filter(Boolean).join(' ').trim();
+
+  const parsed = parseFilename(parse(filePath).name);
+  let date = parsed.date;
+  if (!date && exif?.DateTimeOriginal) {
+    date = new Date(exif.DateTimeOriginal).toISOString().slice(0, 10);
+  }
+  const lat = exif?.latitude ?? null;
+  const lng = exif?.longitude ?? null;
+
+  const exifUpdates = {};
+
+  if (!date) {
+    const guess = parsed.date || '';
+    const answer = await ask(`    date (YYYY-MM-DD)${guess ? ` [${guess}]` : ''}: `);
+    const val = answer.trim() || guess;
+    if (val) {
+      exifUpdates.DateTimeOriginal = `${val.replace(/-/g, ':')} 12:00:00`;
+      date = val;
+    }
+  }
+
+  if (lat == null || lng == null) {
+    const answer = await ask('    location (place name or lat,lng): ');
+    const trimmed = answer.trim();
+    if (trimmed) {
+      if (/^-?\d+\.\d+,-?\d+\.\d+$/.test(trimmed.replace(/\s/g, ''))) {
+        const [la, ln] = trimmed.replace(/\s/g, '').split(',').map(Number);
+        exifUpdates.GPSLatitudeRef = la >= 0 ? 'North' : 'South';
+        exifUpdates.GPSLatitude = Math.abs(la);
+        exifUpdates.GPSLongitudeRef = ln >= 0 ? 'East' : 'West';
+        exifUpdates.GPSLongitude = Math.abs(ln);
+      } else {
+        console.log(`    geocoding "${trimmed}"...`);
+        const coords = await geocodePlace(trimmed);
+        if (coords) {
+          console.log(`    → ${coords.lat.toFixed(4)}, ${coords.lng.toFixed(4)}`);
+          exifUpdates.GPSLatitudeRef = coords.lat >= 0 ? 'North' : 'South';
+          exifUpdates.GPSLatitude = Math.abs(coords.lat);
+          exifUpdates.GPSLongitudeRef = coords.lng >= 0 ? 'East' : 'West';
+          exifUpdates.GPSLongitude = Math.abs(coords.lng);
+        } else {
+          console.log('    geocoding failed');
+        }
+      }
+    }
+  }
+
+  if (!camera) {
+    const answer = await ask('    camera (e.g. "Canon EOS 70D"): ');
+    const trimmed = answer.trim();
+    if (trimmed) {
+      const parts = trimmed.split(/\s+/);
+      exifUpdates.Make = parts[0];
+      exifUpdates.Model = parts.slice(1).join(' ') || parts[0];
+    }
+  }
+
+  if (Object.keys(exifUpdates).length > 0) {
+    console.log('    writing to EXIF...');
+    await writeExif(filePath, exifUpdates);
+    console.log('    done\n');
+  } else {
+    console.log('    nothing to update\n');
+  }
+}
+
 async function main() {
   const srcDir = join(process.cwd(), PHOTOS_DIR);
   if (!existsSync(srcDir)) {
@@ -181,9 +305,12 @@ async function main() {
   }
 
   const { invalid } = await validateJPGs(files);
-  if (VALIDATE_ONLY) process.exit(invalid ? 1 : 0);
+  if (VALIDATE_ONLY) {
+    rl.close();
+    process.exit(invalid ? 1 : 0);
+  }
   if (invalid) {
-    console.warn(`${invalid} file(s) have issues — will skip if no existing manifest entry\n`);
+    console.warn(`${invalid} file(s) have issues — will prompt for missing data\n`);
   }
 
   let r2Photos = new Set();
@@ -233,9 +360,10 @@ async function main() {
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    const filePath = join(srcDir, file);
-    const slug = slugify(parse(file).name);
+    let filePath = join(srcDir, file);
+    let slug = slugify(parse(file).name);
     const prev = existing[slug] || {};
+    const isNew = !existing[slug];
     const idx = `[${i + 1}/${files.length}]`;
 
     let exif = {};
@@ -243,7 +371,41 @@ async function main() {
       exif = await exifr.parse(filePath, true);
     } catch {}
 
-    const parsed = parseFilename(file);
+    if (isNew) {
+      const exifDate = exif?.DateTimeOriginal ? new Date(exif.DateTimeOriginal) : null;
+      const parsedOrig = parseFilename(file);
+      const dateStr = exifDate
+        ? `${String(exifDate.getDate()).padStart(2, '0')}_${String(exifDate.getMonth() + 1).padStart(2, '0')}_${exifDate.getFullYear()}`
+        : parsedOrig.date
+          ? parsedOrig.date.replace(/-/g, '_')
+          : null;
+      const ans = await ask(
+        `    rename file${dateStr ? ` (date: ${dateStr.replace(/_/g, '/')})` : ''}\n      current: ${file}\n      new name (description only, date will be appended): `,
+      );
+      const trimmed = ans.trim().replace(/\.jpe?g$/i, '');
+      if (trimmed) {
+        const safeDesc = trimmed.replace(/[^\w\s-]/g, '').replace(/[\s]+/g, '_');
+        const newBase = dateStr ? `${safeDesc}_${dateStr}` : safeDesc;
+        const newName = newBase + '.jpg';
+        const newPath = join(srcDir, newName);
+        await rename(filePath, newPath);
+        slug = slugify(newBase);
+        filePath = newPath;
+      }
+      await promptForMissing(filePath, slug, exif);
+      try {
+        exif = await exifr.parse(filePath, true);
+      } catch {}
+    }
+
+    let category = prev.category || 'uncategorized';
+    if (isNew) {
+      const catAns = await ask('    category: ');
+      const trimmed = catAns.trim();
+      if (trimmed) category = trimmed;
+    }
+
+    const parsed = parseFilename(filePath);
     const make = exif?.Make || '';
     const model = exif?.Model || '';
     const camera = [make, model].filter(Boolean).join(' ').trim() || null;
@@ -262,6 +424,12 @@ async function main() {
     const aperture = exif?.FNumber != null ? `f/${exif.FNumber}` : null;
     const focalLength = exif?.FocalLength != null ? `${Math.round(exif.FocalLength)} mm` : null;
     const shutterSpeed = formatShutterSpeed(exif?.ExposureTime);
+
+    if (isNew && (!date || lat == null || lng == null || !camera)) {
+      console.log(`  ${idx} ✗ ${slug} — still missing required data after prompt, skipping`);
+      skipped++;
+      continue;
+    }
 
     try {
       const image = sharp(filePath);
@@ -328,7 +496,7 @@ async function main() {
       entry.fullsize = `/photo/photos/${slug}.webp`;
       entry.width = imgWidth;
       entry.height = imgHeight;
-      entry.category = prev.category || 'uncategorized';
+      entry.category = category;
       entry.iso = iso;
       entry.aperture = aperture;
       entry.focalLength = focalLength;
@@ -337,6 +505,7 @@ async function main() {
       photos.push(entry);
 
       const status = [];
+      if (isNew) status.push('new');
       if (needsFull) status.push('fullsize');
       if (needsThumb) status.push('thumb');
       if (upload && (FORCE || !r2Photos.has(`${R2_PHOTO_PREFIX}${slug}.webp`)))
@@ -356,6 +525,7 @@ async function main() {
   console.log(
     `\nDone: ${photos.length} in manifest, ${generated} generated, ${uploaded} uploaded to R2, ${skipped} skipped`,
   );
+  rl.close();
 }
 
 main().catch(err => {

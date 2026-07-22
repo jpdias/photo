@@ -29,12 +29,14 @@ npm run sync -- --no-upload
 npm run sync -- --force
 ```
 
-### `npm run onramp`
+### `npm run sync` (interactive)
 
-Interactive wizard for first-time photo setup. Prompts for rename, category, location, camera — writes EXIF back to source JPG and generates WebP locally.
+For new files, `sync` runs interactively — prompts to rename, fills missing EXIF (date, GPS, camera), and asks for a category before generating WebP and uploading to R2. Existing files are processed silently.
 
 ```bash
-npm run onramp
+npm run sync           # default: uploads to R2
+npm run sync -- --no-upload   # local only, skip R2
+npm run sync -- --force       # re-upload even if present on R2
 ```
 
 ### `npm run discover`

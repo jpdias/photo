@@ -78,18 +78,22 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 <div class="modal" id="photo-modal">
   <div class="modal-backdrop" id="modal-backdrop"></div>
 
-  <!-- Arrows are siblings of modal-content (not nested inside it), so they are
-       unaffected by modal-content's open/close transform and can be truly
-       fixed to the viewport edges, outside the photo. -->
-  <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
-  <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
-
   <div class="modal-content">
     <div class="modal-body">
-      <div class="modal-image-wrap">
-        <img class="modal-image" id="modal-image" src="" alt="" />
+      <!-- The image wrap holds only the photo (so nothing sits on top of
+           it); arrows and the info toggle live in a plain bar underneath,
+           in their own dedicated space. -->
+      <div class="modal-visual">
+        <div class="modal-image-wrap" id="modal-image-wrap">
+          <img class="modal-image" id="modal-image" src="" alt="" />
+        </div>
+        <div class="modal-controls">
+          <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
+          <button class="modal-info-toggle" id="modal-info-toggle" title="Toggle details" aria-label="Toggle details">ⓘ</button>
+          <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
+        </div>
       </div>
-      <div class="modal-info">
+      <div class="modal-info" id="modal-info">
         <div class="modal-header">
           <h2 class="modal-title" id="modal-title"></h2>
           <span class="modal-counter" id="modal-counter"></span>
@@ -193,9 +197,11 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   const modal = document.getElementById('photo-modal')!;
   const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+  const modalImageWrap = document.getElementById('modal-image-wrap') as HTMLElement;
   const modalTitle = document.getElementById('modal-title')!;
   const modalCounter = document.getElementById('modal-counter')!;
   const modalDetails = document.getElementById('modal-details')!;
+  const modalInfoToggle = document.getElementById('modal-info-toggle')!;
   let currentIndex = -1;
   let closeTimer: ReturnType<typeof setTimeout> | null = null;
 
@@ -204,6 +210,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     currentIndex = visible.indexOf(el);
     renderModal();
     if (closeTimer) clearTimeout(closeTimer);
+    modal.classList.remove('info-open');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('show')));
@@ -280,12 +287,58 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   document.getElementById('modal-prev')!.addEventListener('click', () => navigate(-1));
   document.getElementById('modal-next')!.addEventListener('click', () => navigate(1));
 
+  // Landscape-mobile "info" panel toggle. The button only shows in that
+  // layout (see CSS); harmless elsewhere.
+  modalInfoToggle.addEventListener('click', () => {
+    modal.classList.toggle('info-open');
+  });
+
   document.addEventListener('keydown', (e) => {
     if (!modal.classList.contains('open')) return;
     if (e.key === 'Escape') closeModal();
     if (e.key === 'ArrowLeft') navigate(-1);
     if (e.key === 'ArrowRight') navigate(1);
   });
+
+  // Swipe to move between photos. Tracked on the image wrap so it never
+  // fights with scrolling inside the details panel.
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchDeltaX = 0;
+  let isSwiping = false;
+
+  modalImageWrap.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchDeltaX = 0;
+    isSwiping = true;
+    modalImage.style.transition = 'none';
+  }, { passive: true });
+
+  modalImageWrap.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy)) {
+      touchDeltaX = dx;
+      modalImage.style.transform = `translateX(${dx}px)`;
+    }
+  }, { passive: true });
+
+  const endSwipe = () => {
+    if (!isSwiping) return;
+    isSwiping = false;
+    modalImage.style.transition = '';
+    modalImage.style.transform = '';
+    const threshold = 60;
+    if (touchDeltaX <= -threshold) navigate(1);
+    else if (touchDeltaX >= threshold) navigate(-1);
+    touchDeltaX = 0;
+  };
+
+  modalImageWrap.addEventListener('touchend', endSwipe);
+  modalImageWrap.addEventListener('touchcancel', endSwipe);
 
   // Lazy load images via IntersectionObserver
   const lazyObserver = new IntersectionObserver((entries) => {
@@ -511,6 +564,13 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     flex-direction: column;
     gap: 1rem;
     overflow-y: auto;
+    min-height: 0;
+  }
+
+  .modal-visual {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
   }
 
   .modal-image-wrap {
@@ -519,6 +579,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     overflow: hidden;
     flex-shrink: 1;
     min-height: 0;
+    touch-action: pan-y;
   }
 
   .modal-image {
@@ -526,6 +587,56 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     max-height: 70vh;
     object-fit: contain;
     display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  /* ---------- controls: a plain bar under the photo, nothing on it ---------- */
+  .modal-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding: 0.35rem 0.25rem 0;
+  }
+
+  .modal-arrow {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .modal-arrow:hover:not(:disabled) {
+    color: var(--accent);
+  }
+
+  .modal-arrow:disabled {
+    opacity: 0.15;
+    cursor: default;
+  }
+
+  /* Info toggle: only meaningful once the info panel becomes an overlay
+     (landscape mobile below), hidden everywhere else. */
+  .modal-info-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .modal-info-toggle:hover {
+    color: var(--accent);
   }
 
   .modal-info {
@@ -544,12 +655,16 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     font-weight: 300;
     font-family: 'Lato', sans-serif;
     color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .modal-counter {
     font-size: 0.75rem;
     color: var(--text-muted);
     font-family: 'IBM Plex Mono', monospace;
+    flex-shrink: 0;
   }
 
   .modal-close {
@@ -562,6 +677,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     transition: color 0.15s;
+    flex-shrink: 0;
   }
 
   .modal-close:hover {
@@ -577,6 +693,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     transition: color 0.15s;
+    flex-shrink: 0;
   }
 
   .modal-share:hover {
@@ -585,6 +702,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   .modal-close:focus-visible,
   .modal-share:focus-visible,
+  .modal-info-toggle:focus-visible,
+  .modal-arrow:focus-visible,
   .chip:focus-visible,
   .tag-chip:focus-visible {
     outline: 1px solid var(--accent);
@@ -643,47 +762,23 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     white-space: nowrap;
   }
 
-  /* ---------- arrows: fixed to viewport edges, outside the photo ---------- */
-  .modal-arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1010;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.15s;
-  }
-
-  .modal-arrow:hover:not(:disabled) {
-    color: var(--accent);
-  }
-
-  .modal-arrow:disabled {
-    opacity: 0.15;
-    cursor: default;
-  }
-
-  .modal-prev { left: 1rem; }
-  .modal-next { right: 1rem; }
-
-  /* As the viewport grows, push the arrows out further so they use the
-     available space beside the (max 1000px wide) modal content instead of
-     hugging its edges. */
-  @media (min-width: 1200px) {
-    .modal-prev { left: 2.5rem; }
-    .modal-next { right: 2.5rem; }
-  }
-
-  @media (min-width: 1600px) {
-    .modal-prev { left: 5rem; }
-    .modal-next { right: 5rem; }
-  }
-
+  /* ================= Mobile: portrait ================= */
   @media (max-width: 640px) {
+    .modal-content {
+      width: 100vw;
+      max-width: none;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    .modal-body {
+      padding: 0 0.75rem env(safe-area-inset-bottom, 0.75rem);
+    }
+
+    .modal-image {
+      max-height: 55vh;
+    }
+
     .modal-meta {
       flex-direction: column;
     }
@@ -697,13 +792,90 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       margin-left: 0;
     }
 
-    .modal-prev { left: 0.5rem; }
-    .modal-next { right: 0.5rem; }
+    .modal-title {
+      font-size: 1rem;
+    }
+  }
+
+  /* ================= Mobile: landscape =================
+     Short viewports (phones on their side) get almost no vertical room,
+     so the photo takes the full frame and details slide in on demand
+     instead of pushing the image down. */
+  @media (max-width: 900px) and (orientation: landscape) {
+    .modal-content {
+      width: 100vw;
+      max-width: none;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    .modal-body {
+      flex-direction: row;
+      height: 100%;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .modal-visual {
+      flex: 1;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .modal-image-wrap {
+      flex: 1;
+      min-height: 0;
+      border-radius: 0;
+    }
+
+    .modal-image {
+      max-height: 100%;
+      height: 100%;
+    }
+
+    .modal-controls {
+      padding: 0.35rem 0.5rem;
+    }
+
+    .modal-info-toggle {
+      display: block;
+    }
+
+    .modal-info {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(78vw, 320px);
+      background: rgba(12, 12, 12, 0.94);
+      backdrop-filter: blur(6px);
+      padding: 1rem 1rem env(safe-area-inset-bottom, 1rem);
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      z-index: 8;
+    }
+
+    .modal.info-open .modal-info {
+      transform: translateX(0);
+    }
+
+    .modal-meta {
+      flex-direction: column;
+    }
+
+    .modal-details,
+    .modal-tech-wrap {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .modal,
-    .modal-content {
+    .modal-content,
+    .modal-info,
+    .modal-image {
       transition: none;
     }
   }

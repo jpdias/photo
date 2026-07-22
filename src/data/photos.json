@@ -6577,7 +6577,7 @@
   {
     "slug": "the-old-streets-of-spain-28-08-2021",
     "title": "The Old Streets Of Spain",
-    "description": "A street in the north of Spain",
+    "description": "A street in the north of Spain 🇪🇸",
     "category": "travel",
     "tags": [
       "2021"
@@ -8373,6 +8373,31 @@
     "aperture": "f/8",
     "focalLength": "88 mm",
     "shutterSpeed": "1/15"
+  },
+  {
+    "slug": "northen-red-veil-05-10-2024",
+    "title": "Northen Red Veil",
+    "description": "",
+    "tags": [
+      "2024"
+    ],
+    "location": {
+      "name": "78.2232, 15.6464",
+      "lat": 78.22315579997358,
+      "lng": 15.646365600108005
+    },
+    "date": "2024-10-05",
+    "camera": "Canon Canon EOS 70D",
+    "thumbnail": "/photo/thumbnails/northen-red-veil-05-10-2024.webp",
+    "fullsize": "/photo/photos/northen-red-veil-05-10-2024.webp",
+    "width": 5184,
+    "height": 3240,
+    "category": "nightscape",
+    "iso": 6400,
+    "aperture": "f/3.2",
+    "focalLength": "24 mm",
+    "shutterSpeed": "10s",
+    "country": null
   },
   {
     "slug": "ice-fall-06-10-2024",
