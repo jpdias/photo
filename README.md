@@ -90,12 +90,12 @@ Public domain: `https://r2.jpdias.me`
 
 ## env vars
 
-| Variable | Description |
-|---|---|
-| `R2_ACCOUNT_ID` | Cloudflare R2 account ID |
-| `R2_ACCESS_KEY_ID` | R2 API key |
-| `R2_SECRET_ACCESS_KEY` | R2 API secret |
-| `R2_BUCKET_NAME` | R2 bucket (default: `photography`) |
-| `R2_PUBLIC_URL` | R2 public endpoint URL |
-| `PUBLIC_R2_BASE_URL` | Public URL for images in production (`https://r2.jpdias.me`) |
-| `PHOTOS_DIR` | Source JPG directory (default: `./photos_to_process`) |
+| Variable               | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| `R2_ACCOUNT_ID`        | Cloudflare R2 account ID                                     |
+| `R2_ACCESS_KEY_ID`     | R2 API key                                                   |
+| `R2_SECRET_ACCESS_KEY` | R2 API secret                                                |
+| `R2_BUCKET_NAME`       | R2 bucket (default: `photography`)                           |
+| `R2_PUBLIC_URL`        | R2 public endpoint URL                                       |
+| `PUBLIC_R2_BASE_URL`   | Public URL for images in production (`https://r2.jpdias.me`) |
+| `PHOTOS_DIR`           | Source JPG directory (default: `./photos_to_process`)        |
