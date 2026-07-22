@@ -23,6 +23,18 @@ const related = photos
 
 <Base title={photo.title} description={photo.description || `${photo.title} — ${photo.location?.name ?? ''}`} image={imageUrl(photo.fullsize)} url={`/photos/${photo.slug}`}>
   <Header />
+
+  {prev && (
+    <a href={`/photo/photos/${prev.slug}`} class="side-nav side-nav--prev" aria-label={`Previous: ${prev.title}`}>
+      <span class="side-nav-arrow">←</span>
+    </a>
+  )}
+  {next && (
+    <a href={`/photo/photos/${next.slug}`} class="side-nav side-nav--next" aria-label={`Next: ${next.title}`}>
+      <span class="side-nav-arrow">→</span>
+    </a>
+  )}
+
   <main class="detail">
     <div class="back-bar">
       <a href="/photo/" class="back">← back</a>
@@ -63,6 +75,30 @@ const related = photos
           <span class="label">camera</span>
           <span>{photo.camera}</span>
         </div>
+        {photo.iso && (
+          <div class="info-item">
+            <span class="label">iso</span>
+            <span>ISO {photo.iso}</span>
+          </div>
+        )}
+        {photo.aperture && (
+          <div class="info-item">
+            <span class="label">aperture</span>
+            <span>{photo.aperture}</span>
+          </div>
+        )}
+        {photo.focalLength && (
+          <div class="info-item">
+            <span class="label">focal length</span>
+            <span>{photo.focalLength}</span>
+          </div>
+        )}
+        {photo.shutterSpeed && (
+          <div class="info-item">
+            <span class="label">shutter</span>
+            <span>{photo.shutterSpeed}</span>
+          </div>
+        )}
         <div class="info-item">
           <span class="label">category</span>
           <span>{photo.category}</span>
@@ -78,8 +114,20 @@ const related = photos
       </div>
 
       <div class="nav-links">
-        {prev && <a href={`/photo/photos/${prev.slug}`} class="nav-btn">← {prev.title}</a>}
-        {next && <a href={`/photo/photos/${next.slug}`} class="nav-btn">{next.title} →</a>}
+        <a href={prev ? `/photo/photos/${prev.slug}` : undefined} class:list={["nav-btn", "nav-btn--prev", { "nav-btn--disabled": !prev }]}>
+          <span class="nav-arrow">←</span>
+          <span class="nav-text">
+            <span class="nav-label">prev</span>
+            <span class="nav-title">{prev?.title ?? '—'}</span>
+          </span>
+        </a>
+        <a href={next ? `/photo/photos/${next.slug}` : undefined} class:list={["nav-btn", "nav-btn--next", { "nav-btn--disabled": !next }]}>
+          <span class="nav-text">
+            <span class="nav-label">next</span>
+            <span class="nav-title">{next?.title ?? '—'}</span>
+          </span>
+          <span class="nav-arrow">→</span>
+        </a>
       </div>
     </div>
 
@@ -100,6 +148,51 @@ const related = photos
 </Base>
 
 <style>
+  /* ---------- side arrows, outside the photo/content column ---------- */
+  .side-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    display: none; /* only shown once there's real space beside the content, see media query */
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .side-nav:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  .side-nav-arrow {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .side-nav--prev { left: 2rem; }
+  .side-nav--next { right: 2rem; }
+
+  /* Content column is max-width 1100px + 1.5rem padding each side.
+     Only show side arrows once the viewport actually has clear room
+     to the left/right of that column for them to sit in. */
+  @media (min-width: 1300px) {
+    .side-nav { display: flex; }
+  }
+
+  @media (min-width: 1600px) {
+    .side-nav--prev { left: 4rem; }
+    .side-nav--next { right: 4rem; }
+  }
+
+  /* ---------- page ---------- */
   .detail {
     max-width: 1100px;
     margin: 0 auto;
@@ -180,23 +273,70 @@ const related = photos
     color: var(--accent);
   }
 
+  /* ---------- bottom prev/next, left/right aligned with fixed gutter ---------- */
   .nav-links {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 2rem;
     padding-top: 1rem;
     border-top: 1px solid var(--border);
   }
 
   .nav-btn {
-    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
     color: var(--text-muted);
+    min-width: 0; /* allow text truncation inside grid/flex */
+    transition: color 0.2s;
   }
-  .nav-btn:hover {
-    background: var(--accent);
-    color: var(--bg);
-    border-radius: 3px;
-    padding: 0 0.25rem;
+
+  .nav-btn--next {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .nav-btn--disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  .nav-btn:hover:not(.nav-btn--disabled) {
+    color: var(--accent);
+  }
+
+  .nav-arrow {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .nav-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .nav-btn--next .nav-text {
+    align-items: flex-end;
+  }
+
+  .nav-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .nav-title {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .related {

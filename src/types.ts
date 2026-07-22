@@ -18,6 +18,10 @@ export interface Photo {
   fullsize: string;
   width: number;
   height: number;
+  iso?: number;
+  aperture?: string;
+  focalLength?: string;
+  shutterSpeed?: string;
 }
 
 export interface PhotoManifest {

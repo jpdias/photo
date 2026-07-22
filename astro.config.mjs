@@ -19,5 +19,11 @@ export default defineConfig({
   },
   vite: {
     customLogger: logger,
+    ssr: {
+      external: ['react', 'react-dom'],
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-dom/client'],
+    },
   },
 });

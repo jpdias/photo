@@ -53,6 +53,10 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         data-slug={photo.slug}
         data-lat={photo.location?.lat ?? ''}
         data-lng={photo.location?.lng ?? ''}
+        data-iso={photo.iso ?? ''}
+        data-aperture={photo.aperture ?? ''}
+        data-focal={photo.focalLength ?? ''}
+        data-shutter={photo.shutterSpeed ?? ''}
         data-index={i}
         style={`--i: ${i}`}
       >
@@ -73,11 +77,14 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
 <div class="modal" id="photo-modal">
   <div class="modal-backdrop" id="modal-backdrop"></div>
+
+  <!-- Arrows are siblings of modal-content (not nested inside it), so they are
+       unaffected by modal-content's open/close transform and can be truly
+       fixed to the viewport edges, outside the photo. -->
+  <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
+  <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
+
   <div class="modal-content">
-    <div class="modal-nav">
-      <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
-      <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
-    </div>
     <div class="modal-body">
       <div class="modal-image-wrap">
         <img class="modal-image" id="modal-image" src="" alt="" />
@@ -91,9 +98,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         </div>
         <div class="modal-meta">
           <div class="modal-details" id="modal-details"></div>
-          <div class="modal-minimap-wrap" id="modal-minimap-wrap" style="display:none">
-            <span class="minimap-label">location</span>
-            <svg id="modal-minimap" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"></svg>
+          <div class="modal-tech-wrap" id="modal-tech-wrap" style="display:none">
+            <div class="tech-rows" id="modal-tech"></div>
           </div>
         </div>
       </div>
@@ -102,55 +108,25 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 </div>
 
 <script>
-  import { geoMercator, geoPath, geoGraticule } from 'd3-geo';
-  import landGeo from '../data/land-geo.json';
+  function detailRow(label: string, val: string) {
+    return `<div class="detail-row"><span class="detail-label">${label}</span><span class="detail-leader"></span><span class="detail-value">${val}</span></div>`;
+  }
 
-  const landFc = { type: 'FeatureCollection', features: landGeo } as any;
-  const graticuleLines = geoGraticule().step([10, 10])();
+  function renderTech(el: HTMLElement) {
+    const rows: string[] = [];
 
-  // Regional zoom: center the map on the point itself rather than showing
-  // a full world map with a barely-visible dot. Falls back to a wider
-  // view if the local projection can't place the point (e.g. data gaps).
-  function renderMinimap(svg: SVGSVGElement, lat: number, lng: number) {
-    const w = 320, h = 200;
-    const cx = w / 2, cy = h / 2;
+    const addRow = (label: string, val: string) => {
+      if (!val) return;
+      rows.push(detailRow(label, val));
+    };
 
-    const projection = geoMercator()
-      .scale(700)
-      .center([lng, lat])
-      .translate([cx, cy]);
-    const pathGen = geoPath(projection);
+    addRow('iso', el.dataset.iso ? `ISO ${el.dataset.iso}` : '');
+    addRow('aperture', el.dataset.aperture ?? '');
+    addRow('focal length', el.dataset.focal ?? '');
+    addRow('shutter', el.dataset.shutter ?? '');
 
-    const landPath = pathGen(landFc) || '';
-    const gratPath = pathGen(graticuleLines as any) || '';
-
-    svg.innerHTML = `
-      <defs>
-        <radialGradient id="minimap-ocean" cx="50%" cy="42%" r="75%">
-          <stop offset="0%" stop-color="#1c2b33"/>
-          <stop offset="100%" stop-color="#0c1417"/>
-        </radialGradient>
-        <filter id="minimap-glow" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="3.5" result="blur"/>
-          <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <rect width="${w}" height="${h}" fill="url(#minimap-ocean)" rx="6"/>
-      <g opacity="0.22">
-        ${gratPath ? `<path d="${gratPath}" fill="none" stroke="#ffffff" stroke-width="0.5"/>` : ''}
-      </g>
-      <path d="${landPath}" fill="rgba(255,255,255,0.62)" stroke="rgba(255,255,255,0.12)" stroke-width="0.6"/>
-      <circle cx="${cx}" cy="${cy}" r="10" fill="none" stroke="#fe5c35" stroke-width="1.4" opacity="0.7">
-        <animate attributeName="r" values="8;18;8" dur="2.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.6;0;0.6" dur="2.6s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="${cx}" cy="${cy}" r="5" fill="#fe5c35" filter="url(#minimap-glow)"/>
-      <circle cx="${cx}" cy="${cy}" r="1.8" fill="#fff"/>
-      <rect width="${w}" height="${h}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="6"/>
-    `;
+    const tech = document.getElementById('modal-tech')!;
+    tech.innerHTML = rows.join('');
   }
 
   const chips = document.querySelectorAll('.chip');
@@ -256,26 +232,19 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     if (slug) history.replaceState(null, '', `#${slug}`);
 
     const rows: string[] = [];
-    if (el.dataset.locationName) rows.push(`<div class="detail-row"><span class="detail-label">location</span><span>${el.dataset.locationName}</span></div>`);
-    if (el.dataset.country) rows.push(`<div class="detail-row"><span class="detail-label">country</span><span>${el.dataset.country}</span></div>`);
-    if (el.dataset.lat && el.dataset.lng) {
-      const lat = parseFloat(el.dataset.lat);
-      const lng = parseFloat(el.dataset.lng);
-      if (!isNaN(lat) && !isNaN(lng)) rows.push(`<div class="detail-row"><span class="detail-label">coordinates</span><span>${lat.toFixed(4)}, ${lng.toFixed(4)}</span></div>`);
-    }
-    if (el.dataset.date) rows.push(`<div class="detail-row"><span class="detail-label">date</span><span>${el.dataset.date}</span></div>`);
-    if (el.dataset.camera) rows.push(`<div class="detail-row"><span class="detail-label">camera</span><span>${el.dataset.camera}</span></div>`);
+    if (el.dataset.locationName) rows.push(detailRow('location', el.dataset.locationName));
+    if (el.dataset.country) rows.push(detailRow('country', el.dataset.country));
+    if (el.dataset.date) rows.push(detailRow('date', el.dataset.date));
+    if (el.dataset.camera) rows.push(detailRow('camera', el.dataset.camera));
     modalDetails.innerHTML = rows.join('');
 
-    const minimapWrap = document.getElementById('modal-minimap-wrap')!;
-    const minimapSvg = document.getElementById('modal-minimap')!;
-    const lat = parseFloat(el.dataset.lat || '');
-    const lng = parseFloat(el.dataset.lng || '');
-    if (!isNaN(lat) && !isNaN(lng)) {
-      minimapWrap.style.display = 'block';
-      renderMinimap(minimapSvg as unknown as SVGSVGElement, lat, lng);
+    const techWrap = document.getElementById('modal-tech-wrap')!;
+    const hasTech = el.dataset.iso || el.dataset.aperture || el.dataset.focal || el.dataset.shutter;
+    if (hasTech) {
+      techWrap.style.display = 'block';
+      renderTech(el);
     } else {
-      minimapWrap.style.display = 'none';
+      techWrap.style.display = 'none';
     }
 
     (document.getElementById('modal-prev') as HTMLButtonElement).disabled = currentIndex <= 0;
@@ -630,13 +599,21 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   }
 
   .modal-details {
-    flex: 1;
-    min-width: 0;
+    width: 50%;
   }
 
-  .modal-details :global(.detail-row) {
+  .modal-tech-wrap {
+    flex-shrink: 0;
+    width: 50%;
+    margin-left: auto;
+  }
+
+  /* ---------- detail rows: fixed label column + dotted "tab" leader + value ---------- */
+  .modal-details :global(.detail-row),
+  .modal-tech-wrap :global(.detail-row) {
     display: flex;
-    gap: 1rem;
+    align-items: baseline;
+    gap: 0.5rem;
     font-size: 0.8rem;
     color: var(--text);
     margin-bottom: 0.35rem;
@@ -644,75 +621,62 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  .modal-details :global(.detail-row:last-child) {
+  .modal-details :global(.detail-row:last-child),
+  .modal-tech-wrap :global(.detail-row:last-child) {
     border-bottom: none;
   }
 
-  .modal-details :global(.detail-label) {
+  .modal-details :global(.detail-label),
+  .modal-tech-wrap :global(.detail-label) {
+    flex: 0 0 auto;
     color: var(--text-muted);
-    min-width: 70px;
-    flex-shrink: 0;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    padding-top: 0.1rem;
+    white-space: nowrap;
   }
 
-  .modal-minimap-wrap {
-    flex-shrink: 0;
-    width: 160px;
-    margin-left: auto;
+  .modal-details :global(.detail-leader),
+  .modal-tech-wrap :global(.detail-leader) {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
+    margin-bottom: 3px;
+    min-width: 0.75rem;
   }
 
-  .minimap-label {
-    display: block;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    margin-bottom: 0.35rem;
+  .modal-details :global(.detail-value),
+  .modal-tech-wrap :global(.detail-value) {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
   }
 
-  .modal-minimap-wrap :global(#modal-minimap) {
-    width: 100%;
-    display: block;
-    border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  }
-
-  .modal-nav {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 0.5rem;
-    z-index: 10;
-  }
-
+  /* ---------- arrows: fixed to viewport edges, outside the photo ---------- */
   .modal-arrow {
-    pointer-events: auto;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1010;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.7);
     font-size: 2rem;
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.15s, color 0.15s, transform 0.15s;
     backdrop-filter: blur(8px);
   }
 
   .modal-arrow:hover:not(:disabled) {
     background: rgba(254, 92, 53, 0.3);
     color: #fff;
+    transform: translateY(-50%) scale(1.06);
   }
 
   .modal-arrow:disabled {
@@ -720,14 +684,44 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     cursor: default;
   }
 
+  .modal-prev { left: 1rem; }
+  .modal-next { right: 1rem; }
+
+  /* As the viewport grows, push the arrows out further so they use the
+     available space beside the (max 1000px wide) modal content instead of
+     hugging its edges. */
+  @media (min-width: 1200px) {
+    .modal-prev { left: 2.5rem; }
+    .modal-next { right: 2.5rem; }
+  }
+
+  @media (min-width: 1600px) {
+    .modal-prev { left: 5rem; }
+    .modal-next { right: 5rem; }
+  }
+
   @media (max-width: 640px) {
     .modal-meta {
       flex-direction: column;
     }
 
-    .modal-minimap-wrap {
+    .modal-details,
+    .modal-tech-wrap {
       width: 100%;
+    }
+
+    .modal-tech-wrap {
       margin-left: 0;
+    }
+
+    /* less room on mobile, keep arrows tucked in close */
+    .modal-prev { left: 0.5rem; }
+    .modal-next { right: 0.5rem; }
+
+    .modal-arrow {
+      width: 40px;
+      height: 40px;
+      font-size: 1.6rem;
     }
   }
 
