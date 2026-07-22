@@ -428,12 +428,12 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     object-fit: cover;
     display: block;
     background: #2a2a2a;
-    transition: transform 0.4s ease;
+    transition: scale 0.4s ease;
     filter: saturate(0.9);
   }
 
   .grid-item:hover img {
-    transform: scale(1.03);
+    scale: 1.03;
     filter: saturate(1);
   }
 
