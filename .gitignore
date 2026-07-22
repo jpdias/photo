@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 photos_to_process/
+public/photos/
+public/thumbnails/
