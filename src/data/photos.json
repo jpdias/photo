@@ -8750,6 +8750,56 @@
     "shutterSpeed": "1/320"
   },
   {
+    "slug": "water-line-30-07-2025",
+    "title": "Water Line",
+    "description": "",
+    "tags": [
+      "2025"
+    ],
+    "location": {
+      "name": "41.1538, -8.3992",
+      "lat": 41.15381860001287,
+      "lng": -8.3992004999569
+    },
+    "date": "2025-07-30",
+    "camera": "Canon Canon EOS 70D",
+    "thumbnail": "/photo/thumbnails/water-line-30-07-2025.webp",
+    "fullsize": "/photo/photos/water-line-30-07-2025.webp",
+    "width": 4206,
+    "height": 2629,
+    "category": "fire",
+    "iso": 160,
+    "aperture": "f/6.3",
+    "focalLength": "200 mm",
+    "shutterSpeed": "1/250",
+    "country": null
+  },
+  {
+    "slug": "water-vs-fire-30-07-2025",
+    "title": "Water Vs Fire",
+    "description": "",
+    "tags": [
+      "2025"
+    ],
+    "location": {
+      "name": "41.1538, -8.3992",
+      "lat": 41.15381860001287,
+      "lng": -8.3992004999569
+    },
+    "date": "2025-07-30",
+    "camera": "Canon Canon EOS 70D",
+    "thumbnail": "/photo/thumbnails/water-vs-fire-30-07-2025.webp",
+    "fullsize": "/photo/photos/water-vs-fire-30-07-2025.webp",
+    "width": 3453,
+    "height": 2158,
+    "category": "fire",
+    "iso": 100,
+    "aperture": "f/9",
+    "focalLength": "58 mm",
+    "shutterSpeed": "1/250",
+    "country": null
+  },
+  {
     "slug": "lighting-the-way-11-08-2025",
     "title": "Lighting The Way",
     "description": "Lighthouse in cape verde islands",
