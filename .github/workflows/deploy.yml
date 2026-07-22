@@ -30,7 +30,7 @@ jobs:
     needs: check
     runs-on: ubuntu-latest
     env:
-      PUBLIC_R2_BASE_URL: https://6b608fe67a90e80f39d5c5c79207024c.r2.cloudflarestorage.com
+      PUBLIC_R2_BASE_URL: https://6b608fe67a90e80f39d5c5c79207024c.r2.cloudflarestorage.com/photography
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
