@@ -28,7 +28,9 @@ const R2_BUCKET = process.env.R2_BUCKET_NAME || 'portfolio-photos';
 const R2_PUBLIC_URL = process.env.R2_PUBLIC_URL;
 
 if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY || !R2_PUBLIC_URL) {
-  console.error('Missing required env vars. Check .env for R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_PUBLIC_URL');
+  console.error(
+    'Missing required env vars. Check .env for R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_PUBLIC_URL',
+  );
   process.exit(1);
 }
 
@@ -70,13 +72,15 @@ async function listAllObjects(prefix) {
   let continuationToken = undefined;
 
   do {
-    const res = await s3.send(new ListObjectsV2Command({
-      Bucket: R2_BUCKET,
-      Prefix: prefix,
-      ContinuationToken: continuationToken,
-    }));
+    const res = await s3.send(
+      new ListObjectsV2Command({
+        Bucket: R2_BUCKET,
+        Prefix: prefix,
+        ContinuationToken: continuationToken,
+      }),
+    );
 
-    for (const obj of (res.Contents || [])) {
+    for (const obj of res.Contents || []) {
       keys.push(obj.Key);
     }
     continuationToken = res.IsTruncated ? res.NextContinuationToken : undefined;
@@ -163,14 +167,10 @@ async function main() {
   const thumbKeys = await listAllObjects(THUMB_PREFIX);
 
   // Build a set of existing thumbnail slugs for quick lookup
-  const existingThumbSlugs = new Set(
-    thumbKeys.map(k => slugify(k.replace(THUMB_PREFIX, '')))
-  );
+  const existingThumbSlugs = new Set(thumbKeys.map(k => slugify(k.replace(THUMB_PREFIX, ''))));
 
   // Filter to supported image files in photos/
-  const imageKeys = photoKeys.filter(k =>
-    SUPPORTED_EXT.some(ext => k.toLowerCase().endsWith(ext))
-  );
+  const imageKeys = photoKeys.filter(k => SUPPORTED_EXT.some(ext => k.toLowerCase().endsWith(ext)));
 
   console.log(`📁 Found ${imageKeys.length} photos in R2`);
 
@@ -206,7 +206,8 @@ async function main() {
 
     // Reverse geocode GPS only if no previous location or coords changed
     let locationName = null;
-    const coordsChanged = prev?.location && (prev.location.lat !== lat || prev.location.lng !== lng);
+    const coordsChanged =
+      prev?.location && (prev.location.lat !== lat || prev.location.lng !== lng);
     const noPrevLocation = !prev?.location && lat != null && lng != null;
 
     if (coordsChanged || noPrevLocation) {
@@ -226,9 +227,14 @@ async function main() {
       description: prev?.description || '',
       category: prev?.category || 'uncategorized',
       tags: prev?.tags || [],
-      location: (lat != null && lng != null)
-        ? { name: locationName || prev?.location?.name || `${lat.toFixed(4)}, ${lng.toFixed(4)}`, lat, lng }
-        : null,
+      location:
+        lat != null && lng != null
+          ? {
+              name: locationName || prev?.location?.name || `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
+              lat,
+              lng,
+            }
+          : null,
       date: exif.date || prev?.date || null,
       camera: exif.camera || prev?.camera || null,
       thumbnail: `${R2_PUBLIC_URL.replace(/\/$/, '')}/${THUMB_PREFIX}${slug}.webp`,

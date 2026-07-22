@@ -16,22 +16,22 @@ interface LocationGroup {
 }
 
 const COUNTRY_CENTROIDS: Record<string, [number, number]> = {
-  "Austria": [47.5940, 14.1246],
-  "Canada": [61.0667, -107.9917],
-  "Cape Verde": [16.0001, -24.0084],
-  "Czechia": [49.7439, 15.3381],
-  "Denmark": [55.6702, 10.3333],
-  "France": [46.6034, 1.8883],
-  "Germany": [51.1638, 10.4478],
-  "Greece": [38.9954, 21.9877],
-  "Luxembourg": [49.8159, 6.1297],
-  "Norway": [61.1529, 8.7877],
-  "Poland": [52.2159, 19.1344],
-  "Portugal": [39.6622, -8.1354],
-  "Spain": [39.3261, -4.8380],
-  "Svalbard": [78.7199, 20.3493],
-  "Switzerland": [46.7986, 8.2320],
-  "United Kingdom": [54.7024, -3.2766],
+  Austria: [47.594, 14.1246],
+  Canada: [61.0667, -107.9917],
+  'Cape Verde': [16.0001, -24.0084],
+  Czechia: [49.7439, 15.3381],
+  Denmark: [55.6702, 10.3333],
+  France: [46.6034, 1.8883],
+  Germany: [51.1638, 10.4478],
+  Greece: [38.9954, 21.9877],
+  Luxembourg: [49.8159, 6.1297],
+  Norway: [61.1529, 8.7877],
+  Poland: [52.2159, 19.1344],
+  Portugal: [39.6622, -8.1354],
+  Spain: [39.3261, -4.838],
+  Svalbard: [78.7199, 20.3493],
+  Switzerland: [46.7986, 8.232],
+  'United Kingdom': [54.7024, -3.2766],
 };
 
 function groupByLocation(photos: Photo[]): LocationGroup[] {
@@ -60,7 +60,9 @@ export default function GlobeMap({ photos }: Props) {
   const groups = useMemo(() => groupByLocation(photos), [photos]);
 
   const [rotation, setRotation] = useState<[number, number, number]>([0, -20, 0]);
-  const [hovered, setHovered] = useState<{ group: LocationGroup; x: number; y: number } | null>(null);
+  const [hovered, setHovered] = useState<{ group: LocationGroup; x: number; y: number } | null>(
+    null,
+  );
 
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -93,7 +95,9 @@ export default function GlobeMap({ photos }: Props) {
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
-    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   const projection = useMemo(() => {
@@ -112,12 +116,12 @@ export default function GlobeMap({ photos }: Props) {
   const center: [number, number] = [-rotation[0], -rotation[1]];
 
   const visibleGroups = groups
-    .map((g) => {
+    .map(g => {
       const dist = geoDistance([g.lng, g.lat], center);
       const coords = projection([g.lng, g.lat]);
       return { g, dist, coords };
     })
-    .filter((v) => v.dist < Math.PI / 2 && v.coords);
+    .filter(v => v.dist < Math.PI / 2 && v.coords);
 
   // Convert a point in SVG user space (0..1000) to pixel coords relative to the container div,
   // so the tooltip (positioned with plain CSS left/top) lines up regardless of how the SVG is scaled.
@@ -172,12 +176,25 @@ export default function GlobeMap({ photos }: Props) {
   return (
     <div
       ref={containerRef}
-      style={{ width: '100%', height: '100%', background: '#202020', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}
+      style={{
+        width: '100%',
+        height: '100%',
+        background: '#202020',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+      }}
     >
       <svg
         ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
-        style={{ width: '100%', height: '100%', touchAction: 'none', cursor: dragRef.current.dragging ? 'grabbing' : 'grab' }}
+        style={{
+          width: '100%',
+          height: '100%',
+          touchAction: 'none',
+          cursor: dragRef.current.dragging ? 'grabbing' : 'grab',
+        }}
         xmlns="http://www.w3.org/2000/svg"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
@@ -188,7 +205,9 @@ export default function GlobeMap({ photos }: Props) {
         <rect width={W} height={H} fill="#202020" />
 
         <circle
-          cx={W / 2} cy={H / 2} r={W / 2.15}
+          cx={W / 2}
+          cy={H / 2}
+          r={W / 2.15}
           fill="rgba(255,255,255,0.03)"
           stroke="rgba(255,255,255,0.08)"
           strokeWidth={0.75}
@@ -216,7 +235,8 @@ export default function GlobeMap({ photos }: Props) {
             <g key={i} style={{ opacity: edgeFade }}>
               {/* outer glow, purely visual */}
               <circle
-                cx={cx} cy={cy}
+                cx={cx}
+                cy={cy}
                 r={isActive ? 10 : 8}
                 fill={isActive ? 'rgba(254,92,53,0.3)' : 'rgba(254,92,53,0.2)'}
                 stroke="none"
@@ -224,7 +244,8 @@ export default function GlobeMap({ photos }: Props) {
               />
               {/* visual dot, purely visual */}
               <circle
-                cx={cx} cy={cy}
+                cx={cx}
+                cy={cy}
                 r={isActive ? 5 : 4}
                 fill="rgba(254,92,53,0.85)"
                 stroke="none"
@@ -232,11 +253,14 @@ export default function GlobeMap({ photos }: Props) {
               />
               {/* invisible, larger hit area — this is what actually catches clicks/hover */}
               <circle
-                cx={cx} cy={cy}
+                cx={cx}
+                cy={cy}
                 r={14}
                 fill="transparent"
                 style={{ cursor: 'pointer' }}
-                onClick={() => { window.location.href = `/portfolio/?location=${encodeURIComponent(g.country || g.name)}`; }}
+                onClick={() => {
+                  window.location.href = `/portfolio/?location=${encodeURIComponent(g.country || g.name)}`;
+                }}
                 onMouseEnter={() => {
                   hoveredRef.current = true;
                   const { x, y } = svgToContainerPoint(cx, cy);
@@ -253,26 +277,49 @@ export default function GlobeMap({ photos }: Props) {
       </svg>
 
       {hovered && (
-        <div style={{
-          position: 'absolute',
-          left: hovered.x + 14,
-          top: hovered.y - 10,
-          background: '#1a1a1a',
-          border: '1px solid rgba(254,92,53,0.3)',
-          borderRadius: '4px',
-          padding: '0.4rem 0.65rem',
-          pointerEvents: 'none',
-          whiteSpace: 'nowrap',
-          zIndex: 20,
-          boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
-        }}>
-          <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.8)', fontFamily: "'Lato', sans-serif", fontWeight: 300 }}>
+        <div
+          style={{
+            position: 'absolute',
+            left: hovered.x + 14,
+            top: hovered.y - 10,
+            background: '#1a1a1a',
+            border: '1px solid rgba(254,92,53,0.3)',
+            borderRadius: '4px',
+            padding: '0.4rem 0.65rem',
+            pointerEvents: 'none',
+            whiteSpace: 'nowrap',
+            zIndex: 20,
+            boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+          }}
+        >
+          <div
+            style={{
+              fontSize: '0.8rem',
+              color: 'rgba(255,255,255,0.8)',
+              fontFamily: "'Lato', sans-serif",
+              fontWeight: 300,
+            }}
+          >
             {hovered.group.country || 'Unknown'}
           </div>
-          <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', fontFamily: "'IBM Plex Mono', monospace", marginTop: '1px' }}>
+          <div
+            style={{
+              fontSize: '0.7rem',
+              color: 'rgba(255,255,255,0.5)',
+              fontFamily: "'IBM Plex Mono', monospace",
+              marginTop: '1px',
+            }}
+          >
             {hovered.group.lat.toFixed(4)}, {hovered.group.lng.toFixed(4)}
           </div>
-          <div style={{ fontSize: '0.7rem', color: 'var(--accent)', fontFamily: "'IBM Plex Mono', monospace", marginTop: '2px' }}>
+          <div
+            style={{
+              fontSize: '0.7rem',
+              color: 'var(--accent)',
+              fontFamily: "'IBM Plex Mono', monospace",
+              marginTop: '2px',
+            }}
+          >
             {hovered.group.photos.length} photo{hovered.group.photos.length !== 1 ? 's' : ''}
           </div>
         </div>

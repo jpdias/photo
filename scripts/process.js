@@ -17,18 +17,23 @@ const MANIFEST_PATH = './src/data/photos.json';
 const UPLOAD = process.argv.includes('--upload');
 
 const rl = createInterface({ input: process.stdin, output: process.stdout });
-const ask = (q) => new Promise(r => rl.question(q, r));
+const ask = q => new Promise(r => rl.question(q, r));
 
 function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'untitled';
+  return (
+    text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'untitled'
+  );
 }
 
 function titleFromSlug(slug) {
-  return slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  return slug
+    .split('-')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ');
 }
 
 function parseFilename(name) {
@@ -75,7 +80,9 @@ function getR2Client() {
 
 async function r2Exists(key) {
   try {
-    await getR2Client().send(new HeadObjectCommand({ Bucket: process.env.R2_BUCKET_NAME, Key: key }));
+    await getR2Client().send(
+      new HeadObjectCommand({ Bucket: process.env.R2_BUCKET_NAME, Key: key }),
+    );
     return true;
   } catch {
     return false;
@@ -87,12 +94,14 @@ async function uploadToR2(filePath, key) {
   if (exists) return false;
   try {
     const file = await readFile(filePath);
-    await getR2Client().send(new PutObjectCommand({
-      Bucket: process.env.R2_BUCKET_NAME,
-      Key: key,
-      Body: file,
-      ContentType: 'image/webp',
-    }));
+    await getR2Client().send(
+      new PutObjectCommand({
+        Bucket: process.env.R2_BUCKET_NAME,
+        Key: key,
+        Body: file,
+        ContentType: 'image/webp',
+      }),
+    );
     return true;
   } catch {
     return false;
@@ -100,20 +109,29 @@ async function uploadToR2(filePath, key) {
 }
 
 async function geocodePlace(query) {
-  const https = (await import('node:https'));
+  const https = await import('node:https');
   const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
-  return new Promise((resolve) => {
-    https.get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, (res) => {
-      let data = '';
-      res.on('data', c => data += c);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          if (parsed.length > 0) resolve({ lat: parseFloat(parsed[0].lat), lng: parseFloat(parsed[0].lon), name: parsed[0].display_name });
-          else resolve(null);
-        } catch { resolve(null); }
-      });
-    }).on('error', () => resolve(null));
+  return new Promise(resolve => {
+    https
+      .get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, res => {
+        let data = '';
+        res.on('data', c => (data += c));
+        res.on('end', () => {
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.length > 0)
+              resolve({
+                lat: parseFloat(parsed[0].lat),
+                lng: parseFloat(parsed[0].lon),
+                name: parsed[0].display_name,
+              });
+            else resolve(null);
+          } catch {
+            resolve(null);
+          }
+        });
+      })
+      .on('error', () => resolve(null));
   });
 }
 
@@ -129,7 +147,7 @@ async function writeExif(filePath, updates) {
     else if (tag === 'Model') args.push(`-Model=${val}`);
   }
   args.push(filePath);
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     execFile('exiftool', args, (err, stdout, stderr) => {
       if (err) resolve(false);
       else resolve(true);
@@ -253,7 +271,8 @@ async function main() {
   }
 
   const photos = [];
-  let processed = 0, skipped = 0;
+  let processed = 0,
+    skipped = 0;
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -310,7 +329,8 @@ async function main() {
       const fullPath = join(process.cwd(), PUBLIC_PHOTOS, `${slug}.webp`);
       const needsFull = !existsSync(fullPath);
       if (needsFull) {
-        await image.clone()
+        await image
+          .clone()
           .resize(2000, undefined, { fit: 'inside', withoutEnlargement: true })
           .webp({ quality: 85 })
           .toFile(fullPath);
@@ -319,7 +339,8 @@ async function main() {
       const thumbPath = join(process.cwd(), PUBLIC_THUMBS, `${slug}.webp`);
       const needsThumb = !existsSync(thumbPath);
       if (needsThumb) {
-        await image.clone()
+        await image
+          .clone()
           .resize(500, undefined, { fit: 'inside', withoutEnlargement: true })
           .webp({ quality: 75 })
           .toFile(thumbPath);
@@ -336,14 +357,19 @@ async function main() {
       }
 
       photos.push({
-        slug, title, description,
+        slug,
+        title,
+        description,
         category: prev?.category || 'uncategorized',
-        tags, location,
+        tags,
+        location,
         country: prev?.country || null,
-        date: date || null, camera: camera || null,
+        date: date || null,
+        camera: camera || null,
         thumbnail: `/portfolio/thumbnails/${slug}.webp`,
         fullsize: `/portfolio/photos/${slug}.webp`,
-        width: imgWidth, height: imgHeight,
+        width: imgWidth,
+        height: imgHeight,
       });
 
       if (UPLOAD) {
@@ -356,7 +382,9 @@ async function main() {
       if (needsFull) status.push('fullsize');
       if (needsThumb) status.push('thumbnail');
       if (UPLOAD) status.push('uploaded');
-      console.log(`  ${idx} ${status.length > 0 ? '→' : '✓'} ${slug}${status.length > 0 ? ` (${status.join(', ')})` : ''}`);
+      console.log(
+        `  ${idx} ${status.length > 0 ? '→' : '✓'} ${slug}${status.length > 0 ? ` (${status.join(', ')})` : ''}`,
+      );
       processed++;
     } catch (err) {
       console.error(`  ${idx} ✗ ${slug}: ${err.message}`);

@@ -15,11 +15,13 @@ const UPLOAD = process.argv.includes('--upload');
 const VALIDATE = process.argv.includes('--validate');
 
 function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'untitled';
+  return (
+    text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'untitled'
+  );
 }
 
 function parseFilename(name) {
@@ -47,7 +49,8 @@ async function validateNewPhotos() {
   const existingSlugs = new Set(manifest.map(p => p.slug));
 
   const files = (await readdir(srcDir)).filter(f => /\.jpe?g$/i.test(f));
-  let valid = 0, invalid = 0;
+  let valid = 0,
+    invalid = 0;
 
   console.log(`\nValidating ${files.length} source JPGs...\n`);
 
@@ -70,7 +73,9 @@ async function validateNewPhotos() {
     if (!parsed.date) issues.push('filename missing date pattern (title_DD_MM_YYYY)');
 
     // Validate date
-    const date = parsed.date || (exif?.DateTimeOriginal ? new Date(exif.DateTimeOriginal).toISOString().slice(0, 10) : null);
+    const date =
+      parsed.date ||
+      (exif?.DateTimeOriginal ? new Date(exif.DateTimeOriginal).toISOString().slice(0, 10) : null);
     if (!date) issues.push('missing date');
 
     // Validate GPS

@@ -12,11 +12,13 @@ const PUBLIC_THUMBS = './public/thumbnails';
 const MANIFEST_PATH = './src/data/photos.json';
 
 function slugify(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'untitled';
+  return (
+    text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'untitled'
+  );
 }
 
 function titleFromSlug(slug) {
@@ -31,9 +33,7 @@ function parseFilename(filename) {
   const m = name.match(/^(.+)_(\d{1,2})_(\d{1,2})_(\d{4})$/);
   if (m) {
     const [, titlePart, day, month, year] = m;
-    const title = titlePart
-      .replace(/_/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase());
+    const title = titlePart.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     const date = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
     return { title, date };
   }
