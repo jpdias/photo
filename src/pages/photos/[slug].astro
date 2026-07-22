@@ -25,7 +25,7 @@ const related = photos
   <Header />
   <main class="detail">
     <div class="back-bar">
-      <a href="/portfolio/" class="back">← back</a>
+      <a href="/photo/" class="back">← back</a>
       <span class="back-index">{index + 1} / {photos.length}</span>
     </div>
 
@@ -78,8 +78,8 @@ const related = photos
       </div>
 
       <div class="nav-links">
-        {prev && <a href={`/portfolio/photos/${prev.slug}`} class="nav-btn">← {prev.title}</a>}
-        {next && <a href={`/portfolio/photos/${next.slug}`} class="nav-btn">{next.title} →</a>}
+        {prev && <a href={`/photo/photos/${prev.slug}`} class="nav-btn">← {prev.title}</a>}
+        {next && <a href={`/photo/photos/${next.slug}`} class="nav-btn">{next.title} →</a>}
       </div>
     </div>
 
@@ -88,7 +88,7 @@ const related = photos
         <h2>more in {photo.category}</h2>
         <div class="related-grid">
           {related.map((p: Photo) => (
-            <a href={`/portfolio/photos/${p.slug}`} class="related-item">
+            <a href={`/photo/photos/${p.slug}`} class="related-item">
               <img src={imageUrl(p.thumbnail)} alt={p.title} />
               <span>{p.title}</span>
             </a>

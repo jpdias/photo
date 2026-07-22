@@ -366,8 +366,8 @@ async function main() {
         country: prev?.country || null,
         date: date || null,
         camera: camera || null,
-        thumbnail: `/portfolio/thumbnails/${slug}.webp`,
-        fullsize: `/portfolio/photos/${slug}.webp`,
+        thumbnail: `/photo/thumbnails/${slug}.webp`,
+        fullsize: `/photo/photos/${slug}.webp`,
         width: imgWidth,
         height: imgHeight,
       });

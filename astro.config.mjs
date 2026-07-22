@@ -11,8 +11,8 @@ logger.warn = (msg, options) => {
 
 export default defineConfig({
   integrations: [react()],
-  site: 'https://example.github.io',
-  base: '/portfolio',
+  site: 'https://jpdias.github.io',
+  base: '/photo',
   output: 'static',
   image: {
     domains: ['localhost'],

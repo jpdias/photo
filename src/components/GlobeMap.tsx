@@ -259,7 +259,7 @@ export default function GlobeMap({ photos }: Props) {
                 fill="transparent"
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
-                  window.location.href = `/portfolio/?location=${encodeURIComponent(g.country || g.name)}`;
+                  window.location.href = `/photo/?location=${encodeURIComponent(g.country || g.name)}`;
                 }}
                 onMouseEnter={() => {
                   hoveredRef.current = true;

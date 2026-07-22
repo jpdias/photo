@@ -5,7 +5,7 @@ export function imageUrl(localPath: string): string {
     return localPath;
   }
   const r2Key = localPath
-    .replace('/portfolio/photos/', 'photography/')
-    .replace('/portfolio/thumbnails/', 'thumbnails/');
+    .replace('/photo/photos/', 'photography/')
+    .replace('/photo/thumbnails/', 'thumbnails/');
   return `${R2_BASE}/${r2Key}`;
 }
