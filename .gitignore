@@ -4,3 +4,5 @@ dist/
 photos_to_process/
 public/photos/
 public/thumbnails/
+.astro/dev.json
+.astro/dev.log

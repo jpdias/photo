@@ -11,49 +11,41 @@ npm install
 
 ## scripts
 
-### `npm run process`
+### `npm run sync`
 
-Interactive pipeline: validates JPGs in `photos_to_process/`, extracts EXIF, generates WebP fullsize + thumbnail locally, and appends to `src/data/photos.json`.
+Validates, generates, and uploads — the one command. Lists existing R2 objects, compares against local sources, validates EXIF, generates missing WebP files, and uploads only the diff.
 
 ```bash
-# process all new photos (generates WebP files locally, updates manifest)
-npm run process
+# full pipeline: validate → generate missing → upload new files to R2
+npm run sync
 
-# process and upload to R2
-npm run process -- --upload
+# validate only (exit 1 if anything fails)
+npm run sync -- --validate-only
+
+# generate WebP and update manifest, skip R2 upload
+npm run sync -- --no-upload
+
+# force re-upload even if file exists on R2
+npm run sync -- --force
 ```
 
-The `--upload` flag uploads every file in the manifest to R2 (skips existing keys via `HeadObjectCommand`).
+### `npm run onramp`
+
+Interactive wizard for first-time photo setup. Prompts for rename, category, location, camera — writes EXIF back to source JPG and generates WebP locally.
+
+```bash
+npm run onramp
+```
 
 ### `npm run discover`
 
-Scans R2 buckets, extracts EXIF from remote fullsize images, reverse-geocodes GPS coordinates, and writes `src/data/photos.json`.
+Scans R2 buckets and rebuilds `src/data/photos.json` from remote files. Useful for disaster recovery or bootstrapping from R2.
 
 ```bash
 npm run discover
 ```
 
 Requires `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_PUBLIC_URL` in `.env`.
-
-### `npm run sync-media`
-
-Validates and regenerates missing local WebP files from source JPGs in `photos_to_process/`.
-
-```bash
-# check manifest entries against local and R2, regenerate missing media
-npm run sync-media
-
-# validate dates and metadata in the manifest
-npm run sync-media -- --validate
-```
-
-### `npm run local-process`
-
-Batch process all JPGs in `photos_to_process/` without interactive prompts. Extracts EXIF, generates WebP files, writes manifest.
-
-```bash
-npm run local-process
-```
 
 ### `npm run seed`
 

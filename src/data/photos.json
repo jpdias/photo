@@ -1,9 +1,34 @@
 [
   {
+    "slug": "girasol-23-08-2008",
+    "title": "Girasol",
+    "description": "",
+    "tags": [
+      "2008"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2008-08-23",
+    "camera": "BenQ DC C800",
+    "thumbnail": "/photo/thumbnails/girasol-23-08-2008.webp",
+    "fullsize": "/photo/photos/girasol-23-08-2008.webp",
+    "width": 1403,
+    "height": 970,
+    "category": "flora",
+    "iso": 50,
+    "aperture": "f/2.8",
+    "focalLength": "8 mm",
+    "shutterSpeed": "1/160",
+    "country": null
+  },
+  {
     "slug": "horse-race-1-07-02-2010",
     "title": "Horse Race 1",
     "description": "Horse Race",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2010"
     ],
@@ -28,7 +53,7 @@
     "slug": "mosca-30-04-2010",
     "title": "Mosca",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2010"
     ],
@@ -53,7 +78,7 @@
     "slug": "red-rose-01-05-2010",
     "title": "Red Rose",
     "description": "Rose",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2010"
     ],
@@ -75,10 +100,110 @@
     "shutterSpeed": "1/200"
   },
   {
+    "slug": "spider-attack-09-05-2010",
+    "title": "Spider Attack",
+    "description": "",
+    "tags": [
+      "2010"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2010-05-09",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/spider-attack-09-05-2010.webp",
+    "fullsize": "/photo/photos/spider-attack-09-05-2010.webp",
+    "width": 2785,
+    "height": 1804,
+    "category": "macro",
+    "iso": 200,
+    "aperture": "f/5.6",
+    "focalLength": "55 mm",
+    "shutterSpeed": "1/250",
+    "country": null
+  },
+  {
+    "slug": "orange-butterfly-10-06-2010",
+    "title": "Orange Butterfly",
+    "description": "",
+    "tags": [
+      "2010"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2010-06-10",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/orange-butterfly-10-06-2010.webp",
+    "fullsize": "/photo/photos/orange-butterfly-10-06-2010.webp",
+    "width": 3618,
+    "height": 2568,
+    "category": "fauna",
+    "iso": 200,
+    "aperture": "f/9",
+    "focalLength": "55 mm",
+    "shutterSpeed": "1/125",
+    "country": null
+  },
+  {
+    "slug": "red-sunflower-15-07-2010",
+    "title": "Red Sunflower",
+    "description": "",
+    "tags": [
+      "2010"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2010-07-15",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/red-sunflower-15-07-2010.webp",
+    "fullsize": "/photo/photos/red-sunflower-15-07-2010.webp",
+    "width": 3239,
+    "height": 2652,
+    "category": "nature",
+    "iso": 200,
+    "aperture": "f/6.3",
+    "focalLength": "55 mm",
+    "shutterSpeed": "1/200",
+    "country": null
+  },
+  {
+    "slug": "landscape-17-07-2010",
+    "title": "Landscape",
+    "description": "Stitched Panorama",
+    "tags": [
+      "2010"
+    ],
+    "location": {
+      "name": "41.3540, -8.7435",
+      "lat": 41.35403980000332,
+      "lng": -8.743540299906279
+    },
+    "date": "2010-07-17",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/landscape-17-07-2010.webp",
+    "fullsize": "/photo/photos/landscape-17-07-2010.webp",
+    "width": 12222,
+    "height": 3757,
+    "category": "landscape",
+    "iso": 200,
+    "aperture": "f/11",
+    "focalLength": "18 mm",
+    "shutterSpeed": "1/320",
+    "country": null
+  },
+  {
     "slug": "ice-purple-26-09-2010",
     "title": "Ice Purple",
     "description": "",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2010"
     ],
@@ -103,7 +228,7 @@
     "slug": "mushroom-land-22-10-2010",
     "title": "Mushroom Land",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2010"
     ],
@@ -120,7 +245,7 @@
     "width": 4272,
     "height": 2848,
     "iso": 800,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "131 mm",
     "shutterSpeed": "1/100"
   },
@@ -128,7 +253,7 @@
     "slug": "watching-frog-19-02-2011",
     "title": "Watching Frog",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2011"
     ],
@@ -153,7 +278,7 @@
     "slug": "bee-at-work-01-03-2011",
     "title": "Bee At Work",
     "description": "Bee at work",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2011"
     ],
@@ -170,15 +295,40 @@
     "width": 1764,
     "height": 1101,
     "iso": 200,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "200 mm",
     "shutterSpeed": "1/640"
+  },
+  {
+    "slug": "old-stairs-05-03-2011",
+    "title": "Old Stairs",
+    "description": "",
+    "tags": [
+      "2011"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2011-03-05",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/old-stairs-05-03-2011.webp",
+    "fullsize": "/photo/photos/old-stairs-05-03-2011.webp",
+    "width": 4208,
+    "height": 2645,
+    "category": "travel",
+    "iso": 200,
+    "aperture": "f/2",
+    "focalLength": "50 mm",
+    "shutterSpeed": "1/50",
+    "country": null
   },
   {
     "slug": "flower-in-the-wild-23-03-2011",
     "title": "Flower In The Wild",
     "description": "",
-    "category": "macrophotography",
+    "category": "flora",
     "tags": [
       "2011"
     ],
@@ -203,7 +353,7 @@
     "slug": "butterfly-couple-31-03-2011",
     "title": "Butterfly Couple",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2011"
     ],
@@ -225,10 +375,35 @@
     "shutterSpeed": "1/320"
   },
   {
+    "slug": "trunk-spider-02-09-2012",
+    "title": "Trunk Spider",
+    "description": "",
+    "tags": [
+      "2012"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2012-09-02",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/trunk-spider-02-09-2012.webp",
+    "fullsize": "/photo/photos/trunk-spider-02-09-2012.webp",
+    "width": 3364,
+    "height": 2052,
+    "category": "macro",
+    "iso": 800,
+    "aperture": "f/5.6",
+    "focalLength": "214 mm",
+    "shutterSpeed": "1/250",
+    "country": null
+  },
+  {
     "slug": "pollen-09-09-2012",
     "title": "Pollen",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2012"
     ],
@@ -248,6 +423,31 @@
     "aperture": "f/5.6",
     "focalLength": "179 mm",
     "shutterSpeed": "1/500"
+  },
+  {
+    "slug": "young-pine-30-01-2013",
+    "title": "Young Pine",
+    "description": "",
+    "tags": [
+      "2013"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2013-01-30",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/young-pine-30-01-2013.webp",
+    "fullsize": "/photo/photos/young-pine-30-01-2013.webp",
+    "width": 4272,
+    "height": 2512,
+    "category": "macro",
+    "iso": 500,
+    "aperture": "f/5.6",
+    "focalLength": "154 mm",
+    "shutterSpeed": "1/200",
+    "country": null
   },
   {
     "slug": "red-carpet-01-08-2013",
@@ -328,7 +528,7 @@
     "slug": "little-cat-05-09-2013",
     "title": "Little Cat",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2013"
     ],
@@ -350,6 +550,31 @@
     "shutterSpeed": "1/50"
   },
   {
+    "slug": "gaia-from-porto-29-12-2013",
+    "title": "Gaia From Porto",
+    "description": "",
+    "tags": [
+      "2013"
+    ],
+    "location": {
+      "name": "41.1502, -8.6103",
+      "lat": 41.1502195,
+      "lng": -8.610349699989285
+    },
+    "date": "2013-12-29",
+    "camera": "Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/gaia-from-porto-29-12-2013.webp",
+    "fullsize": "/photo/photos/gaia-from-porto-29-12-2013.webp",
+    "width": 12619,
+    "height": 4097,
+    "category": "travel",
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null,
+    "country": null
+  },
+  {
     "slug": "porto-1-29-12-2013",
     "title": "Porto 1",
     "description": "",
@@ -368,13 +593,67 @@
     "thumbnail": "/photo/thumbnails/porto-1-29-12-2013.webp",
     "fullsize": "/photo/photos/porto-1-29-12-2013.webp",
     "width": 7415,
-    "height": 3990
+    "height": 3990,
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null
+  },
+  {
+    "slug": "porto-sunset-29-12-2013",
+    "title": "Porto Sunset",
+    "description": "",
+    "tags": [
+      "2013"
+    ],
+    "location": {
+      "name": "41.1502, -8.6103",
+      "lat": 41.1502195,
+      "lng": -8.610349699989285
+    },
+    "date": "2013-12-29",
+    "camera": "Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/porto-sunset-29-12-2013.webp",
+    "fullsize": "/photo/photos/porto-sunset-29-12-2013.webp",
+    "width": 9160,
+    "height": 3765,
+    "category": "travel",
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null,
+    "country": null
+  },
+  {
+    "slug": "sao-bento-symmetry-04-04-2014",
+    "title": "Sao Bento Symmetry",
+    "description": "",
+    "tags": [
+      "2014"
+    ],
+    "location": {
+      "name": "41.1502, -8.6103",
+      "lat": 41.1502195,
+      "lng": -8.610349699989285
+    },
+    "date": "2014-04-04",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/sao-bento-symmetry-04-04-2014.webp",
+    "fullsize": "/photo/photos/sao-bento-symmetry-04-04-2014.webp",
+    "width": 4036,
+    "height": 2725,
+    "category": "architecture",
+    "iso": 640,
+    "aperture": "f/3.5",
+    "focalLength": "18 mm",
+    "shutterSpeed": "1/400",
+    "country": null
   },
   {
     "slug": "bee-close-20-04-2014",
     "title": "Bee Close",
     "description": "Bee at Work",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2014"
     ],
@@ -399,7 +678,7 @@
     "slug": "olive-17-05-2014",
     "title": "Olive",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2014"
     ],
@@ -424,7 +703,7 @@
     "slug": "yellow-focus-17-05-2014",
     "title": "Yellow Focus",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2014"
     ],
@@ -449,7 +728,7 @@
     "slug": "pink-07-06-2014",
     "title": "Pink",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2014"
     ],
@@ -474,7 +753,7 @@
     "slug": "moonlight-09-09-2014",
     "title": "Moonlight",
     "description": "",
-    "category": "animals",
+    "category": "nightscape",
     "tags": [
       "2014"
     ],
@@ -491,15 +770,90 @@
     "width": 4272,
     "height": 2848,
     "iso": 800,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "100 mm",
     "shutterSpeed": "1/5"
+  },
+  {
+    "slug": "lisbon-subway-03-04-2015",
+    "title": "Lisbon Subway",
+    "description": "",
+    "tags": [
+      "2015"
+    ],
+    "location": {
+      "name": "38.7078, -9.1366",
+      "lat": 38.70775069997053,
+      "lng": -9.136591899993187
+    },
+    "date": "2015-04-03",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/lisbon-subway-03-04-2015.webp",
+    "fullsize": "/photo/photos/lisbon-subway-03-04-2015.webp",
+    "width": 4272,
+    "height": 2848,
+    "category": "architecture",
+    "iso": 800,
+    "aperture": "f/3.5",
+    "focalLength": "18 mm",
+    "shutterSpeed": "1/13",
+    "country": null
+  },
+  {
+    "slug": "turn-around-to-fire-26-07-2015",
+    "title": "Turn Around To Fire",
+    "description": "",
+    "tags": [
+      "2015"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2015-07-26",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/turn-around-to-fire-26-07-2015.webp",
+    "fullsize": "/photo/photos/turn-around-to-fire-26-07-2015.webp",
+    "width": 3071,
+    "height": 1871,
+    "category": "fire",
+    "iso": 200,
+    "aperture": "f/8",
+    "focalLength": "250 mm",
+    "shutterSpeed": "1/500",
+    "country": null
+  },
+  {
+    "slug": "red-skies-08-08-2015",
+    "title": "Red Skies",
+    "description": "",
+    "tags": [
+      "2015"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2015-08-08",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/red-skies-08-08-2015.webp",
+    "fullsize": "/photo/photos/red-skies-08-08-2015.webp",
+    "width": 4272,
+    "height": 1847,
+    "category": "fire",
+    "iso": 400,
+    "aperture": "f/10",
+    "focalLength": "250 mm",
+    "shutterSpeed": "8s",
+    "country": null
   },
   {
     "slug": "red-parrot-20-08-2015",
     "title": "Red Parrot",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2015"
     ],
@@ -549,7 +903,7 @@
     "slug": "acorn-22-08-2015",
     "title": "Acorn",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2015"
     ],
@@ -569,6 +923,31 @@
     "aperture": "f/1.8",
     "focalLength": "50 mm",
     "shutterSpeed": "1/400"
+  },
+  {
+    "slug": "dead-flower-22-08-2015",
+    "title": "Dead Flower",
+    "description": "",
+    "tags": [
+      "2015"
+    ],
+    "location": {
+      "name": "39.6622, -8.1354",
+      "lat": 39.66216479993507,
+      "lng": -8.135351899997373
+    },
+    "date": "2015-08-22",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/dead-flower-22-08-2015.webp",
+    "fullsize": "/photo/photos/dead-flower-22-08-2015.webp",
+    "width": 3940,
+    "height": 2571,
+    "category": "flora",
+    "iso": 200,
+    "aperture": "f/1.8",
+    "focalLength": "50 mm",
+    "shutterSpeed": "1/1600",
+    "country": null
   },
   {
     "slug": "porto-city-04-09-2015",
@@ -591,7 +970,7 @@
     "width": 4234,
     "height": 2823,
     "iso": 200,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "34 mm",
     "shutterSpeed": "1/160"
   },
@@ -614,7 +993,11 @@
     "thumbnail": "/photo/thumbnails/sunset-on-the-horizon-08-09-2015.webp",
     "fullsize": "/photo/photos/sunset-on-the-horizon-08-09-2015.webp",
     "width": 9511,
-    "height": 3482
+    "height": 3482,
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null
   },
   {
     "slug": "alone-in-the-sky-29-09-2015",
@@ -645,7 +1028,7 @@
     "slug": "keep-butterflying-22-05-2016",
     "title": "Keep Butterflying",
     "description": "Butterfly",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2016"
     ],
@@ -692,10 +1075,35 @@
     "shutterSpeed": "1/25"
   },
   {
+    "slug": "juvenile-bird-10-06-2016",
+    "title": "Juvenile Bird",
+    "description": "",
+    "tags": [
+      "2016"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2016-06-10",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/juvenile-bird-10-06-2016.webp",
+    "fullsize": "/photo/photos/juvenile-bird-10-06-2016.webp",
+    "width": 2649,
+    "height": 1729,
+    "category": "fauna",
+    "iso": 800,
+    "aperture": "f/5.6",
+    "focalLength": "250 mm",
+    "shutterSpeed": "1/50",
+    "country": null
+  },
+  {
     "slug": "pink-flower-11-06-2016",
     "title": "Pink Flower",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2016"
     ],
@@ -717,10 +1125,35 @@
     "shutterSpeed": "1/160"
   },
   {
+    "slug": "fire-08-08-2016",
+    "title": "Fire",
+    "description": "",
+    "tags": [
+      "2016"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2016-08-08",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/fire-08-08-2016.webp",
+    "fullsize": "/photo/photos/fire-08-08-2016.webp",
+    "width": 3823,
+    "height": 2013,
+    "category": "fire",
+    "iso": 400,
+    "aperture": "f/20",
+    "focalLength": "250 mm",
+    "shutterSpeed": "30s",
+    "country": null
+  },
+  {
     "slug": "look-the-earth-is-moving-19-09-2016",
     "title": "Look The Earth Is Moving",
     "description": "",
-    "category": "abstract",
+    "category": "nightscape",
     "tags": [
       "2016"
     ],
@@ -735,13 +1168,17 @@
     "thumbnail": "/photo/thumbnails/look-the-earth-is-moving-19-09-2016.webp",
     "fullsize": "/photo/photos/look-the-earth-is-moving-19-09-2016.webp",
     "width": 4272,
-    "height": 2809
+    "height": 2809,
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null
   },
   {
     "slug": "on-leaves-29-10-2016",
     "title": "On Leaves",
     "description": "",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2016"
     ],
@@ -766,7 +1203,7 @@
     "slug": "mirrors-11-12-2016",
     "title": "Mirrors",
     "description": "",
-    "category": "abstract",
+    "category": "landscape",
     "tags": [
       "2016"
     ],
@@ -783,9 +1220,34 @@
     "width": 4192,
     "height": 2795,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/40"
+  },
+  {
+    "slug": "porto-by-night-28-12-2016",
+    "title": "Porto By Night",
+    "description": "",
+    "tags": [
+      "2016"
+    ],
+    "location": {
+      "name": "41.1502, -8.6103",
+      "lat": 41.1502195,
+      "lng": -8.610349699989285
+    },
+    "date": "2016-12-28",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/porto-by-night-28-12-2016.webp",
+    "fullsize": "/photo/photos/porto-by-night-28-12-2016.webp",
+    "width": 9039,
+    "height": 3771,
+    "category": "nightscape",
+    "iso": 400,
+    "aperture": "f/3.5",
+    "focalLength": "18 mm",
+    "shutterSpeed": "1/8",
+    "country": null
   },
   {
     "slug": "grow-little-tree-22-01-2017",
@@ -866,7 +1328,7 @@
     "slug": "shroom-born-05-03-2017",
     "title": "Shroom Born",
     "description": "",
-    "category": "macrophotography",
+    "category": "fungi",
     "tags": [
       "2017"
     ],
@@ -886,6 +1348,56 @@
     "aperture": "f/6.3",
     "focalLength": "200 mm",
     "shutterSpeed": "1/200"
+  },
+  {
+    "slug": "feup-lines-20-04-2017",
+    "title": "Feup Lines",
+    "description": "",
+    "tags": [
+      "2017"
+    ],
+    "location": {
+      "name": "41.1502, -8.6103",
+      "lat": 41.1502195,
+      "lng": -8.610349699989285
+    },
+    "date": "2017-04-20",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/feup-lines-20-04-2017.webp",
+    "fullsize": "/photo/photos/feup-lines-20-04-2017.webp",
+    "width": 4085,
+    "height": 2734,
+    "category": "architecture",
+    "iso": 800,
+    "aperture": "f/3.5",
+    "focalLength": "18 mm",
+    "shutterSpeed": "1/4",
+    "country": null
+  },
+  {
+    "slug": "skystars-01-07-2017",
+    "title": "Skystars",
+    "description": "",
+    "tags": [
+      "2017"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2017-07-01",
+    "camera": "Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/skystars-01-07-2017.webp",
+    "fullsize": "/photo/photos/skystars-01-07-2017.webp",
+    "width": 3689,
+    "height": 2801,
+    "category": "nightscape",
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null,
+    "country": null
   },
   {
     "slug": "purple-mist-08-07-2017",
@@ -916,7 +1428,7 @@
     "slug": "spiral-08-07-2017",
     "title": "Spiral",
     "description": "Growing.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2017"
     ],
@@ -938,10 +1450,35 @@
     "shutterSpeed": "1/250"
   },
   {
+    "slug": "firefighters-05-08-2017",
+    "title": "Firefighters",
+    "description": "",
+    "tags": [
+      "2017"
+    ],
+    "location": {
+      "name": "41.2699, -8.0805",
+      "lat": 41.26993159998689,
+      "lng": -8.080456299972429
+    },
+    "date": "2017-08-05",
+    "camera": "Canon Canon EOS 450D",
+    "thumbnail": "/photo/thumbnails/firefighters-05-08-2017.webp",
+    "fullsize": "/photo/photos/firefighters-05-08-2017.webp",
+    "width": 4272,
+    "height": 2848,
+    "category": "fire",
+    "iso": 800,
+    "aperture": "f/5",
+    "focalLength": "58 mm",
+    "shutterSpeed": "1/200",
+    "country": null
+  },
+  {
     "slug": "through-fire-and-ashes-05-08-2017",
     "title": "Through Fire And Ashes",
     "description": "Wildfires Portugal 2017",
-    "category": "landscape",
+    "category": "fire",
     "tags": [
       "2017"
     ],
@@ -966,7 +1503,7 @@
     "slug": "little-bungalows-09-09-2017",
     "title": "Little Bungalows",
     "description": "Vidoeiro camping scape.",
-    "category": "architecture",
+    "category": "nature",
     "tags": [
       "2017"
     ],
@@ -983,15 +1520,15 @@
     "width": 3736,
     "height": 2335,
     "iso": 400,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "4"
+    "shutterSpeed": "4s"
   },
   {
     "slug": "ocean-of-green-09-09-2017",
     "title": "Ocean Of Green",
     "description": "Gerês camping",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2017"
     ],
@@ -1033,9 +1570,9 @@
     "width": 3665,
     "height": 2291,
     "iso": 200,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "natura-itineris-10-09-2017",
@@ -1058,15 +1595,15 @@
     "width": 4091,
     "height": 2517,
     "iso": 200,
-    "aperture": "f/4.0",
+    "aperture": "f/4",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "wild-horse-10-09-2017",
     "title": "Wild Horse",
     "description": "Wild Horse @ Geres Natural Park\n\nHello /r/itookapicture, from jpdias",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2017"
     ],
@@ -1091,7 +1628,7 @@
     "slug": "autumn-by-the-beach-22-10-2017",
     "title": "Autumn By The Beach",
     "description": "Vancouver, 2017",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2017"
     ],
@@ -1108,7 +1645,7 @@
     "width": 3832,
     "height": 1909,
     "iso": 200,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/160"
   },
@@ -1116,7 +1653,7 @@
     "slug": "float-on-22-10-2017",
     "title": "Float On",
     "description": "Lone surfer, Vancouver, Canada",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2017"
     ],
@@ -1158,7 +1695,7 @@
     "width": 3587,
     "height": 2214,
     "iso": 200,
-    "aperture": "f/4.0",
+    "aperture": "f/4",
     "focalLength": "18 mm",
     "shutterSpeed": "1/40"
   },
@@ -1166,7 +1703,7 @@
     "slug": "safe-upon-the-shore-22-10-2017",
     "title": "Safe Upon The Shore",
     "description": "Vancouver, Safe Upon the Shore, 2017",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2017"
     ],
@@ -1183,7 +1720,7 @@
     "width": 4217,
     "height": 2212,
     "iso": 200,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "18 mm",
     "shutterSpeed": "1/200"
   },
@@ -1233,7 +1770,7 @@
     "width": 5110,
     "height": 2284,
     "iso": 200,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/160"
   },
@@ -1291,7 +1828,7 @@
     "slug": "birding-at-you-04-11-2017",
     "title": "Birding At You",
     "description": "Oceanario de Lisboa",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2017"
     ],
@@ -1316,7 +1853,7 @@
     "slug": "otters-04-11-2017",
     "title": "Otters",
     "description": "* Enhydra lutris\n\nPacific Ocean\nNorth Pacific Rim: from the eastern coast of Russia to the northwest coast of North America into Alaska; also from California to Mexico.\n\nEndangered: IUCN Status",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2017"
     ],
@@ -1341,7 +1878,7 @@
     "slug": "the-lisbon-cathedral-05-11-2017",
     "title": "The Lisbon Cathedral",
     "description": "The oldest church in the city is the see of the Archdiocese of Lisbon. Since the beginning of the construction of the cathedral, in the year 1147, the building has been modified several times and survived many earthquakes. It is nowadays a mix of different architectural styles. It has been classified as a National Monument since 1910.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2017"
     ],
@@ -1358,7 +1895,7 @@
     "width": 3673,
     "height": 2068,
     "iso": 200,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "88 mm",
     "shutterSpeed": "1/400"
   },
@@ -1408,9 +1945,9 @@
     "width": 3440,
     "height": 2162,
     "iso": 400,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "go-around-and-around-18-12-2017",
@@ -1433,7 +1970,7 @@
     "width": 3715,
     "height": 1912,
     "iso": 400,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "18 mm",
     "shutterSpeed": "1/13"
   },
@@ -1458,9 +1995,9 @@
     "width": 4263,
     "height": 2496,
     "iso": 400,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "cozy-spot-14-01-2018",
@@ -1508,15 +2045,15 @@
     "width": 5228,
     "height": 3287,
     "iso": 100,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "waterdrop-21-01-2018",
     "title": "Waterdrop",
     "description": "Moss World",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2018"
     ],
@@ -1558,7 +2095,7 @@
     "width": 5327,
     "height": 3150,
     "iso": 125,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/8"
   },
@@ -1566,7 +2103,7 @@
     "slug": "stopped-in-movement-02-02-2018",
     "title": "Stopped In Movement",
     "description": "Rabelo boat is a traditional Portuguese wooden cargo boat that was used for centuries to transport people and goods along the Douro River. It is flat-bottomed, with a shallow draught, which was necessary to navigate the often shallow fast-flowing waters of the upper Douro prior to the construction of dams and locks from 1968 onwards.",
-    "category": "abstract",
+    "category": "travel",
     "tags": [
       "2018"
     ],
@@ -1583,15 +2120,15 @@
     "width": 5472,
     "height": 3012,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "4"
+    "shutterSpeed": "4s"
   },
   {
     "slug": "symmetry-03-02-2018",
     "title": "Symmetry",
     "description": "The University of Coimbra is a Portuguese public university in Coimbra, Portugal. Established in 1290 in Lisbon, it went through a number of relocations until it was moved permanently to its current city in 1537, being one of the oldest universities in continuous operation in the world and the oldest university of Portugal.",
-    "category": "abstract",
+    "category": "architecture",
     "tags": [
       "2018"
     ],
@@ -1608,7 +2145,7 @@
     "width": 5220,
     "height": 3224,
     "iso": 800,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "19 mm",
     "shutterSpeed": "1/400"
   },
@@ -1616,7 +2153,7 @@
     "slug": "wild-river-11-02-2018",
     "title": "Wild River",
     "description": "Geres National Park, North of Portugal",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -1633,9 +2170,9 @@
     "width": 5115,
     "height": 3336,
     "iso": 320,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "wilderness-11-02-2018",
@@ -1658,9 +2195,9 @@
     "width": 4806,
     "height": 2871,
     "iso": 640,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "sundown-12-02-2018",
@@ -1683,15 +2220,15 @@
     "width": 7945,
     "height": 3518,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "50 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "against-the-lighthouse-11-03-2018",
     "title": "Against The Lighthouse",
     "description": "Felgueiras lighthouse \n\n19th-century hexagonal lighthouse on the Douro River is 10 m. tall & constructed of granite.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -1708,7 +2245,7 @@
     "width": 4021,
     "height": 2346,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "100 mm",
     "shutterSpeed": "1/320"
   },
@@ -1716,7 +2253,7 @@
     "slug": "against-the-tide-11-03-2018",
     "title": "Against The Tide",
     "description": "Felix Storm, Mar/2018",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -1758,7 +2295,7 @@
     "width": 5048,
     "height": 3012,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "50 mm",
     "shutterSpeed": "1/15"
   },
@@ -1783,9 +2320,9 @@
     "width": 6283,
     "height": 3763,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "looking-down-28-03-2018",
@@ -1833,7 +2370,7 @@
     "width": 4829,
     "height": 2994,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "23 mm",
     "shutterSpeed": "1/250"
   },
@@ -1858,9 +2395,9 @@
     "width": 4856,
     "height": 3123,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "stone-house-22-04-2018",
@@ -1883,7 +2420,7 @@
     "width": 5164,
     "height": 2999,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "129 mm",
     "shutterSpeed": "1/125"
   },
@@ -1891,7 +2428,7 @@
     "slug": "waterfall-22-04-2018",
     "title": "Waterfall",
     "description": "Waterfall",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -1908,7 +2445,7 @@
     "width": 5087,
     "height": 3005,
     "iso": 200,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "42 mm",
     "shutterSpeed": "1/6"
   },
@@ -1933,7 +2470,7 @@
     "width": 4030,
     "height": 2094,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "50 mm",
     "shutterSpeed": "1/250"
   },
@@ -1958,7 +2495,7 @@
     "width": 5324,
     "height": 3282,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/160"
   },
@@ -1983,7 +2520,7 @@
     "width": 5410,
     "height": 3607,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/60"
   },
@@ -2008,7 +2545,7 @@
     "width": 4483,
     "height": 2531,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "19 mm",
     "shutterSpeed": "1/200"
   },
@@ -2041,7 +2578,7 @@
     "slug": "wild-rose-03-06-2018",
     "title": "Wild Rose",
     "description": "Lost in chaos",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2018"
     ],
@@ -2058,7 +2595,7 @@
     "width": 2255,
     "height": 1561,
     "iso": 100,
-    "aperture": "f/2.0",
+    "aperture": "f/2",
     "focalLength": "50 mm",
     "shutterSpeed": "1/2000"
   },
@@ -2066,7 +2603,7 @@
     "slug": "black-looking-30-06-2018",
     "title": "Black Looking",
     "description": "A blackbird in the wild.",
-    "category": "abstract",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2091,7 +2628,7 @@
     "slug": "shore-30-06-2018",
     "title": "Shore",
     "description": "View from the high lighthouse of Leça.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -2108,7 +2645,7 @@
     "width": 4553,
     "height": 2611,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "22 mm",
     "shutterSpeed": "1/160"
   },
@@ -2133,7 +2670,7 @@
     "width": 4189,
     "height": 2496,
     "iso": 250,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "30 mm",
     "shutterSpeed": "1/60"
   },
@@ -2141,7 +2678,7 @@
     "slug": "donkeys-14-07-2018",
     "title": "Donkeys",
     "description": "Donkeys near Fisgas de Ermelo, Portugal",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2183,15 +2720,15 @@
     "width": 5220,
     "height": 3335,
     "iso": 250,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "29 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "goats-hike-14-07-2018",
     "title": "Goats Hike",
     "description": "Shepherding in Figas de Ermelo",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2208,9 +2745,9 @@
     "width": 4504,
     "height": 3134,
     "iso": 250,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "190 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "hot-land-14-07-2018",
@@ -2233,9 +2770,9 @@
     "width": 4974,
     "height": 2973,
     "iso": 250,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "25 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "lightway-14-07-2018",
@@ -2258,7 +2795,7 @@
     "width": 4988,
     "height": 3204,
     "iso": 250,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
     "shutterSpeed": "1/13"
   },
@@ -2266,7 +2803,7 @@
     "slug": "lucanus-cervus-14-07-2018",
     "title": "Lucanus Cervus",
     "description": "Stag beetle. North of Portugal.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2283,9 +2820,9 @@
     "width": 4191,
     "height": 2639,
     "iso": 250,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "the-woods-14-07-2018",
@@ -2308,7 +2845,7 @@
     "width": 4977,
     "height": 3052,
     "iso": 250,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/15"
   },
@@ -2333,9 +2870,9 @@
     "width": 5361,
     "height": 3480,
     "iso": 250,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "to-somewhere-14-07-2018",
@@ -2358,7 +2895,7 @@
     "width": 4796,
     "height": 2760,
     "iso": 160,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "176 mm",
     "shutterSpeed": "1/80"
   },
@@ -2383,15 +2920,15 @@
     "width": 4785,
     "height": 3155,
     "iso": 250,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "wild-lagoon-14-07-2018",
     "title": "Wild Lagoon",
     "description": "Lagoon in the middle of the woods near Fisgas de Ermelo, Fafe, Portugal",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -2408,7 +2945,7 @@
     "width": 5472,
     "height": 3648,
     "iso": 250,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "73 mm",
     "shutterSpeed": "1/25"
   },
@@ -2416,7 +2953,7 @@
     "slug": "old-fly-21-07-2018",
     "title": "Old Fly",
     "description": "An old butterfly in the woods",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2441,7 +2978,7 @@
     "slug": "orange-and-spikes-21-07-2018",
     "title": "Orange And Spikes",
     "description": "A butterfly on a leaf.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2018"
     ],
@@ -2483,7 +3020,7 @@
     "width": 4453,
     "height": 2881,
     "iso": 250,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "19 mm",
     "shutterSpeed": "1/50"
   },
@@ -2491,7 +3028,7 @@
     "slug": "juvenile-frog-28-07-2018",
     "title": "Juvenile Frog",
     "description": "A young frog in a small lake, Geres National Park.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2533,15 +3070,15 @@
     "width": 4694,
     "height": 2776,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "92 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "lost-boat-03-08-2018",
     "title": "Lost Boat",
     "description": "A boat forgot in time",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -2583,15 +3120,15 @@
     "width": 3437,
     "height": 2069,
     "iso": 640,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "250 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "porto-coastline-03-08-2018",
     "title": "Porto Coastline",
     "description": "Cold days at Porto sea.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -2608,9 +3145,9 @@
     "width": 4426,
     "height": 2414,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "28 mm",
-    "shutterSpeed": "13"
+    "shutterSpeed": "13s"
   },
   {
     "slug": "mountain-windmill-10-08-2018",
@@ -2633,7 +3170,7 @@
     "width": 4289,
     "height": 2516,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "48 mm",
     "shutterSpeed": "1/60"
   },
@@ -2658,7 +3195,7 @@
     "width": 4913,
     "height": 2700,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "28 mm",
     "shutterSpeed": "1/20"
   },
@@ -2683,7 +3220,7 @@
     "width": 4542,
     "height": 2688,
     "iso": 100,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "190 mm",
     "shutterSpeed": "1/50"
   },
@@ -2708,9 +3245,9 @@
     "width": 4926,
     "height": 2779,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "61 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "castle-of-lousa-18-08-2018",
@@ -2733,7 +3270,7 @@
     "width": 5195,
     "height": 3247,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "63 mm",
     "shutterSpeed": "1/30"
   },
@@ -2741,7 +3278,7 @@
     "slug": "sly-looking-fox-18-08-2018",
     "title": "Sly Looking Fox",
     "description": "A fox at the Parque Biológico da Lousã",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2783,7 +3320,7 @@
     "width": 4876,
     "height": 2779,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "30 mm",
     "shutterSpeed": "1/125"
   },
@@ -2808,9 +3345,9 @@
     "width": 5154,
     "height": 3321,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "schist-village-19-08-2018",
@@ -2833,7 +3370,7 @@
     "width": 5472,
     "height": 3420,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "18 mm",
     "shutterSpeed": "1/50"
   },
@@ -2841,7 +3378,7 @@
     "slug": "shining-grasshopper-19-08-2018",
     "title": "Shining Grasshopper",
     "description": "A red/orange/green grasshopper under sunlight at Lousã Mountains.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -2883,15 +3420,15 @@
     "width": 4896,
     "height": 3274,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "moutain-roadway-22-08-2018",
     "title": "Moutain Roadway",
     "description": "Road from the highest point of the Serra da Estrela, Portugal",
-    "category": "street",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -2908,7 +3445,7 @@
     "width": 4451,
     "height": 2597,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "44 mm",
     "shutterSpeed": "1/40"
   },
@@ -2916,7 +3453,7 @@
     "slug": "road-to-the-other-side-22-08-2018",
     "title": "Road To The Other Side",
     "description": "A tunnel in the Estrela Mountain",
-    "category": "street",
+    "category": "travel",
     "tags": [
       "2018"
     ],
@@ -2933,7 +3470,7 @@
     "width": 4988,
     "height": 2663,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "18 mm",
     "shutterSpeed": "1/60"
   },
@@ -2958,9 +3495,9 @@
     "width": 4734,
     "height": 2415,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "castle-of-sortelha-23-08-2018",
@@ -2983,7 +3520,7 @@
     "width": 4462,
     "height": 2594,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "29 mm",
     "shutterSpeed": "1/60"
   },
@@ -3008,7 +3545,7 @@
     "width": 5260,
     "height": 3214,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "19 mm",
     "shutterSpeed": "1/200"
   },
@@ -3016,7 +3553,7 @@
     "slug": "monarch-23-08-2018",
     "title": "Monarch",
     "description": "A monarch butterfly in Belmonte, Portugal during summer.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -3033,9 +3570,9 @@
     "width": 3673,
     "height": 2344,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "190 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "moutain-valley-24-08-2018",
@@ -3058,7 +3595,7 @@
     "width": 5428,
     "height": 3062,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "45 mm",
     "shutterSpeed": "1/250"
   },
@@ -3083,15 +3620,15 @@
     "width": 4481,
     "height": 2799,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "red-firefly-24-08-2018",
     "title": "Red Firefly",
     "description": "A red firefly during summer in Serra da Estrela Natural Park, Portugal",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -3108,7 +3645,7 @@
     "width": 3653,
     "height": 2233,
     "iso": 400,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "200 mm",
     "shutterSpeed": "1/500"
   },
@@ -3133,7 +3670,7 @@
     "width": 5264,
     "height": 3193,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/320"
   },
@@ -3158,7 +3695,7 @@
     "width": 4704,
     "height": 2759,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "123 mm",
     "shutterSpeed": "1/800"
   },
@@ -3183,7 +3720,7 @@
     "width": 4718,
     "height": 2949,
     "iso": 1600,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "25 mm",
     "shutterSpeed": "1/20"
   },
@@ -3191,7 +3728,7 @@
     "slug": "hoverbee-09-09-2018",
     "title": "Hoverbee",
     "description": "A bee on its search for pollen.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -3208,15 +3745,15 @@
     "width": 4118,
     "height": 2607,
     "iso": 400,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "wallflower-30-09-2018",
     "title": "Wallflower",
     "description": "Random flower at Jardins do Pálacio de Cristal, Porto",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2018"
     ],
@@ -3241,7 +3778,7 @@
     "slug": "falling-in-bokeh-14-10-2018",
     "title": "Falling In Bokeh",
     "description": "The first signs of autumn are lovely.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2018"
     ],
@@ -3258,9 +3795,9 @@
     "width": 5012,
     "height": 2907,
     "iso": 800,
-    "aperture": "f/5.0",
+    "aperture": "f/5",
     "focalLength": "61 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "among-the-fallen-28-10-2018",
@@ -3283,9 +3820,9 @@
     "width": 4506,
     "height": 2950,
     "iso": 500,
-    "aperture": "f/1.0",
+    "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "fallset-01-11-2018",
@@ -3308,9 +3845,9 @@
     "width": 4840,
     "height": 2917,
     "iso": 250,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "golden-reflections-01-11-2018",
@@ -3333,15 +3870,15 @@
     "width": 5310,
     "height": 3436,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "23 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "lights-and-shadows-01-11-2018",
     "title": "Lights And Shadows",
     "description": "",
-    "category": "abstract",
+    "category": "nature",
     "tags": [
       "2018"
     ],
@@ -3358,15 +3895,15 @@
     "width": 4956,
     "height": 3001,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "root-squirrel-01-11-2018",
     "title": "Root Squirrel",
     "description": "A squirrel in English gardens",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2018"
     ],
@@ -3383,9 +3920,9 @@
     "width": 4340,
     "height": 2385,
     "iso": 2500,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "flowing-through-the-woods-03-11-2018",
@@ -3408,15 +3945,15 @@
     "width": 5472,
     "height": 3648,
     "iso": 640,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "autumn-mushrooms-25-11-2018",
     "title": "Autumn Mushrooms",
     "description": "Wild mushrooms among the grass.",
-    "category": "macrophotography",
+    "category": "fungi",
     "tags": [
       "2018"
     ],
@@ -3433,9 +3970,9 @@
     "width": 4315,
     "height": 2597,
     "iso": 100,
-    "aperture": "f/1.0",
+    "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "rainy-days-25-11-2018",
@@ -3458,15 +3995,15 @@
     "width": 5301,
     "height": 3113,
     "iso": 100,
-    "aperture": "f/1.0",
+    "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "forgotten-railway-27-12-2018",
     "title": "Forgotten Railway",
     "description": "Abandoned rail lines at Olympiazentrum, Munich.",
-    "category": "street",
+    "category": "landscape",
     "tags": [
       "2018"
     ],
@@ -3483,9 +4020,9 @@
     "width": 3966,
     "height": 2439,
     "iso": 100,
-    "aperture": "f/32.0",
+    "aperture": "f/32",
     "focalLength": "48 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "alps-landscapes-03-01-2019",
@@ -3508,7 +4045,7 @@
     "width": 4580,
     "height": 2915,
     "iso": 200,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "23 mm",
     "shutterSpeed": "1/40"
   },
@@ -3533,9 +4070,9 @@
     "width": 4996,
     "height": 2829,
     "iso": 100,
-    "aperture": "f/25.0",
+    "aperture": "f/25",
     "focalLength": "25 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "high-peak-03-01-2019",
@@ -3558,7 +4095,7 @@
     "width": 5209,
     "height": 3294,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "123 mm",
     "shutterSpeed": "1/400"
   },
@@ -3583,9 +4120,9 @@
     "width": 5354,
     "height": 3060,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "neuschwanstein-castle-03-01-2019",
@@ -3608,7 +4145,7 @@
     "width": 5426,
     "height": 3415,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "88 mm",
     "shutterSpeed": "1/40"
   },
@@ -3633,7 +4170,7 @@
     "width": 5139,
     "height": 3325,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "190 mm",
     "shutterSpeed": "1/160"
   },
@@ -3641,7 +4178,7 @@
     "slug": "the-old-harbor-03-01-2019",
     "title": "The Old Harbor",
     "description": "Alpsee old harbor.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -3658,9 +4195,9 @@
     "width": 5106,
     "height": 3205,
     "iso": 640,
-    "aperture": "f/25.0",
+    "aperture": "f/25",
     "focalLength": "46 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "the-small-cabin-in-the-snow-03-01-2019",
@@ -3681,13 +4218,17 @@
     "thumbnail": "/photo/thumbnails/the-small-cabin-in-the-snow-03-01-2019.webp",
     "fullsize": "/photo/photos/the-small-cabin-in-the-snow-03-01-2019.webp",
     "width": 3207,
-    "height": 1805
+    "height": 1805,
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null
   },
   {
     "slug": "spring-creek-23-02-2019",
     "title": "Spring Creek",
     "description": "Rio Odres Creek, Amarante",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -3704,15 +4245,15 @@
     "width": 5058,
     "height": 3161,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "21 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "a-game-of-reflections-02-03-2019",
     "title": "A Game Of Reflections",
     "description": "A old trunk in the middle of the Königssee lake.",
-    "category": "abstract",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -3729,9 +4270,9 @@
     "width": 4634,
     "height": 2607,
     "iso": 1000,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "36 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "between-forests-and-mountains-02-03-2019",
@@ -3754,9 +4295,9 @@
     "width": 5329,
     "height": 3331,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "19 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "foggy-peaks-02-03-2019",
@@ -3779,15 +4320,15 @@
     "width": 5256,
     "height": 2957,
     "iso": 320,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "111 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "go-with-the-flow-02-03-2019",
     "title": "Go With The Flow",
     "description": "Boat trip in the alps",
-    "category": "street",
+    "category": "travel",
     "tags": [
       "2019"
     ],
@@ -3804,9 +4345,9 @@
     "width": 5318,
     "height": 3324,
     "iso": 125,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "20 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "silent-alps-02-03-2019",
@@ -3829,7 +4370,7 @@
     "width": 4910,
     "height": 3069,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "30 mm",
     "shutterSpeed": "1/30"
   },
@@ -3837,7 +4378,7 @@
     "slug": "st-bartholomew-02-03-2019",
     "title": "St Bartholomew",
     "description": "St. Bartholomew Church, Königssee, Germany",
-    "category": "architecture",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -3854,9 +4395,9 @@
     "width": 5337,
     "height": 3060,
     "iso": 160,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "19 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "winter-tales-02-03-2019",
@@ -3879,7 +4420,7 @@
     "width": 5262,
     "height": 3289,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "19 mm",
     "shutterSpeed": "1/80"
   },
@@ -3904,15 +4445,15 @@
     "width": 4355,
     "height": 2722,
     "iso": 250,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "70 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "dear-deers-06-03-2019",
     "title": "Dear Deers",
     "description": "Dears at Munich Westpark.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -3929,9 +4470,9 @@
     "width": 4237,
     "height": 2648,
     "iso": 640,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "little-spring-06-03-2019",
@@ -3954,9 +4495,9 @@
     "width": 4440,
     "height": 2775,
     "iso": 160,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "176 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "spring-land-06-03-2019",
@@ -3979,9 +4520,9 @@
     "width": 4082,
     "height": 2551,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "105 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "westpark-06-03-2019",
@@ -4004,15 +4545,15 @@
     "width": 4019,
     "height": 2512,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "foggy-waves-13-04-2019",
     "title": "Foggy Waves",
     "description": "A chapel sitted on the bench of the Atlantic.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -4029,15 +4570,15 @@
     "width": 4826,
     "height": 3016,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "42 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "hidden-frog-19-04-2019",
     "title": "Hidden Frog",
     "description": "A frog near Tongobriga, Marco de Canaveses",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4079,15 +4620,15 @@
     "width": 4910,
     "height": 3069,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "154 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "sheep-farm-19-04-2019",
     "title": "Sheep Farm",
     "description": "Some sheep's at Marco de Canaveses",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4129,9 +4670,9 @@
     "width": 5001,
     "height": 3126,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "38 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "wild-roaming-19-04-2019",
@@ -4154,9 +4695,9 @@
     "width": 4785,
     "height": 2991,
     "iso": 125,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "knossoos-04-05-2019",
@@ -4179,15 +4720,15 @@
     "width": 5276,
     "height": 3298,
     "iso": 125,
-    "aperture": "f/32.0",
+    "aperture": "f/32",
     "focalLength": "44 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "orange-contrasts-04-05-2019",
     "title": "Orange Contrasts",
     "description": "A butterfly at Creta Island, Greece",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2019"
     ],
@@ -4204,15 +4745,15 @@
     "width": 4968,
     "height": 3105,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "wild-complexity-04-05-2019",
     "title": "Wild Complexity",
     "description": "Wild white flower",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2019"
     ],
@@ -4229,15 +4770,15 @@
     "width": 5198,
     "height": 3249,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "190 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "dark-orange-05-05-2019",
     "title": "Dark Orange",
     "description": "Some flowers blooming.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2019"
     ],
@@ -4254,15 +4795,15 @@
     "width": 5099,
     "height": 3187,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "140 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "lizard-05-05-2019",
     "title": "Lizard",
     "description": "A Lizard in Heraklion, Crete.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4287,7 +4828,7 @@
     "slug": "olive-valley-05-05-2019",
     "title": "Olive Valley",
     "description": "Crete landscape, Greece",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2019"
     ],
@@ -4304,9 +4845,9 @@
     "width": 4486,
     "height": 2804,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "46 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "lost-in-the-valley-11-05-2019",
@@ -4329,9 +4870,9 @@
     "width": 5083,
     "height": 3177,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "150 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "oak-trail-11-05-2019",
@@ -4354,15 +4895,15 @@
     "width": 4896,
     "height": 3060,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "bee-takeoff-15-06-2019",
     "title": "Bee Takeoff",
     "description": "A bee in mid flight",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4379,15 +4920,15 @@
     "width": 4198,
     "height": 2624,
     "iso": 125,
-    "aperture": "f/1.0",
+    "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "flying-in-chaos-15-06-2019",
     "title": "Flying In Chaos",
     "description": "A butterfly during summer.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4437,7 +4978,7 @@
     "slug": "felgueiras-lighthouse-24-06-2019",
     "title": "Felgueiras Lighthouse",
     "description": "Felgueiras Lighthouse in Porto, Portugal",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -4454,15 +4995,15 @@
     "width": 5018,
     "height": 3136,
     "iso": 100,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "200 mm",
-    "shutterSpeed": "0"
+    "shutterSpeed": "1/Infinity"
   },
   {
     "slug": "bokeh-dragonfly-25-07-2019",
     "title": "Bokeh Dragonfly",
     "description": "Bokeh landscape with an dragonfly",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4504,15 +5045,15 @@
     "width": 4471,
     "height": 2794,
     "iso": 250,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "30 mm",
-    "shutterSpeed": "30"
+    "shutterSpeed": "30s"
   },
   {
     "slug": "safe-harbor-03-08-2019",
     "title": "Safe Harbor",
     "description": "Lighthouse by the lake",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -4529,7 +5070,7 @@
     "width": 4652,
     "height": 2617,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "96 mm",
     "shutterSpeed": "1/320"
   },
@@ -4554,7 +5095,7 @@
     "width": 4265,
     "height": 2399,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "21 mm",
     "shutterSpeed": "1/14"
   },
@@ -4579,7 +5120,7 @@
     "width": 5341,
     "height": 3338,
     "iso": 200,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "56 mm",
     "shutterSpeed": "1/40"
   },
@@ -4604,7 +5145,7 @@
     "width": 4874,
     "height": 2742,
     "iso": 200,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "88 mm",
     "shutterSpeed": "1/400"
   },
@@ -4629,7 +5170,7 @@
     "width": 4958,
     "height": 3099,
     "iso": 200,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "200 mm",
     "shutterSpeed": "1/640"
   },
@@ -4654,7 +5195,7 @@
     "width": 5293,
     "height": 3308,
     "iso": 400,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/20"
   },
@@ -4712,7 +5253,7 @@
     "slug": "tree-squirrel-14-08-2019",
     "title": "Tree Squirrel",
     "description": "A squirrel eating an acorn in a tree.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4754,7 +5295,7 @@
     "width": 5230,
     "height": 3269,
     "iso": 500,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/5"
   },
@@ -4779,7 +5320,7 @@
     "width": 5472,
     "height": 3420,
     "iso": 800,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "18 mm",
     "shutterSpeed": "1/5"
   },
@@ -4804,7 +5345,7 @@
     "width": 5313,
     "height": 3321,
     "iso": 200,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "150 mm",
     "shutterSpeed": "1/640"
   },
@@ -4812,7 +5353,7 @@
     "slug": "webmaker-16-08-2019",
     "title": "Webmaker",
     "description": "Low angle view of a spider and its web",
-    "category": "animals",
+    "category": "macro",
     "tags": [
       "2019"
     ],
@@ -4829,7 +5370,7 @@
     "width": 4167,
     "height": 2604,
     "iso": 200,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "200 mm",
     "shutterSpeed": "1/800"
   },
@@ -4837,7 +5378,7 @@
     "slug": "summer-dragonfly-17-08-2019",
     "title": "Summer Dragonfly",
     "description": "A dragonfly @ Munich",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -4879,7 +5420,7 @@
     "width": 5378,
     "height": 3025,
     "iso": 100,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "25 mm",
     "shutterSpeed": "1/31"
   },
@@ -4887,7 +5428,7 @@
     "slug": "water-trees-and-mountains-23-08-2019",
     "title": "Water Trees And Mountains",
     "description": "Eibsee lake landscape",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -4904,7 +5445,7 @@
     "width": 4643,
     "height": 2902,
     "iso": 400,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "35 mm",
     "shutterSpeed": "1/200"
   },
@@ -4912,7 +5453,7 @@
     "slug": "flow-24-08-2019",
     "title": "Flow",
     "description": "Partnach Gorge flow.",
-    "category": "street",
+    "category": "nature",
     "tags": [
       "2019"
     ],
@@ -4929,7 +5470,7 @@
     "width": 5472,
     "height": 3420,
     "iso": 1000,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/6"
   },
@@ -4937,7 +5478,7 @@
     "slug": "frozen-water-24-08-2019",
     "title": "Frozen Water",
     "description": "Garmisch-Partenkirchen Gorge",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2019"
     ],
@@ -4979,7 +5520,7 @@
     "width": 4998,
     "height": 3124,
     "iso": 250,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "19 mm",
     "shutterSpeed": "1/25"
   },
@@ -5004,7 +5545,7 @@
     "width": 9770,
     "height": 5496,
     "iso": 400,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "18 mm",
     "shutterSpeed": "1/400"
   },
@@ -5037,7 +5578,7 @@
     "slug": "little-one-24-08-2019",
     "title": "Little One",
     "description": "A bird by the lake forest.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2019"
     ],
@@ -5079,7 +5620,7 @@
     "width": 5179,
     "height": 3237,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "46 mm",
     "shutterSpeed": "1/30"
   },
@@ -5104,15 +5645,15 @@
     "width": 4928,
     "height": 3085,
     "iso": 500,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "a-game-of-light-and-shadows-24-02-2020",
     "title": "A Game Of Light And Shadows",
     "description": "Mata da Albergaria, Gerês",
-    "category": "abstract",
+    "category": "nature",
     "tags": [
       "2020"
     ],
@@ -5129,7 +5670,7 @@
     "width": 3949,
     "height": 2468,
     "iso": 160,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
     "shutterSpeed": "1/5"
   },
@@ -5137,7 +5678,7 @@
     "slug": "little-waterfall-24-02-2020",
     "title": "Little Waterfall",
     "description": "Little waterfall at Mata de Albergaria",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2020"
     ],
@@ -5154,7 +5695,7 @@
     "width": 4657,
     "height": 2910,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -5179,9 +5720,9 @@
     "width": 5300,
     "height": 3313,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "follow-the-wind-09-06-2020",
@@ -5204,7 +5745,7 @@
     "width": 5068,
     "height": 3168,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "56 mm",
     "shutterSpeed": "1/30"
   },
@@ -5229,7 +5770,7 @@
     "width": 5152,
     "height": 2898,
     "iso": 800,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "190 mm",
     "shutterSpeed": "1/500"
   },
@@ -5254,7 +5795,7 @@
     "width": 5449,
     "height": 3065,
     "iso": 125,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "117 mm",
     "shutterSpeed": "1/40"
   },
@@ -5279,7 +5820,7 @@
     "width": 5259,
     "height": 3287,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
     "shutterSpeed": "1/250"
   },
@@ -5312,7 +5853,7 @@
     "slug": "red-dragonfly-14-08-2020",
     "title": "Red Dragonfly",
     "description": "A dragonfly in the lands of Mira de Aire",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2020"
     ],
@@ -5337,7 +5878,7 @@
     "slug": "alone-olive-15-08-2020",
     "title": "Alone Olive",
     "description": "An olive tree in the mountains of Mira de Aire e Candeeiros",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2020"
     ],
@@ -5362,7 +5903,7 @@
     "slug": "black-on-yellow-15-08-2020",
     "title": "Black On Yellow",
     "description": "A big butterfly in the mountains of Serra de Aire e Candeeiros",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2020"
     ],
@@ -5404,7 +5945,7 @@
     "width": 4926,
     "height": 3079,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/20"
   },
@@ -5429,7 +5970,7 @@
     "width": 4907,
     "height": 3067,
     "iso": 100,
-    "aperture": "f/29.0",
+    "aperture": "f/29",
     "focalLength": "65 mm",
     "shutterSpeed": "1/25"
   },
@@ -5437,7 +5978,7 @@
     "slug": "tones-of-brown-16-08-2020",
     "title": "Tones Of Brown",
     "description": "On the cliffs of Alcanede Castle",
-    "category": "abstract",
+    "category": "nature",
     "tags": [
       "2020"
     ],
@@ -5454,7 +5995,7 @@
     "width": 5240,
     "height": 3275,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
     "shutterSpeed": "1/20"
   },
@@ -5479,15 +6020,15 @@
     "width": 5149,
     "height": 3218,
     "iso": 640,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "20 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "brook-bridge-22-08-2020",
     "title": "Brook Bridge",
     "description": "A little water stream in Cinfães, Viseu.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2020"
     ],
@@ -5504,7 +6045,7 @@
     "width": 4708,
     "height": 2943,
     "iso": 640,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "28 mm",
     "shutterSpeed": "1/4"
   },
@@ -5529,15 +6070,15 @@
     "width": 4838,
     "height": 3024,
     "iso": 320,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "horses-05-09-2020",
     "title": "Horses",
     "description": "Some horses in the mountains of Peneda-Geres",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2020"
     ],
@@ -5579,7 +6120,7 @@
     "width": 4155,
     "height": 2597,
     "iso": 100,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "19 mm",
     "shutterSpeed": "1/50"
   },
@@ -5587,7 +6128,7 @@
     "slug": "brown-and-white-18-04-2021",
     "title": "Brown And White",
     "description": "",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2021"
     ],
@@ -5629,7 +6170,7 @@
     "width": 4178,
     "height": 2611,
     "iso": 125,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -5637,7 +6178,7 @@
     "slug": "wings-wide-open-18-04-2021",
     "title": "Wings Wide Open",
     "description": "Butterfly in the mountains.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2021"
     ],
@@ -5662,7 +6203,7 @@
     "slug": "asphalt-serpentine-23-04-2021",
     "title": "Asphalt Serpentine",
     "description": "Asphalt Serpentine",
-    "category": "street",
+    "category": "landscape",
     "tags": [
       "2021"
     ],
@@ -5679,7 +6220,7 @@
     "width": 5066,
     "height": 3166,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "181 mm",
     "shutterSpeed": "1/100"
   },
@@ -5704,7 +6245,7 @@
     "width": 5032,
     "height": 2831,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "70 mm",
     "shutterSpeed": "1/31"
   },
@@ -5729,7 +6270,7 @@
     "width": 4781,
     "height": 2988,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "18 mm",
     "shutterSpeed": "1/15"
   },
@@ -5754,7 +6295,7 @@
     "width": 4614,
     "height": 2884,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "22 mm",
     "shutterSpeed": "1/14"
   },
@@ -5762,7 +6303,7 @@
     "slug": "illuminated-waterfall-24-04-2021",
     "title": "Illuminated Waterfall",
     "description": "Waterfall in the land of Mondim",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2021"
     ],
@@ -5779,7 +6320,7 @@
     "width": 4862,
     "height": 3039,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -5804,7 +6345,7 @@
     "width": 4824,
     "height": 3015,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -5829,7 +6370,7 @@
     "width": 5187,
     "height": 3242,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "20 mm",
     "shutterSpeed": "1/9"
   },
@@ -5854,7 +6395,7 @@
     "width": 4262,
     "height": 2397,
     "iso": 320,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "200 mm",
     "shutterSpeed": "1/125"
   },
@@ -5879,7 +6420,7 @@
     "width": 4717,
     "height": 2948,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "32 mm",
     "shutterSpeed": "1/4"
   },
@@ -5904,7 +6445,7 @@
     "width": 4958,
     "height": 3099,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "19 mm",
     "shutterSpeed": "1/4"
   },
@@ -5912,7 +6453,7 @@
     "slug": "minimal-wheat-04-07-2021",
     "title": "Minimal Wheat",
     "description": "A field of wheat in Portugal.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2021"
     ],
@@ -5929,7 +6470,7 @@
     "width": 5145,
     "height": 3216,
     "iso": 100,
-    "aperture": "f/33191.0",
+    "aperture": "f/33191",
     "focalLength": "123 mm",
     "shutterSpeed": "1/199"
   },
@@ -5937,7 +6478,7 @@
     "slug": "rabbit-rabbit-rabbit-22-08-2021",
     "title": "Rabbit Rabbit Rabbit",
     "description": "Rabbit at the Parque",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2021"
     ],
@@ -5954,7 +6495,7 @@
     "width": 4115,
     "height": 2572,
     "iso": 160,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "200 mm",
     "shutterSpeed": "1/100"
   },
@@ -5979,7 +6520,7 @@
     "width": 4982,
     "height": 3114,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "29 mm",
     "shutterSpeed": "1/250"
   },
@@ -5987,7 +6528,7 @@
     "slug": "waves-of-gold-24-08-2021",
     "title": "Waves Of Gold",
     "description": "Montesinho mountains.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2021"
     ],
@@ -6004,7 +6545,7 @@
     "width": 5472,
     "height": 3420,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "176 mm",
     "shutterSpeed": "1/249"
   },
@@ -6012,7 +6553,7 @@
     "slug": "iberian-wolf-28-08-2021",
     "title": "Iberian Wolf",
     "description": "Centro Del Lobo Ibérico",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2021"
     ],
@@ -6036,8 +6577,8 @@
   {
     "slug": "the-old-streets-of-spain-28-08-2021",
     "title": "The Old Streets Of Spain",
-    "description": "A street in the north of Spain 🇪🇸",
-    "category": "landscape",
+    "description": "A street in the north of Spain",
+    "category": "travel",
     "tags": [
       "2021"
     ],
@@ -6054,7 +6595,7 @@
     "width": 4745,
     "height": 2966,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "25 mm",
     "shutterSpeed": "1/50"
   },
@@ -6079,7 +6620,7 @@
     "width": 4734,
     "height": 2959,
     "iso": 800,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "105 mm",
     "shutterSpeed": "1/61"
   },
@@ -6104,7 +6645,7 @@
     "width": 4958,
     "height": 3099,
     "iso": 160,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "18 mm",
     "shutterSpeed": "1/7"
   },
@@ -6154,7 +6695,7 @@
     "width": 4761,
     "height": 2976,
     "iso": 800,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "61 mm",
     "shutterSpeed": "1/250"
   },
@@ -6179,7 +6720,7 @@
     "width": 5142,
     "height": 3214,
     "iso": 800,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/320"
   },
@@ -6187,7 +6728,7 @@
     "slug": "red-mushroom-03-10-2021",
     "title": "Red Mushroom",
     "description": "A mushroom in the Marão Mountains",
-    "category": "macrophotography",
+    "category": "fungi",
     "tags": [
       "2021"
     ],
@@ -6204,7 +6745,7 @@
     "width": 5179,
     "height": 3237,
     "iso": 100,
-    "aperture": "f/4.0",
+    "aperture": "f/4",
     "focalLength": "50 mm",
     "shutterSpeed": "1/125"
   },
@@ -6212,7 +6753,7 @@
     "slug": "shroom-shelter-07-10-2021",
     "title": "Shroom Shelter",
     "description": "A mushroom in the Marão Mountains",
-    "category": "macrophotography",
+    "category": "fungi",
     "tags": [
       "2021"
     ],
@@ -6227,7 +6768,11 @@
     "thumbnail": "/photo/thumbnails/shroom-shelter-07-10-2021.webp",
     "fullsize": "/photo/photos/shroom-shelter-07-10-2021.webp",
     "width": 965,
-    "height": 603
+    "height": 603,
+    "iso": null,
+    "aperture": null,
+    "focalLength": null,
+    "shutterSpeed": null
   },
   {
     "slug": "autumn-versus-winter-10-10-2021",
@@ -6250,7 +6795,7 @@
     "width": 4370,
     "height": 2731,
     "iso": 320,
-    "aperture": "f/10.0",
+    "aperture": "f/9.999",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -6276,7 +6821,8 @@
     "height": 2560,
     "iso": 100,
     "focalLength": "96 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "aperture": null
   },
   {
     "slug": "sundown-bridge-13-11-2021",
@@ -6299,7 +6845,7 @@
     "width": 5350,
     "height": 3344,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "18 mm",
     "shutterSpeed": "1/39"
   },
@@ -6324,7 +6870,7 @@
     "width": 4491,
     "height": 2807,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/9.999",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -6374,7 +6920,7 @@
     "width": 4800,
     "height": 3000,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/160"
   },
@@ -6399,7 +6945,7 @@
     "width": 5064,
     "height": 3165,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/20"
   },
@@ -6424,7 +6970,7 @@
     "width": 4934,
     "height": 3084,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "29 mm",
     "shutterSpeed": "1/320"
   },
@@ -6449,7 +6995,7 @@
     "width": 4990,
     "height": 3119,
     "iso": 100,
-    "aperture": "f/16.0",
+    "aperture": "f/16",
     "focalLength": "18 mm",
     "shutterSpeed": "1/14"
   },
@@ -6457,7 +7003,7 @@
     "slug": "from-above-13-02-2022",
     "title": "From Above",
     "description": "View from the top of Estrela mountain.",
-    "category": "aerial",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6474,7 +7020,7 @@
     "width": 5082,
     "height": 3176,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "76 mm",
     "shutterSpeed": "1/320"
   },
@@ -6499,9 +7045,9 @@
     "width": 5270,
     "height": 3294,
     "iso": 125,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "3/10 s"
+    "shutterSpeed": "1/3"
   },
   {
     "slug": "wild-road-23-04-2022",
@@ -6524,9 +7070,9 @@
     "width": 5101,
     "height": 3188,
     "iso": 200,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "3/10 s"
+    "shutterSpeed": "1/3"
   },
   {
     "slug": "summer-days-30-04-2022",
@@ -6574,7 +7120,7 @@
     "width": 5466,
     "height": 3416,
     "iso": 400,
-    "aperture": "f/10.0",
+    "aperture": "f/9.999",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4"
   },
@@ -6582,7 +7128,7 @@
     "slug": "lost-waterfall-01-05-2022",
     "title": "Lost Waterfall",
     "description": "A small waterfall in Eume valley.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6599,7 +7145,7 @@
     "width": 5205,
     "height": 3253,
     "iso": 640,
-    "aperture": "f/20.0",
+    "aperture": "f/19.99",
     "focalLength": "44 mm",
     "shutterSpeed": "1/4"
   },
@@ -6607,7 +7153,7 @@
     "slug": "minimal-fern-01-05-2022",
     "title": "Minimal Fern",
     "description": "A fern in the Spanish North.",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2022"
     ],
@@ -6632,7 +7178,7 @@
     "slug": "purple-blossom-01-05-2022",
     "title": "Purple Blossom",
     "description": "A purple flower in Portugal mountains",
-    "category": "macrophotography",
+    "category": "flora",
     "tags": [
       "2022"
     ],
@@ -6674,7 +7220,7 @@
     "width": 5152,
     "height": 3220,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/21.99",
     "focalLength": "22 mm",
     "shutterSpeed": "1/60"
   },
@@ -6682,7 +7228,7 @@
     "slug": "still-waterfall-02-05-2022",
     "title": "Still Waterfall",
     "description": "A waterfall in the north of spain",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6699,9 +7245,9 @@
     "width": 5398,
     "height": 3374,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "3/10 s"
+    "shutterSpeed": "1/3"
   },
   {
     "slug": "the-big-fall-03-05-2022",
@@ -6724,7 +7270,7 @@
     "width": 5129,
     "height": 3206,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/19"
   },
@@ -6732,7 +7278,7 @@
     "slug": "over-the-edge-05-05-2022",
     "title": "Over The Edge",
     "description": "A boat going around a sea rock",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6749,7 +7295,7 @@
     "width": 4342,
     "height": 2714,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/10.99",
     "focalLength": "50 mm",
     "shutterSpeed": "1/99"
   },
@@ -6757,7 +7303,7 @@
     "slug": "overwatching-the-atlantic-05-05-2022",
     "title": "Overwatching The Atlantic",
     "description": "Summer days on Galicia",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6774,7 +7320,7 @@
     "width": 4778,
     "height": 2986,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
     "shutterSpeed": "1/60"
   },
@@ -6782,7 +7328,7 @@
     "slug": "the-moo-05-05-2022",
     "title": "The Moo",
     "description": "A mountain cow resting.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2022"
     ],
@@ -6807,7 +7353,7 @@
     "slug": "where-the-mountains-meet-the-sea-05-05-2022",
     "title": "Where The Mountains Meet The Sea",
     "description": "Mountains in the north of the Iberian peninsula",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2022"
     ],
@@ -6824,7 +7370,7 @@
     "width": 5246,
     "height": 3279,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "27 mm",
     "shutterSpeed": "1/40"
   },
@@ -6849,7 +7395,7 @@
     "width": 5266,
     "height": 3291,
     "iso": 100,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "100 mm",
     "shutterSpeed": "1/50"
   },
@@ -6857,7 +7403,7 @@
     "slug": "living-on-the-waterfall-22-01-2023",
     "title": "Living On The Waterfall",
     "description": "The rural villages of the Arouca mountains.",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -6874,7 +7420,7 @@
     "width": 5169,
     "height": 3231,
     "iso": 100,
-    "aperture": "f/29.0",
+    "aperture": "f/29",
     "focalLength": "63 mm",
     "shutterSpeed": "1/20"
   },
@@ -6899,7 +7445,7 @@
     "width": 4937,
     "height": 3086,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "29 mm",
     "shutterSpeed": "1/20"
   },
@@ -6907,7 +7453,7 @@
     "slug": "stream-flow-09-07-2023",
     "title": "Stream Flow",
     "description": "Monte Córdova streams",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -6924,15 +7470,15 @@
     "width": 4096,
     "height": 2559,
     "iso": 160,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "the-river-wall-15-07-2023",
     "title": "The River Wall",
     "description": "Landscapes from Paiva",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -6949,7 +7495,7 @@
     "width": 5299,
     "height": 3312,
     "iso": 160,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "18 mm",
     "shutterSpeed": "1/10"
   },
@@ -6974,7 +7520,7 @@
     "width": 4950,
     "height": 3094,
     "iso": 160,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "18 mm",
     "shutterSpeed": "1/25"
   },
@@ -6999,7 +7545,7 @@
     "width": 5410,
     "height": 3043,
     "iso": 160,
-    "aperture": "f/20.0",
+    "aperture": "f/20",
     "focalLength": "27 mm",
     "shutterSpeed": "1/125"
   },
@@ -7024,15 +7570,15 @@
     "width": 4612,
     "height": 2883,
     "iso": 160,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2 s"
+    "shutterSpeed": "1/2"
   },
   {
     "slug": "moody-water-on-rocks-19-08-2023",
     "title": "Moody Water On Rocks",
     "description": "Falls on the north of Portugal",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2023"
     ],
@@ -7049,7 +7595,7 @@
     "width": 5429,
     "height": 3393,
     "iso": 160,
-    "aperture": "f/29.0",
+    "aperture": "f/29",
     "focalLength": "40 mm",
     "shutterSpeed": "1/13"
   },
@@ -7057,7 +7603,7 @@
     "slug": "the-village-on-the-riverbed-18-12-2023",
     "title": "The Village On The Riverbed",
     "description": "A winter shot on Luxemburg old town",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -7074,7 +7620,7 @@
     "width": 5113,
     "height": 3196,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "61 mm",
     "shutterSpeed": "1/6"
   },
@@ -7082,7 +7628,7 @@
     "slug": "flooded-23-12-2023",
     "title": "Flooded",
     "description": "A forest flooded by the lake in the Alps",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -7099,15 +7645,15 @@
     "width": 4096,
     "height": 2560,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "25 mm",
-    "shutterSpeed": "1"
+    "shutterSpeed": "1s"
   },
   {
     "slug": "follow-the-light-23-12-2023",
     "title": "Follow The Light",
     "description": "A road in the Alps mountains in France",
-    "category": "abstract",
+    "category": "travel",
     "tags": [
       "2023"
     ],
@@ -7124,7 +7670,7 @@
     "width": 4846,
     "height": 3029,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "18 mm",
     "shutterSpeed": "1/6"
   },
@@ -7149,7 +7695,7 @@
     "width": 5362,
     "height": 3351,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "36 mm",
     "shutterSpeed": "1/25"
   },
@@ -7174,7 +7720,7 @@
     "width": 5050,
     "height": 3156,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "22 mm",
     "shutterSpeed": "1/50"
   },
@@ -7199,7 +7745,7 @@
     "width": 5163,
     "height": 3227,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/10"
   },
@@ -7207,7 +7753,7 @@
     "slug": "the-house-by-the-lake-27-12-2023",
     "title": "The House By The Lake",
     "description": "A little house by a Lake in the Alps",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -7224,7 +7770,7 @@
     "width": 5386,
     "height": 3366,
     "iso": 640,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "129 mm",
     "shutterSpeed": "1/80"
   },
@@ -7232,7 +7778,7 @@
     "slug": "water-thunder-27-12-2023",
     "title": "Water Thunder",
     "description": "A waterfall in the  French Alps",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2023"
     ],
@@ -7249,7 +7795,7 @@
     "width": 5258,
     "height": 3286,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/10"
   },
@@ -7257,7 +7803,7 @@
     "slug": "the-little-squirrel-by-the-stump-01-02-2024",
     "title": "The Little Squirrel By The Stump",
     "description": "A Squirrel in London parks",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7282,7 +7828,7 @@
     "slug": "holding-on-02-02-2024",
     "title": "Holding On",
     "description": "Squirrels of London",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7324,7 +7870,7 @@
     "width": 4676,
     "height": 2923,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "23 mm",
     "shutterSpeed": "1/8"
   },
@@ -7332,7 +7878,7 @@
     "slug": "the-deer-is-watching-06-02-2024",
     "title": "The Deer Is Watching",
     "description": "A watchful deer in the Richmond Park, London.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7357,7 +7903,7 @@
     "slug": "follow-the-river-south-31-05-2024",
     "title": "Follow The River South",
     "description": "Foz Coa Landscapes",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7374,7 +7920,7 @@
     "width": 4902,
     "height": 3064,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "23 mm",
     "shutterSpeed": "1/100"
   },
@@ -7382,7 +7928,7 @@
     "slug": "in-spiral-caterpillar-01-06-2024",
     "title": "In Spiral Caterpillar",
     "description": "a caterpillar in the valleys of Coa river",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7407,7 +7953,7 @@
     "slug": "the-cow-and-the-tree-01-06-2024",
     "title": "The Cow And The Tree",
     "description": "a cow and a cork tree in the north of Portugal",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7424,7 +7970,7 @@
     "width": 4264,
     "height": 2665,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "68 mm",
     "shutterSpeed": "1/250"
   },
@@ -7449,7 +7995,7 @@
     "width": 5182,
     "height": 3239,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "70 mm",
     "shutterSpeed": "1/100"
   },
@@ -7457,7 +8003,7 @@
     "slug": "the-prey-13-07-2024",
     "title": "The Prey",
     "description": "A spider with a prey",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7482,7 +8028,7 @@
     "slug": "ready-to-fly-25-08-2024",
     "title": "Ready To Fly",
     "description": "A butterfly in Valongo mountains",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2024"
     ],
@@ -7507,7 +8053,7 @@
     "slug": "ice-water-19-09-2024",
     "title": "Ice Water",
     "description": "A ice water reservatory on Longyearbyen",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7524,7 +8070,7 @@
     "width": 4275,
     "height": 2672,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "41 mm",
     "shutterSpeed": "1/30"
   },
@@ -7532,7 +8078,7 @@
     "slug": "ice-wall-21-09-2024",
     "title": "Ice Wall",
     "description": "A Glacier in Svalbard",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7549,7 +8095,7 @@
     "width": 4660,
     "height": 2913,
     "iso": 100,
-    "aperture": "f/18.0",
+    "aperture": "f/18",
     "focalLength": "18 mm",
     "shutterSpeed": "1/30"
   },
@@ -7557,7 +8103,7 @@
     "slug": "sailing-to-nowhere-21-09-2024",
     "title": "Sailing To Nowhere",
     "description": "a boat in the svalbard waters",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7574,7 +8120,7 @@
     "width": 3916,
     "height": 2448,
     "iso": 320,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "96 mm",
     "shutterSpeed": "1/80"
   },
@@ -7599,7 +8145,7 @@
     "width": 5122,
     "height": 3415,
     "iso": 200,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "186 mm",
     "shutterSpeed": "1/200"
   },
@@ -7624,7 +8170,7 @@
     "width": 4485,
     "height": 2803,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "58 mm",
     "shutterSpeed": "1/40"
   },
@@ -7632,7 +8178,7 @@
     "slug": "sailing-on-ice-24-09-2024",
     "title": "Sailing On Ice",
     "description": "Antigua ship on Svalbard waters",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7649,7 +8195,7 @@
     "width": 3235,
     "height": 2022,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "200 mm",
     "shutterSpeed": "1/160"
   },
@@ -7657,7 +8203,7 @@
     "slug": "the-ice-land-27-09-2024",
     "title": "The Ice Land",
     "description": "Longyearbyen postcards",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7674,7 +8220,7 @@
     "width": 5099,
     "height": 3187,
     "iso": 100,
-    "aperture": "f/14.0",
+    "aperture": "f/14",
     "focalLength": "18 mm",
     "shutterSpeed": "1/15"
   },
@@ -7699,7 +8245,7 @@
     "width": 5139,
     "height": 3212,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "25 mm",
     "shutterSpeed": "1/10"
   },
@@ -7707,7 +8253,7 @@
     "slug": "ice-coast-line-01-10-2024",
     "title": "Ice Coast Line",
     "description": "A coastline on Longyearbyen",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7724,15 +8270,15 @@
     "width": 4771,
     "height": 2982,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "inf"
+    "shutterSpeed": "Infinitys"
   },
   {
     "slug": "ice-line-01-10-2024",
     "title": "Ice Line",
     "description": "An ice line in the seafront",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7749,7 +8295,7 @@
     "width": 5266,
     "height": 3291,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/10"
   },
@@ -7757,7 +8303,7 @@
     "slug": "of-ice-and-fire-01-10-2024",
     "title": "Of Ice And Fire",
     "description": "sunsets before the Svalbard dark season",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7774,7 +8320,7 @@
     "width": 5200,
     "height": 3250,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "25 mm",
     "shutterSpeed": "1/15"
   },
@@ -7782,7 +8328,7 @@
     "slug": "the-house-on-ice-01-10-2024",
     "title": "The House On Ice",
     "description": "A cabin in the ice desert of Longyearbyen",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7799,7 +8345,7 @@
     "width": 4755,
     "height": 2972,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "186 mm",
     "shutterSpeed": "1/15"
   },
@@ -7824,7 +8370,7 @@
     "width": 4661,
     "height": 2913,
     "iso": 160,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "88 mm",
     "shutterSpeed": "1/15"
   },
@@ -7832,7 +8378,7 @@
     "slug": "ice-fall-06-10-2024",
     "title": "Ice Fall",
     "description": "A frozen waterfall under the wagons of the old mines in Svalbard",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7849,7 +8395,7 @@
     "width": 4990,
     "height": 3119,
     "iso": 100,
-    "aperture": "f/6.0",
+    "aperture": "f/6",
     "focalLength": "24 mm",
     "shutterSpeed": "1/40"
   },
@@ -7874,7 +8420,7 @@
     "width": 3805,
     "height": 2378,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "23 mm",
     "shutterSpeed": "1/4"
   },
@@ -7882,7 +8428,7 @@
     "slug": "golden-reflections-of-upcoming-dark-season-22-10-2024",
     "title": "Golden Reflections Of Upcoming Dark Season",
     "description": "Sunset on the brief days before the dark season on Svalbars",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -7899,7 +8445,7 @@
     "width": 5011,
     "height": 3132,
     "iso": 100,
-    "aperture": "f/22.0",
+    "aperture": "f/22",
     "focalLength": "38 mm",
     "shutterSpeed": "1/5"
   },
@@ -7951,7 +8497,7 @@
     "iso": 4000,
     "aperture": "f/2.8",
     "focalLength": "24 mm",
-    "shutterSpeed": "inf"
+    "shutterSpeed": "Infinitys"
   },
   {
     "slug": "cold-reflections-25-10-2024",
@@ -7974,7 +8520,7 @@
     "width": 5406,
     "height": 3379,
     "iso": 100,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/6"
   },
@@ -8007,7 +8553,7 @@
     "slug": "floating-in-ice-15-12-2024",
     "title": "Floating In Ice",
     "description": "A sailless boat in the cold waters of Oslo",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -8032,7 +8578,7 @@
     "slug": "lighthouse-reflections-15-12-2024",
     "title": "Lighthouse Reflections",
     "description": "Oslo fjord",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2024"
     ],
@@ -8049,7 +8595,7 @@
     "width": 4906,
     "height": 3066,
     "iso": 250,
-    "aperture": "f/11.0",
+    "aperture": "f/11",
     "focalLength": "56 mm",
     "shutterSpeed": "1/15"
   },
@@ -8057,7 +8603,7 @@
     "slug": "nazare-waters-22-02-2025",
     "title": "Nazare Waters",
     "description": "some waves breaking against the coast of Nazaré",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2025"
     ],
@@ -8074,7 +8620,7 @@
     "width": 5284,
     "height": 3303,
     "iso": 100,
-    "aperture": "f/13.0",
+    "aperture": "f/13",
     "focalLength": "36 mm",
     "shutterSpeed": "1/400"
   },
@@ -8099,7 +8645,7 @@
     "width": 5281,
     "height": 3301,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/25"
   },
@@ -8132,7 +8678,7 @@
     "slug": "juvenile-bird-05-06-2025",
     "title": "Juvenile Bird",
     "description": "a young bird in the woods",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2025"
     ],
@@ -8157,7 +8703,7 @@
     "slug": "321-take-off-10-06-2025",
     "title": "321 Take Off",
     "description": "a firefly ready to fly on a stick",
-    "category": "aerial",
+    "category": "fauna",
     "tags": [
       "2025"
     ],
@@ -8182,7 +8728,7 @@
     "slug": "lighting-the-way-11-08-2025",
     "title": "Lighting The Way",
     "description": "Lighthouse in cape verde islands",
-    "category": "abstract",
+    "category": "travel",
     "tags": [
       "2025"
     ],
@@ -8199,7 +8745,7 @@
     "width": 5182,
     "height": 3239,
     "iso": 100,
-    "aperture": "f/10.0",
+    "aperture": "f/10",
     "focalLength": "56 mm",
     "shutterSpeed": "1/20"
   },
@@ -8207,7 +8753,7 @@
     "slug": "fishing-in-the-rocks-13-08-2025",
     "title": "Fishing In The Rocks",
     "description": "a heron on cape verde looking for food",
-    "category": "waterscapes",
+    "category": "landscape",
     "tags": [
       "2025"
     ],
@@ -8249,7 +8795,7 @@
     "width": 5091,
     "height": 3182,
     "iso": 100,
-    "aperture": "f/9.0",
+    "aperture": "f/9",
     "focalLength": "172 mm",
     "shutterSpeed": "1/500"
   },
@@ -8274,7 +8820,7 @@
     "width": 5472,
     "height": 3420,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "28 mm",
     "shutterSpeed": "1/160"
   },
@@ -8307,7 +8853,7 @@
     "slug": "colorful-mist-25-10-2025",
     "title": "Colorful Mist",
     "description": "Some random flowers in Poznan, Poland",
-    "category": "landscape",
+    "category": "flora",
     "tags": [
       "2025"
     ],
@@ -8332,7 +8878,7 @@
     "slug": "old-oak-lichen-14-02-2026",
     "title": "Old Oak Lichen",
     "description": "a lichen on a branch of an old oak",
-    "category": "macrophotography",
+    "category": "macro",
     "tags": [
       "2026"
     ],
@@ -8374,7 +8920,7 @@
     "width": 6804,
     "height": 4253,
     "iso": 100,
-    "aperture": "f/8.0",
+    "aperture": "f/8",
     "focalLength": "18 mm",
     "shutterSpeed": "1/10"
   },
@@ -8382,7 +8928,7 @@
     "slug": "the-frog-16-04-2026",
     "title": "The Frog",
     "description": "A frog in my backyard",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2026"
     ],
@@ -8407,7 +8953,7 @@
     "slug": "sitting-on-a-branch-03-05-2026",
     "title": "Sitting On A Branch",
     "description": "A Squirrel sitting on a branch in Londo parks.",
-    "category": "animals",
+    "category": "fauna",
     "tags": [
       "2026"
     ],

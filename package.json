@@ -7,9 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "seed": "node scripts/seed.js",
-    "process": "node scripts/process.js",
+    "sync": "node scripts/sync.js",
+    "onramp": "node scripts/onramp.js",
     "discover": "node scripts/discover.js",
-    "local-process": "node scripts/local-process.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "astro check"

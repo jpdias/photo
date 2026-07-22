@@ -36,7 +36,7 @@ if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY || !R2_PUBLIC_U
 
 const MANIFEST_PATH = join(process.cwd(), 'src', 'data', 'photos.json');
 const THUMB_PREFIX = 'thumbnails/';
-const PHOTO_PREFIX = 'photos/';
+const PHOTO_PREFIX = 'photography/';
 const SUPPORTED_EXT = ['.webp', '.jpg', '.jpeg', '.png', '.avif'];
 
 // ── R2 Client ───────────────────────────────────────────────────────────────

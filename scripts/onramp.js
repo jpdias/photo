@@ -318,6 +318,13 @@ async function main() {
       } catch {}
     }
 
+    let category = prev?.category || 'uncategorized';
+    if (isNew) {
+      const catAns = await ask('    category: ');
+      const trimmed = catAns.trim();
+      if (trimmed) category = trimmed;
+    }
+
     const parsed = parseFilename(parse(filePath).name);
     const make = exif?.Make || '';
     const model = exif?.Model || '';
@@ -383,7 +390,7 @@ async function main() {
         slug,
         title,
         description,
-        category: prev?.category || 'uncategorized',
+        category,
         tags,
         location,
         country: prev?.country || null,
