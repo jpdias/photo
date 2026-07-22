@@ -288,9 +288,7 @@ async function main() {
 
     const isNew = !prev;
     if (isNew) {
-      const exifDate = exif?.DateTimeOriginal
-        ? new Date(exif.DateTimeOriginal)
-        : null;
+      const exifDate = exif?.DateTimeOriginal ? new Date(exif.DateTimeOriginal) : null;
       const parsedOrig = parseFilename(parse(file).name);
       const dateStr = exifDate
         ? `${String(exifDate.getDate()).padStart(2, '0')}_${String(exifDate.getMonth() + 1).padStart(2, '0')}_${exifDate.getFullYear()}`

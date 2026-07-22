@@ -3,7 +3,12 @@
 import { readFile, writeFile, readdir, mkdir, unlink } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, parse } from 'node:path';
-import { S3Client, PutObjectCommand, HeadObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import {
+  S3Client,
+  PutObjectCommand,
+  HeadObjectCommand,
+  ListObjectsV2Command,
+} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import exifr from 'exifr';
 import 'dotenv/config';
@@ -114,7 +119,8 @@ async function uploadToR2(filePath, key) {
 async function validateJPGs(files) {
   const srcDir = join(process.cwd(), PHOTOS_DIR);
   console.log(`\nValidating ${files.length} source JPGs...\n`);
-  let valid = 0, invalid = 0;
+  let valid = 0,
+    invalid = 0;
 
   for (const file of files) {
     const filePath = join(srcDir, file);
@@ -221,7 +227,9 @@ async function main() {
   if (stale > 0) console.log(`Removed ${stale} stale local WebP files\n`);
 
   const photos = [];
-  let generated = 0, uploaded = 0, skipped = 0;
+  let generated = 0,
+    uploaded = 0,
+    skipped = 0;
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -331,8 +339,11 @@ async function main() {
       const status = [];
       if (needsFull) status.push('fullsize');
       if (needsThumb) status.push('thumb');
-      if (upload && (FORCE || !r2Photos.has(`${R2_PHOTO_PREFIX}${slug}.webp`))) status.push('uploaded');
-      console.log(`  ${idx} ${status.length ? '→' : '✓'} ${slug}${status.length ? ` (${status.join(', ')})` : ''}`);
+      if (upload && (FORCE || !r2Photos.has(`${R2_PHOTO_PREFIX}${slug}.webp`)))
+        status.push('uploaded');
+      console.log(
+        `  ${idx} ${status.length ? '→' : '✓'} ${slug}${status.length ? ` (${status.join(', ')})` : ''}`,
+      );
     } catch (err) {
       console.error(`  ${idx} ✗ ${slug}: ${err.message}`);
       skipped++;
@@ -342,7 +353,9 @@ async function main() {
   photos.sort((a, b) => (a.date || '').localeCompare(b.date || '') || a.slug.localeCompare(b.slug));
   await writeFile(join(process.cwd(), MANIFEST_PATH), JSON.stringify(photos, null, 2) + '\n');
 
-  console.log(`\nDone: ${photos.length} in manifest, ${generated} generated, ${uploaded} uploaded to R2, ${skipped} skipped`);
+  console.log(
+    `\nDone: ${photos.length} in manifest, ${generated} generated, ${uploaded} uploaded to R2, ${skipped} skipped`,
+  );
 }
 
 main().catch(err => {
