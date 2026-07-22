@@ -50,8 +50,11 @@ function groupByLocation(photos: Photo[]): LocationGroup[] {
 
 const W = 1000;
 const H = 1000;
-const ROTATION_SPEED = 4.5; // degrees per second, auto-spin
-const DRAG_SENSITIVITY = 0.25; // degrees per pixel dragged
+const ROTATION_SPEED = 4.5;
+const DRAG_SENSITIVITY = 0.25;
+const BASE_SCALE = W / 2.15;
+const MIN_ZOOM = 0.5;
+const MAX_ZOOM = 4;
 
 const landFc = { type: 'FeatureCollection', features: landGeo } as any;
 const graticule = geoGraticule10();
@@ -63,9 +66,11 @@ export default function GlobeMap({ photos }: Props) {
   const [hovered, setHovered] = useState<{ group: LocationGroup; x: number; y: number } | null>(
     null,
   );
+  const [zoom, setZoom] = useState(1);
 
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const zoomRef = useRef(zoom);
 
   const rotationRef = useRef(rotation);
   const autoSpinRef = useRef(true); // whether idle auto-rotation should be running
@@ -80,6 +85,22 @@ export default function GlobeMap({ photos }: Props) {
     startY: number;
     startRotation: [number, number, number];
   }>({ dragging: false, startX: 0, startY: 0, startRotation: rotation });
+
+  // non-passive wheel listener for zoom
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const handler = (e: WheelEvent) => {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? -0.1 : 0.1;
+      const next = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, zoomRef.current + delta));
+      zoomRef.current = next;
+      setZoom(next);
+      autoSpinRef.current = false;
+    };
+    svg.addEventListener('wheel', handler, { passive: false });
+    return () => svg.removeEventListener('wheel', handler);
+  }, []);
 
   useEffect(() => {
     const tick = (t: number) => {
@@ -102,11 +123,11 @@ export default function GlobeMap({ photos }: Props) {
 
   const projection = useMemo(() => {
     return geoOrthographic()
-      .scale(W / 2.15)
+      .scale(BASE_SCALE * zoom)
       .translate([W / 2, H / 2])
       .clipAngle(90)
       .rotate(rotation);
-  }, [rotation]);
+  }, [rotation, zoom]);
 
   const pathGen = useMemo(() => geoPath(projection), [projection]);
 
@@ -147,7 +168,7 @@ export default function GlobeMap({ photos }: Props) {
       startY: e.clientY,
       startRotation: rotationRef.current,
     };
-    autoSpinRef.current = false; // dragging stops auto-spin for good, until double-click
+    autoSpinRef.current = false;
     setHovered(null);
   }
 
@@ -170,7 +191,9 @@ export default function GlobeMap({ photos }: Props) {
   }
 
   function handleDoubleClick() {
-    autoSpinRef.current = true; // resume auto-rotation
+    zoomRef.current = zoomRef.current === 1 ? 2.5 : 1;
+    setZoom(zoomRef.current);
+    autoSpinRef.current = true;
   }
 
   return (
