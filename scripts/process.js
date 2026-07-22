@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFile, readdir, writeFile, mkdir, unlink } from 'node:fs/promises';
+import { readFile, readdir, writeFile, mkdir, unlink, rename } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, parse } from 'node:path';
 import { execFile } from 'node:child_process';
@@ -276,10 +276,10 @@ async function main() {
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    const filePath = join(srcDir, file);
-    const slug = slugify(parse(file).name);
+    let filePath = join(srcDir, file);
+    let slug = slugify(parse(file).name);
     const idx = `[${i + 1}/${files.length}]`;
-    const prev = existingMap[slug];
+    let prev = existingMap[slug];
 
     let exif = {};
     try {
@@ -288,6 +288,29 @@ async function main() {
 
     const isNew = !prev;
     if (isNew) {
+      const exifDate = exif?.DateTimeOriginal
+        ? new Date(exif.DateTimeOriginal)
+        : null;
+      const parsedOrig = parseFilename(parse(file).name);
+      const dateStr = exifDate
+        ? `${String(exifDate.getDate()).padStart(2, '0')}_${String(exifDate.getMonth() + 1).padStart(2, '0')}_${exifDate.getFullYear()}`
+        : parsedOrig.date
+          ? parsedOrig.date.replace(/-/g, '_')
+          : null;
+      const ans = await ask(
+        `    rename file${dateStr ? ` (date: ${dateStr.replace(/_/g, '/')})` : ''}\n      current: ${file}\n      new name (description only, date will be appended): `,
+      );
+      const trimmed = ans.trim().replace(/\.jpe?g$/i, '');
+      if (trimmed) {
+        const safeDesc = trimmed.replace(/[^\w\s-]/g, '').replace(/[\s]+/g, '_');
+        const newBase = dateStr ? `${safeDesc}_${dateStr}` : safeDesc;
+        const newName = newBase + '.jpg';
+        const newPath = join(srcDir, newName);
+        await rename(filePath, newPath);
+        slug = slugify(newBase);
+        filePath = newPath;
+        prev = existingMap[slug] || null;
+      }
       await promptForMissing(filePath, slug, exif);
       // Re-read EXIF after potential updates
       try {
@@ -295,7 +318,7 @@ async function main() {
       } catch {}
     }
 
-    const parsed = parseFilename(parse(file).name);
+    const parsed = parseFilename(parse(filePath).name);
     const make = exif?.Make || '';
     const model = exif?.Model || '';
     const camera = [make, model].filter(Boolean).join(' ').trim() || null;
