@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import photos from '../data/photos.json';
+
+const sorted = [...photos].reverse();
+---
+
+<Base title="Photos">
+  <Header currentPage="home" />
+  <main>
+    <PhotoGrid photos={sorted} />
+  </main>
+</Base>
+
+

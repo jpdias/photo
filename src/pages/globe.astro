@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import GlobeMap from '../components/GlobeMap.tsx';
+import photos from '../data/photos.json';
+---
+
+<Base title="Map">
+  <Header currentPage="globe" />
+  <main>
+    <GlobeMap photos={photos} client:only="react" />
+  </main>
+</Base>
+
+<style>
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+  }
+</style>

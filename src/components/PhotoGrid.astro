@@ -1,0 +1,740 @@
+---
+import type { Photo } from '../types';
+import { imageUrl } from '../utils/images';
+
+export interface Props {
+  photos: Photo[];
+}
+
+const { photos } = Astro.props;
+
+const categories = [...new Set(photos.map(p => p.category))].sort();
+
+const tagCounts = new Map<string, number>();
+for (const p of photos) for (const t of p.tags) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
+const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b)).slice(0, 20).map(([t]) => t);
+---
+
+<div class="container">
+  <div class="location-filter" id="location-filter" style="display:none">
+    <span></span>
+    <a href="/portfolio/" class="clear-filter">clear</a>
+  </div>
+  <div class="controls">
+    <div class="categories">
+      <button class="chip active" data-filter="all">*</button>
+      {categories.map(cat => (
+        <button class="chip" data-filter={cat}>{cat}</button>
+      ))}
+    </div>
+    {topTags.length > 0 && (
+      <div class="tags">
+        {topTags.map(tag => (
+          <button class="tag-chip" data-tag={tag}>#{tag}</button>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <div class="grid" id="photo-grid">
+    {photos.map((photo, i) => (
+      <div
+        class="grid-item"
+        data-category={photo.category}
+        data-tags={photo.tags.join(',')}
+        data-location={photo.country ?? ''}
+        data-fullsize={imageUrl(photo.fullsize)}
+        data-title={photo.title}
+        data-desc={photo.description}
+        data-location-name={photo.location?.name ?? ''}
+        data-country={photo.country ?? ''}
+        data-date={photo.date}
+        data-camera={photo.camera}
+        data-slug={photo.slug}
+        data-lat={photo.location?.lat ?? ''}
+        data-lng={photo.location?.lng ?? ''}
+        data-index={i}
+        style={`--i: ${i}`}
+      >
+        <img
+          data-src={imageUrl(photo.thumbnail)}
+          alt={photo.title}
+          width={photo.width}
+          height={photo.height}
+        />
+        <div class="overlay">
+          <span class="overlay-title">{photo.title}</span>
+          {photo.location && <span class="overlay-location">{photo.location.name}</span>}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div class="modal" id="photo-modal">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-nav">
+      <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
+      <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-image-wrap">
+        <img class="modal-image" id="modal-image" src="" alt="" />
+      </div>
+      <div class="modal-info">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modal-title"></h2>
+          <span class="modal-counter" id="modal-counter"></span>
+          <button class="modal-share" id="modal-share" title="Copy link">⎘</button>
+          <button class="modal-close" id="modal-close" title="Close (Esc)">✕</button>
+        </div>
+        <div class="modal-meta">
+          <div class="modal-details" id="modal-details"></div>
+          <div class="modal-minimap-wrap" id="modal-minimap-wrap" style="display:none">
+            <span class="minimap-label">location</span>
+            <svg id="modal-minimap" viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { geoMercator, geoPath, geoGraticule } from 'd3-geo';
+  import landGeo from '../data/land-geo.json';
+
+  const landFc = { type: 'FeatureCollection', features: landGeo } as any;
+  const graticuleLines = geoGraticule().step([10, 10])();
+
+  // Regional zoom: center the map on the point itself rather than showing
+  // a full world map with a barely-visible dot. Falls back to a wider
+  // view if the local projection can't place the point (e.g. data gaps).
+  function renderMinimap(svg: SVGSVGElement, lat: number, lng: number) {
+    const w = 320, h = 200;
+    const cx = w / 2, cy = h / 2;
+
+    const projection = geoMercator()
+      .scale(700)
+      .center([lng, lat])
+      .translate([cx, cy]);
+    const pathGen = geoPath(projection);
+
+    const landPath = pathGen(landFc) || '';
+    const gratPath = pathGen(graticuleLines as any) || '';
+
+    svg.innerHTML = `
+      <defs>
+        <radialGradient id="minimap-ocean" cx="50%" cy="42%" r="75%">
+          <stop offset="0%" stop-color="#1c2b33"/>
+          <stop offset="100%" stop-color="#0c1417"/>
+        </radialGradient>
+        <filter id="minimap-glow" x="-150%" y="-150%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="3.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <rect width="${w}" height="${h}" fill="url(#minimap-ocean)" rx="6"/>
+      <g opacity="0.22">
+        ${gratPath ? `<path d="${gratPath}" fill="none" stroke="#ffffff" stroke-width="0.5"/>` : ''}
+      </g>
+      <path d="${landPath}" fill="rgba(255,255,255,0.62)" stroke="rgba(255,255,255,0.12)" stroke-width="0.6"/>
+      <circle cx="${cx}" cy="${cy}" r="10" fill="none" stroke="#fe5c35" stroke-width="1.4" opacity="0.7">
+        <animate attributeName="r" values="8;18;8" dur="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="${cx}" cy="${cy}" r="5" fill="#fe5c35" filter="url(#minimap-glow)"/>
+      <circle cx="${cx}" cy="${cy}" r="1.8" fill="#fff"/>
+      <rect width="${w}" height="${h}" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" rx="6"/>
+    `;
+  }
+
+  const chips = document.querySelectorAll('.chip');
+  const tagChips = document.querySelectorAll('.tag-chip');
+  const items = document.querySelectorAll<HTMLElement>('.grid-item');
+
+  let activeCategory = 'all';
+  let activeTag: string | null = null;
+  let activeLocation: string | null = null;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const locationParam = urlParams.get('location');
+
+  if (locationParam) {
+    activeLocation = locationParam;
+    const banner = document.getElementById('location-filter');
+    if (banner) {
+      banner.style.display = 'flex';
+      banner.querySelector('span')!.textContent = `filtered by ${locationParam}`;
+    }
+  }
+
+  function getVisibleItems(): HTMLElement[] {
+    return [...items].filter(item => !item.classList.contains('hidden'));
+  }
+
+  function filter() {
+    items.forEach(item => {
+      const cat = item.dataset.category;
+      const tags = (item.dataset.tags ?? '').split(',');
+      const loc = item.dataset.location;
+      const matchCat = activeCategory === 'all' || cat === activeCategory;
+      const matchTag = !activeTag || tags.includes(activeTag);
+      const matchLoc = !activeLocation || loc === activeLocation;
+      item.classList.toggle('hidden', !(matchCat && matchTag && matchLoc));
+    });
+  }
+
+  chips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      chips.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.filter!;
+      filter();
+    });
+  });
+
+  tagChips.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.dataset.tag!;
+      if (activeTag === tag) {
+        activeTag = null;
+        tagChips.forEach(b => b.classList.remove('active'));
+      } else {
+        activeTag = tag;
+        tagChips.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      filter();
+    });
+  });
+
+  filter();
+
+  const modal = document.getElementById('photo-modal')!;
+  const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+  const modalTitle = document.getElementById('modal-title')!;
+  const modalCounter = document.getElementById('modal-counter')!;
+  const modalDetails = document.getElementById('modal-details')!;
+  let currentIndex = -1;
+  let closeTimer: ReturnType<typeof setTimeout> | null = null;
+
+  function openModal(el: HTMLElement) {
+    const visible = getVisibleItems();
+    currentIndex = visible.indexOf(el);
+    renderModal();
+    if (closeTimer) clearTimeout(closeTimer);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('show')));
+    const slug = el.dataset.slug;
+    if (slug) history.replaceState(null, '', `#${slug}`);
+  }
+
+  function closeModal() {
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+    currentIndex = -1;
+    closeTimer = setTimeout(() => modal.classList.remove('open'), 220);
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+
+  function renderModal() {
+    const visible = getVisibleItems();
+    if (currentIndex < 0 || currentIndex >= visible.length) return closeModal();
+    const el = visible[currentIndex];
+    modalImage.src = el.dataset.fullsize!;
+    modalImage.alt = el.dataset.title!;
+    modalTitle.textContent = el.dataset.title!;
+    modalCounter.textContent = `${currentIndex + 1} / ${visible.length}`;
+
+    const slug = el.dataset.slug;
+    if (slug) history.replaceState(null, '', `#${slug}`);
+
+    const rows: string[] = [];
+    if (el.dataset.locationName) rows.push(`<div class="detail-row"><span class="detail-label">location</span><span>${el.dataset.locationName}</span></div>`);
+    if (el.dataset.country) rows.push(`<div class="detail-row"><span class="detail-label">country</span><span>${el.dataset.country}</span></div>`);
+    if (el.dataset.lat && el.dataset.lng) {
+      const lat = parseFloat(el.dataset.lat);
+      const lng = parseFloat(el.dataset.lng);
+      if (!isNaN(lat) && !isNaN(lng)) rows.push(`<div class="detail-row"><span class="detail-label">coordinates</span><span>${lat.toFixed(4)}, ${lng.toFixed(4)}</span></div>`);
+    }
+    if (el.dataset.date) rows.push(`<div class="detail-row"><span class="detail-label">date</span><span>${el.dataset.date}</span></div>`);
+    if (el.dataset.camera) rows.push(`<div class="detail-row"><span class="detail-label">camera</span><span>${el.dataset.camera}</span></div>`);
+    modalDetails.innerHTML = rows.join('');
+
+    const minimapWrap = document.getElementById('modal-minimap-wrap')!;
+    const minimapSvg = document.getElementById('modal-minimap')!;
+    const lat = parseFloat(el.dataset.lat || '');
+    const lng = parseFloat(el.dataset.lng || '');
+    if (!isNaN(lat) && !isNaN(lng)) {
+      minimapWrap.style.display = 'block';
+      renderMinimap(minimapSvg as unknown as SVGSVGElement, lat, lng);
+    } else {
+      minimapWrap.style.display = 'none';
+    }
+
+    (document.getElementById('modal-prev') as HTMLButtonElement).disabled = currentIndex <= 0;
+    (document.getElementById('modal-next') as HTMLButtonElement).disabled = currentIndex >= visible.length - 1;
+  }
+
+  function navigate(dir: number) {
+    const visible = getVisibleItems();
+    const next = currentIndex + dir;
+    if (next >= 0 && next < visible.length) {
+      currentIndex = next;
+      renderModal();
+    }
+  }
+
+  items.forEach(item => {
+    item.addEventListener('click', () => openModal(item));
+  });
+
+  document.getElementById('modal-backdrop')!.addEventListener('click', closeModal);
+  document.getElementById('modal-close')!.addEventListener('click', closeModal);
+  document.getElementById('modal-share')!.addEventListener('click', () => {
+    const visible = getVisibleItems();
+    const el = visible[currentIndex];
+    const slug = el?.dataset.slug;
+    const url = `${window.location.origin}${window.location.pathname.replace(/\/$/, '')}/photos/${slug}`;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('modal-share')!;
+      btn.textContent = '✓';
+      setTimeout(() => { btn.textContent = '⎘'; }, 1200);
+    });
+  });
+  document.getElementById('modal-prev')!.addEventListener('click', () => navigate(-1));
+  document.getElementById('modal-next')!.addEventListener('click', () => navigate(1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
+  });
+
+  // Lazy load images via IntersectionObserver
+  const lazyObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const img = entry.target.querySelector<HTMLImageElement>('img');
+      if (img && img.dataset.src && !img.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+      lazyObserver.unobserve(entry.target);
+    }
+  }, { rootMargin: '300px' });
+
+  const origFilter = filter;
+  filter = function () {
+    origFilter();
+    items.forEach(item => {
+      if (!item.classList.contains('hidden')) lazyObserver.observe(item);
+    });
+  };
+
+  filter();
+
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const target = [...items].find(i => i.dataset.slug === hash);
+    if (target) openModal(target);
+  }
+</script>
+
+<style>
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .controls {
+    margin-bottom: 1.5rem;
+  }
+
+  .location-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(254, 92, 53, 0.08);
+    border: 1px solid rgba(254, 92, 53, 0.2);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .clear-filter {
+    font-size: 0.75rem;
+    color: var(--accent);
+    opacity: 0.7;
+    transition: opacity 0.15s;
+  }
+
+  .clear-filter:hover {
+    opacity: 1;
+    background: transparent;
+  }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .chip {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 0.15rem 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.15s;
+    border-radius: 3px;
+  }
+
+  .chip:hover,
+  .chip.active {
+    color: var(--accent);
+    background: transparent;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+  }
+
+  .tag-chip {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.25);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .tag-chip:hover,
+  .tag-chip.active {
+    color: var(--accent);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .grid-item {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-card);
+    transition: opacity 0.15s;
+    cursor: pointer;
+  }
+
+  .grid-item.hidden {
+    display: none;
+  }
+
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #2a2a2a;
+    transition: transform 0.4s ease;
+    filter: saturate(0.9);
+  }
+
+  .grid-item:hover img {
+    transform: scale(1.03);
+    filter: saturate(1);
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem 1rem 0.75rem;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .grid-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .overlay-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .overlay-location {
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-top: 0.1rem;
+  }
+
+  /* Modal: hidden by default via display, faded/scaled in via .show */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.22s ease;
+  }
+
+  .modal.open {
+    display: flex;
+  }
+
+  .modal.show {
+    opacity: 1;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(20, 20, 20, 0.97) 0%, rgba(0, 0, 0, 0.98) 100%);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 90vw;
+    max-width: 1000px;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.96) translateY(6px);
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.3, 1);
+  }
+
+  .modal.show .modal-content {
+    transform: scale(1) translateY(0);
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+  }
+
+  .modal-image-wrap {
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 1;
+    min-height: 0;
+  }
+
+  .modal-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .modal-info {
+    padding: 0 0.25rem;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+  }
+
+  .modal-counter {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .modal-close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .modal-close:hover {
+    color: var(--accent);
+  }
+
+  .modal-share {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    transition: color 0.15s;
+  }
+
+  .modal-share:hover {
+    color: var(--accent);
+  }
+
+  .modal-close:focus-visible,
+  .modal-share:focus-visible,
+  .modal-arrow:focus-visible,
+  .chip:focus-visible,
+  .tag-chip:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .modal-meta {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .modal-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .modal-details :global(.detail-row) {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .modal-details :global(.detail-row:last-child) {
+    border-bottom: none;
+  }
+
+  .modal-details :global(.detail-label) {
+    color: var(--text-muted);
+    min-width: 70px;
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-top: 0.1rem;
+  }
+
+  .modal-minimap-wrap {
+    flex-shrink: 0;
+    width: 160px;
+    margin-left: auto;
+  }
+
+  .minimap-label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .modal-minimap-wrap :global(#modal-minimap) {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .modal-nav {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    z-index: 10;
+  }
+
+  .modal-arrow {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-arrow:hover:not(:disabled) {
+    background: rgba(254, 92, 53, 0.3);
+    color: #fff;
+  }
+
+  .modal-arrow:disabled {
+    opacity: 0.2;
+    cursor: default;
+  }
+
+  @media (max-width: 640px) {
+    .modal-meta {
+      flex-direction: column;
+    }
+
+    .modal-minimap-wrap {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modal,
+    .modal-content {
+      transition: none;
+    }
+  }
+</style>

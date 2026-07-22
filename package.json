@@ -1,0 +1,40 @@
+{
+  "name": "photo-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "seed": "node scripts/seed.js",
+    "process": "node scripts/process.js",
+    "discover": "node scripts/discover.js",
+    "local-process": "node scripts/local-process.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.0",
+    "astro": "^4.16.0",
+    "d3-geo": "^3.1.1",
+    "exiftool-vendored": "^37.0.0",
+    "globe.gl": "^2.33.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-globe.gl": "^2.38.0",
+    "three": "^0.169.0",
+    "three-geojson-geometry": "^2.1.1",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@aws-sdk/client-s3": "^3.600.0",
+    "dotenv": "^16.4.5",
+    "enquirer": "^2.4.1",
+    "exifr": "^7.1.3",
+    "prettier": "^3.4.0",
+    "sharp": "^0.33.5",
+    "typescript": "^5.6.0"
+  }
+}

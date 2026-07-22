@@ -1,0 +1,220 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+---
+
+<Base title="About" description="Photographer, explorer, visual storyteller.">
+  <Header currentPage="about" />
+  <main>
+    <section class="about">
+      <h1>about</h1>
+
+      <div class="bio">
+        <p>
+          Photographer and visual storyteller drawn to the interplay of light, shadow, and the quiet
+          moments between. My work spans landscapes, street, portraits, and architecture — driven by
+          curiosity and the compulsion to be somewhere I haven't been yet.
+        </p>
+        <p>
+          Based in Portugal, shooting wherever the road leads. I believe every place has a texture
+          worth capturing and every person carries a story in their expression.
+        </p>
+      </div>
+
+      <section class="section">
+        <h2>gear</h2>
+        <div class="gear-grid">
+          <div class="gear-item">
+            <span class="gear-label">camera</span>
+            <span class="gear-value">Canon EOS R5</span>
+          </div>
+          <div class="gear-item">
+            <span class="gear-label">lens</span>
+            <span class="gear-value">RF 24-70mm f/2.8L</span>
+          </div>
+          <div class="gear-item">
+            <span class="gear-label">lens</span>
+            <span class="gear-value">RF 15-35mm f/2.8L</span>
+          </div>
+          <div class="gear-item">
+            <span class="gear-label">lens</span>
+            <span class="gear-value">RF 70-200mm f/2.8L</span>
+          </div>
+          <div class="gear-item">
+            <span class="gear-label">drone</span>
+            <span class="gear-value">DJI Mavic 3 Pro</span>
+          </div>
+          <div class="gear-item">
+            <span class="gear-label">edit</span>
+            <span class="gear-value">Lightroom / Capture One</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>achievements</h2>
+        <ul class="list">
+          <li>
+            <span class="list-year">2024</span>
+            <span>Featured in <em>National Geographic Your Shot</em> — "Golden Hour Serenity"</span>
+          </li>
+          <li>
+            <span class="list-year">2024</span>
+            <span>Winner — <em>Travel Photography Awards</em>, Landscape category</span>
+          </li>
+          <li>
+            <span class="list-year">2023</span>
+            <span>Published in <em>AFAR Magazine</em> — "Streets of Kyoto" series</span>
+          </li>
+          <li>
+            <span class="list-year">2023</span>
+            <span>Group exhibition — <em>Galeria da Maré</em>, Lisbon</span>
+          </li>
+          <li>
+            <span class="list-year">2022</span>
+            <span>Semi-finalist — <em>Sony World Photography Awards</em>, Open category</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>contact</h2>
+        <div class="contact-links">
+          <a href="mailto:hello@jpdias.dev">hello@jpdias.dev</a>
+          <a href="https://instagram.com/jpdias" target="_blank" rel="noopener">instagram</a>
+          <a href="https://github.com/jpdias" target="_blank" rel="noopener">github</a>
+        </div>
+      </section>
+    </main>
+  </main>
+</Base>
+
+<style>
+  .about {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 2rem;
+  }
+
+  h1::before {
+    content: '#';
+    color: var(--accent);
+    margin-right: 8px;
+  }
+
+  .bio {
+    max-width: 640px;
+    margin-bottom: 3rem;
+  }
+
+  .bio p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2::before {
+    content: '#';
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .gear-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--bg-card);
+    border-radius: 3px;
+    font-size: 0.8rem;
+  }
+
+  .gear-label {
+    color: var(--text-muted);
+    min-width: 50px;
+    flex-shrink: 0;
+  }
+
+  .gear-value {
+    color: var(--text);
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .list li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .list li:last-child {
+    border-bottom: none;
+  }
+
+  .list-year {
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    min-width: 40px;
+    flex-shrink: 0;
+  }
+
+  .list em {
+    color: var(--text);
+    font-style: normal;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .contact-links a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .contact-links a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: transparent;
+  }
+</style>
