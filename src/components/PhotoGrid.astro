@@ -109,7 +109,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
 <script>
   function detailRow(label: string, val: string) {
-    return `<div class="detail-row"><span class="detail-label">${label}</span><span class="detail-leader"></span><span class="detail-value">${val}</span></div>`;
+    return `<div class="detail-row"><span class="detail-label">${label}</span><span class="detail-value">${val}</span></div>`;
   }
 
   function renderTech(el: HTMLElement) {
@@ -585,7 +585,6 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   .modal-close:focus-visible,
   .modal-share:focus-visible,
-  .modal-arrow:focus-visible,
   .chip:focus-visible,
   .tag-chip:focus-visible {
     outline: 1px solid var(--accent);
@@ -637,14 +636,6 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     white-space: nowrap;
   }
 
-  .modal-details :global(.detail-leader),
-  .modal-tech-wrap :global(.detail-leader) {
-    flex: 1 1 auto;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.15);
-    margin-bottom: 3px;
-    min-width: 0.75rem;
-  }
-
   .modal-details :global(.detail-value),
   .modal-tech-wrap :global(.detail-value) {
     flex: 0 0 auto;
@@ -658,29 +649,21 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     top: 50%;
     transform: translateY(-50%);
     z-index: 1010;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
     font-size: 2rem;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s, color 0.15s, transform 0.15s;
-    backdrop-filter: blur(8px);
+    padding: 0.5rem;
+    transition: color 0.15s;
   }
 
   .modal-arrow:hover:not(:disabled) {
-    background: rgba(254, 92, 53, 0.3);
-    color: #fff;
-    transform: translateY(-50%) scale(1.06);
+    color: var(--accent);
   }
 
   .modal-arrow:disabled {
-    opacity: 0.2;
+    opacity: 0.15;
     cursor: default;
   }
 
@@ -714,15 +697,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       margin-left: 0;
     }
 
-    /* less room on mobile, keep arrows tucked in close */
     .modal-prev { left: 0.5rem; }
     .modal-next { right: 0.5rem; }
-
-    .modal-arrow {
-      width: 40px;
-      height: 40px;
-      font-size: 1.6rem;
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
