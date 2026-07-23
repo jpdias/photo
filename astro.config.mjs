@@ -14,6 +14,7 @@ export default defineConfig({
   site: 'https://jpdias.github.io',
   base: '/photo',
   output: 'static',
+  devToolbar: { enabled: false },
   image: {
     domains: ['localhost'],
   },

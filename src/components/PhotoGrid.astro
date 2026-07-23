@@ -75,37 +75,42 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   </div>
 </div>
 
-<div class="modal" id="photo-modal">
+<div class="modal" id="photo-modal" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <div class="modal-backdrop" id="modal-backdrop"></div>
 
   <div class="modal-content">
+    <button class="modal-close-landscape" id="modal-close-landscape" title="Close (Esc)">✕</button>
     <div class="modal-body">
       <!-- The image wrap holds only the photo (so nothing sits on top of
-           it); arrows and the info toggle live in a plain bar underneath,
-           in their own dedicated space. -->
+           it); the arrows live in a plain bar underneath, in their own
+           dedicated space. -->
       <div class="modal-visual">
         <div class="modal-image-wrap" id="modal-image-wrap">
           <img class="modal-image" id="modal-image" src="" alt="" />
         </div>
         <div class="modal-controls">
           <button class="modal-arrow modal-prev" id="modal-prev" title="Previous (←)">‹</button>
-          <button class="modal-info-toggle" id="modal-info-toggle" title="Toggle details" aria-label="Toggle details">ⓘ</button>
           <button class="modal-arrow modal-next" id="modal-next" title="Next (→)">›</button>
         </div>
       </div>
       <div class="modal-info" id="modal-info">
-        <div class="modal-header">
-          <h2 class="modal-title" id="modal-title"></h2>
-          <span class="modal-counter" id="modal-counter"></span>
-          <button class="modal-share" id="modal-share" title="Copy link">⎘</button>
-          <button class="modal-close" id="modal-close" title="Close (Esc)">✕</button>
-        </div>
-        <div class="modal-meta">
-          <div class="modal-details" id="modal-details"></div>
-          <div class="modal-tech-wrap" id="modal-tech-wrap" style="display:none">
-            <div class="tech-rows" id="modal-tech"></div>
+        <div class="modal-collapsible" id="modal-collapsible">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modal-title"></h2>
+            <span class="modal-counter" id="modal-counter"></span>
+            <button class="modal-share" id="modal-share" title="Copy link">⎘</button>
+            <button class="modal-close" id="modal-close" title="Close (Esc)">✕</button>
+          </div>
+          <div class="modal-meta" id="modal-meta">
+            <div class="modal-details" id="modal-details"></div>
+            <div class="modal-tech-wrap" id="modal-tech-wrap" style="display:none">
+              <div class="tech-rows" id="modal-tech"></div>
+            </div>
           </div>
         </div>
+        <button class="modal-toggle-btn" id="modal-toggle-btn" title="Toggle details" aria-label="Toggle details">
+          <span class="chevron">⌄</span>
+        </button>
       </div>
     </div>
   </div>
@@ -142,8 +147,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   let activeLocation: string | null = null;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const locationParam = urlParams.get('location');
 
+  const locationParam = urlParams.get('location');
   if (locationParam) {
     activeLocation = locationParam;
     const banner = document.getElementById('location-filter');
@@ -153,11 +158,63 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     }
   }
 
+  const categoryParam = urlParams.get('category');
+  if (categoryParam && categoryParam !== 'all') {
+    activeCategory = categoryParam;
+    chips.forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === categoryParam);
+    });
+  }
+
+  const tagParam = urlParams.get('tag');
+  if (tagParam) {
+    activeTag = tagParam;
+    tagChips.forEach(b => {
+      b.classList.toggle('active', b.dataset.tag === tagParam);
+    });
+  }
+
+  function updateURL() {
+    const url = new URL(window.location.href);
+    if (activeCategory && activeCategory !== 'all') {
+      url.searchParams.set('category', activeCategory);
+    } else {
+      url.searchParams.delete('category');
+    }
+    if (activeTag) {
+      url.searchParams.set('tag', activeTag);
+    } else {
+      url.searchParams.delete('tag');
+    }
+    if (activeLocation) {
+      url.searchParams.set('location', activeLocation);
+    } else {
+      url.searchParams.delete('location');
+    }
+    history.replaceState(null, '', url.pathname + url.search);
+  }
+
   function getVisibleItems(): HTMLElement[] {
     return [...items].filter(item => !item.classList.contains('hidden'));
   }
 
-  function filter() {
+  // Lazy load images via IntersectionObserver
+  const lazyObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const img = entry.target.querySelector<HTMLImageElement>('img');
+      if (img && img.dataset.src && !img.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      }
+      lazyObserver.unobserve(entry.target);
+    }
+  }, { rootMargin: '300px' });
+
+  // Single source of truth for grid visibility: applies the active
+  // category/tag/location filters and lazily loads whatever becomes
+  // visible as a result.
+  function applyFilters() {
     items.forEach(item => {
       const cat = item.dataset.category;
       const tags = (item.dataset.tags ?? '').split(',');
@@ -165,7 +222,9 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       const matchCat = activeCategory === 'all' || cat === activeCategory;
       const matchTag = !activeTag || tags.includes(activeTag);
       const matchLoc = !activeLocation || loc === activeLocation;
-      item.classList.toggle('hidden', !(matchCat && matchTag && matchLoc));
+      const visible = matchCat && matchTag && matchLoc;
+      item.classList.toggle('hidden', !visible);
+      if (visible) lazyObserver.observe(item);
     });
   }
 
@@ -174,7 +233,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       chips.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeCategory = btn.dataset.filter!;
-      filter();
+      applyFilters();
+      updateURL();
     });
   });
 
@@ -189,11 +249,16 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         tagChips.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       }
-      filter();
+      applyFilters();
+      updateURL();
     });
   });
 
-  filter();
+  applyFilters();
+
+  // -----------------------------------------------------------------
+  // Modal
+  // -----------------------------------------------------------------
 
   const modal = document.getElementById('photo-modal')!;
   const modalImage = document.getElementById('modal-image') as HTMLImageElement;
@@ -201,9 +266,32 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   const modalTitle = document.getElementById('modal-title')!;
   const modalCounter = document.getElementById('modal-counter')!;
   const modalDetails = document.getElementById('modal-details')!;
-  const modalInfoToggle = document.getElementById('modal-info-toggle')!;
+  const modalToggleBtn = document.getElementById('modal-toggle-btn')!;
+  const modalCloseBtn = document.getElementById('modal-close') as HTMLButtonElement;
+  const modalCloseLandscape = document.getElementById('modal-close-landscape') as HTMLButtonElement;
+  const modalPrevBtn = document.getElementById('modal-prev') as HTMLButtonElement;
+  const modalNextBtn = document.getElementById('modal-next') as HTMLButtonElement;
+  // Everything outside the modal, so it can be made inert/hidden from
+  // assistive tech while the modal is open (belt-and-suspenders on top
+  // of the focus trap below).
+  const pageContent = document.querySelector('.container') as HTMLElement | null;
+
   let currentIndex = -1;
   let closeTimer: ReturnType<typeof setTimeout> | null = null;
+  let previouslyFocused: HTMLElement | null = null;
+
+  function getFocusableElements(): HTMLElement[] {
+    return [...modal.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )].filter(el => !el.hasAttribute('disabled') && getComputedStyle(el).display !== 'none');
+  }
+
+  function preloadNeighbors(visible: HTMLElement[], index: number) {
+    [index - 1, index + 1].forEach(i => {
+      const src = visible[i]?.dataset.fullsize;
+      if (src) new Image().src = src;
+    });
+  }
 
   function openModal(el: HTMLElement) {
     const visible = getVisibleItems();
@@ -213,17 +301,31 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     modal.classList.remove('info-open');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    pageContent?.setAttribute('inert', '');
+    pageContent?.setAttribute('aria-hidden', 'true');
+    previouslyFocused = document.activeElement as HTMLElement | null;
+    modalCloseBtn.focus({ preventScroll: true });
     requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('show')));
     const slug = el.dataset.slug;
-    if (slug) history.replaceState(null, '', `#${slug}`);
+    if (slug) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('slug', slug);
+      history.replaceState(null, '', url.pathname + url.search);
+    }
   }
 
   function closeModal() {
     modal.classList.remove('show');
     document.body.style.overflow = '';
+    pageContent?.removeAttribute('inert');
+    pageContent?.removeAttribute('aria-hidden');
     currentIndex = -1;
     closeTimer = setTimeout(() => modal.classList.remove('open'), 220);
-    history.replaceState(null, '', window.location.pathname + window.location.search);
+    const closeUrl = new URL(window.location.href);
+    closeUrl.searchParams.delete('slug');
+    history.replaceState(null, '', closeUrl.pathname + closeUrl.search);
+    previouslyFocused?.focus({ preventScroll: true });
+    previouslyFocused = null;
   }
 
   function renderModal() {
@@ -234,9 +336,14 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     modalImage.alt = el.dataset.title!;
     modalTitle.textContent = el.dataset.title!;
     modalCounter.textContent = `${currentIndex + 1} / ${visible.length}`;
+    preloadNeighbors(visible, currentIndex);
 
     const slug = el.dataset.slug;
-    if (slug) history.replaceState(null, '', `#${slug}`);
+    if (slug) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('slug', slug);
+      history.replaceState(null, '', url.pathname + url.search);
+    }
 
     const rows: string[] = [];
     if (el.dataset.locationName) rows.push(detailRow('location', el.dataset.locationName));
@@ -254,8 +361,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       techWrap.style.display = 'none';
     }
 
-    (document.getElementById('modal-prev') as HTMLButtonElement).disabled = currentIndex <= 0;
-    (document.getElementById('modal-next') as HTMLButtonElement).disabled = currentIndex >= visible.length - 1;
+    modalPrevBtn.disabled = currentIndex <= 0;
+    modalNextBtn.disabled = currentIndex >= visible.length - 1;
   }
 
   function navigate(dir: number) {
@@ -272,24 +379,25 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   });
 
   document.getElementById('modal-backdrop')!.addEventListener('click', closeModal);
-  document.getElementById('modal-close')!.addEventListener('click', closeModal);
+  modalCloseBtn.addEventListener('click', closeModal);
+  modalCloseLandscape.addEventListener('click', closeModal);
   document.getElementById('modal-share')!.addEventListener('click', () => {
     const visible = getVisibleItems();
     const el = visible[currentIndex];
     const slug = el?.dataset.slug;
-    const url = `${window.location.origin}${window.location.pathname.replace(/\/$/, '')}/photos/${slug}`;
+    const shareUrl = new URL(window.location.href);
+    shareUrl.searchParams.set('slug', slug);
+    const url = shareUrl.toString();
     navigator.clipboard.writeText(url).then(() => {
       const btn = document.getElementById('modal-share')!;
       btn.textContent = '✓';
       setTimeout(() => { btn.textContent = '⎘'; }, 1200);
     });
   });
-  document.getElementById('modal-prev')!.addEventListener('click', () => navigate(-1));
-  document.getElementById('modal-next')!.addEventListener('click', () => navigate(1));
+  modalPrevBtn.addEventListener('click', () => navigate(-1));
+  modalNextBtn.addEventListener('click', () => navigate(1));
 
-  // Landscape-mobile "info" panel toggle. The button only shows in that
-  // layout (see CSS); harmless elsewhere.
-  modalInfoToggle.addEventListener('click', () => {
+  modalToggleBtn.addEventListener('click', () => {
     modal.classList.toggle('info-open');
   });
 
@@ -298,10 +406,28 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     if (e.key === 'Escape') closeModal();
     if (e.key === 'ArrowLeft') navigate(-1);
     if (e.key === 'ArrowRight') navigate(1);
+    if (e.key === 'Tab') {
+      // Focus trap: keep Tab/Shift+Tab cycling within the modal instead
+      // of leaking out to the (inert, but belt-and-suspenders) page
+      // behind it.
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   // Swipe to move between photos. Tracked on the image wrap so it never
-  // fights with scrolling inside the details panel.
+  // fights with scrolling inside the details panel. Only takes over for
+  // single-finger horizontal drags; a second finger (pinch-to-zoom) is
+  // left alone via touch-action in CSS and the length checks below.
   let touchStartX = 0;
   let touchStartY = 0;
   let touchDeltaX = 0;
@@ -317,7 +443,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   }, { passive: true });
 
   modalImageWrap.addEventListener('touchmove', (e) => {
-    if (!isSwiping) return;
+    if (!isSwiping || e.touches.length !== 1) return;
     const dx = e.touches[0].clientX - touchStartX;
     const dy = e.touches[0].clientY - touchStartY;
     if (Math.abs(dx) > Math.abs(dy)) {
@@ -340,32 +466,9 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   modalImageWrap.addEventListener('touchend', endSwipe);
   modalImageWrap.addEventListener('touchcancel', endSwipe);
 
-  // Lazy load images via IntersectionObserver
-  const lazyObserver = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      const img = entry.target.querySelector<HTMLImageElement>('img');
-      if (img && img.dataset.src && !img.src) {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-      }
-      lazyObserver.unobserve(entry.target);
-    }
-  }, { rootMargin: '300px' });
-
-  const origFilter = filter;
-  filter = function () {
-    origFilter();
-    items.forEach(item => {
-      if (!item.classList.contains('hidden')) lazyObserver.observe(item);
-    });
-  };
-
-  filter();
-
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    const target = [...items].find(i => i.dataset.slug === hash);
+  const slugParam = urlParams.get('slug');
+  if (slugParam) {
+    const target = [...items].find(i => i.dataset.slug === slugParam);
     if (target) openModal(target);
   }
 </script>
@@ -547,7 +650,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   .modal-content {
     position: relative;
     width: 90vw;
-    max-width: 130vh;
+    max-width: 1000px;
     max-height: 95vh;
     display: flex;
     flex-direction: column;
@@ -562,7 +665,6 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     overflow-y: auto;
     min-height: 0;
   }
@@ -571,14 +673,19 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     display: flex;
     flex-direction: column;
     min-height: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--bg, #0c0c0c);
   }
 
   .modal-image-wrap {
+    background: #111;
     border-radius: 4px;
     overflow: hidden;
     flex-shrink: 1;
     min-height: 0;
-    touch-action: pan-y;
+    touch-action: pan-y pinch-zoom;
   }
 
   .modal-image {
@@ -620,22 +727,22 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     cursor: default;
   }
 
-  /* Info toggle: only meaningful once the info panel becomes an overlay
-     (landscape mobile below), hidden everywhere else. */
-  .modal-info-toggle {
+  /* Hidden by default in portrait; shown in landscape as the bottom
+     control bar. The toggle button and close are hidden alongside .modal-info-toggle
+     since they live in the same strip. */
+  .modal-toggle-btn,
+  .modal-close-landscape {
     display: none;
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 1.1rem;
-    cursor: pointer;
-    padding: 0.25rem 0.6rem;
-    border-radius: 3px;
-    transition: color 0.15s;
   }
 
-  .modal-info-toggle:hover {
-    color: var(--accent);
+  .modal-toggle-btn .chevron {
+    display: inline-block;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .modal.info-open .modal-toggle-btn .chevron {
+    transform: rotate(180deg);
   }
 
   .modal-info {
@@ -700,8 +807,9 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   }
 
   .modal-close:focus-visible,
+  .modal-close-landscape:focus-visible,
   .modal-share:focus-visible,
-  .modal-info-toggle:focus-visible,
+  .modal-toggle-btn:focus-visible,
   .modal-arrow:focus-visible,
   .chip:focus-visible,
   .tag-chip:focus-visible {
@@ -797,9 +905,10 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   }
 
   /* ================= Mobile: landscape =================
-     Short viewports (phones on their side) get almost no vertical room,
-     so the photo takes the full frame and details slide in on demand
-     instead of pushing the image down. */
+     Short viewports (phones on their side) get little vertical room.
+     The photo fills the screen and the info panel is collapsed by
+     default — only a thin chevron handle is visible at the bottom.
+     Tapping it reveals the header (title/share/close) and details. */
   @media (max-width: 900px) and (orientation: landscape) {
     .modal-content {
       width: 100vw;
@@ -809,16 +918,16 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     }
 
     .modal-body {
-      flex-direction: row;
+      position: relative;
       height: 100%;
-      gap: 0;
       overflow: hidden;
     }
 
     .modal-visual {
-      flex: 1;
-      height: 100%;
-      min-height: 0;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .modal-image-wrap {
@@ -833,34 +942,89 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     }
 
     .modal-controls {
-      padding: 0.35rem 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      padding: 0.3rem 0.5rem;
     }
 
-    .modal-info-toggle {
+    .modal-arrow {
+      font-size: 1.3rem;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .modal-close {
+      display: none;
+    }
+
+    .modal-close-landscape {
       display: block;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 20;
+      color: rgba(255, 255, 255, 0.55);
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.3rem 0.5rem;
+      line-height: 1;
+    }
+
+    .modal-close-landscape:hover {
+      color: var(--accent);
     }
 
     .modal-info {
       position: absolute;
-      top: 0;
+      left: 0;
       right: 0;
       bottom: 0;
-      width: min(78vw, 320px);
-      background: rgba(12, 12, 12, 0.94);
-      backdrop-filter: blur(6px);
-      padding: 1rem 1rem env(safe-area-inset-bottom, 1rem);
-      overflow-y: auto;
-      transform: translateX(100%);
-      transition: transform 0.25s ease;
-      z-index: 8;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
     }
 
-    .modal.info-open .modal-info {
-      transform: translateX(0);
+    .modal-collapsible {
+      max-height: 0;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.94);
+      transition: max-height 0.3s ease;
+    }
+
+    .modal.info-open .modal-collapsible {
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+
+    .modal-toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .modal-header {
+      display: none;
+    }
+
+    .modal.info-open .modal-header {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      padding: 1rem 0.5rem 0;
     }
 
     .modal-meta {
       flex-direction: column;
+      padding: 0 0.5rem 0.75rem;
     }
 
     .modal-details,
@@ -874,6 +1038,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     .modal,
     .modal-content,
     .modal-info,
+    .modal-collapsible,
+    .modal-toggle-btn .chevron,
     .modal-image {
       transition: none;
     }
