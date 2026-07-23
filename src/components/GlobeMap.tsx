@@ -67,6 +67,7 @@ export default function GlobeMap({ photos }: Props) {
     null,
   );
   const [zoom, setZoom] = useState(1);
+  const [selected, setSelected] = useState<LocationGroup | null>(null);
 
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -225,7 +226,15 @@ export default function GlobeMap({ photos }: Props) {
         onPointerLeave={handlePointerUp}
         onDoubleClick={handleDoubleClick}
       >
-        <rect width={W} height={H} fill="#202020" onClick={() => setSelected(null)} />
+        <rect
+          width={W}
+          height={H}
+          fill="#202020"
+          onClick={() => {
+            setSelected(null);
+            setHovered(null);
+          }}
+        />
 
         <circle
           cx={W / 2}
@@ -252,7 +261,7 @@ export default function GlobeMap({ photos }: Props) {
 
         {visibleGroups.map(({ g, dist, coords }, i) => {
           const [cx, cy] = coords!;
-          const isActive = hovered?.group === g;
+          const isActive = hovered?.group === g || selected === g;
           const edgeFade = 1 - Math.pow(dist / (Math.PI / 2), 6) * 0.6;
           return (
             <g key={i} style={{ opacity: edgeFade }}>
@@ -281,9 +290,13 @@ export default function GlobeMap({ photos }: Props) {
                 r={14}
                 fill="transparent"
                 style={{ cursor: 'pointer' }}
-                onDoubleClick={e => {
-                  e.stopPropagation();
-                  window.location.href = `/photo/?location=${encodeURIComponent(g.country || g.name)}`;
+                onClick={() => {
+                  if (selected === g) {
+                    window.location.href = `/photo/?location=${encodeURIComponent(g.country || g.name)}`;
+                  } else {
+                    setSelected(g);
+                    autoSpinRef.current = false;
+                  }
                 }}
                 onMouseEnter={() => {
                   hoveredRef.current = true;
@@ -300,55 +313,76 @@ export default function GlobeMap({ photos }: Props) {
         })}
       </svg>
 
-      {hovered && (
-        <div
-          style={{
-            position: 'absolute',
-            left: hovered.x + 14,
-            top: hovered.y - 10,
-            background: '#1a1a1a',
-            border: '1px solid rgba(254,92,53,0.3)',
-            borderRadius: '4px',
-            padding: '0.4rem 0.65rem',
-            pointerEvents: 'none',
-            cursor: 'default',
-            whiteSpace: 'nowrap',
-            zIndex: 20,
-            boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
-          }}
-        >
+      {(() => {
+        const tipGroup = hovered?.group || selected;
+        if (!tipGroup) return null;
+        const tip =
+          hovered ||
+          (() => {
+            const v = visibleGroups.find(vv => vv.g === selected);
+            if (!v || !v.coords) return null;
+            const p = svgToContainerPoint(v.coords[0], v.coords[1]);
+            return { group: selected!, x: p.x, y: p.y };
+          })();
+        if (!tip) return null;
+        const isPinned = selected === tip.group;
+        return (
           <div
             style={{
-              fontSize: '0.8rem',
-              color: 'rgba(255,255,255,0.8)',
-              fontFamily: "'Lato', sans-serif",
-              fontWeight: 300,
+              position: 'absolute',
+              left: tip.x + 14,
+              top: tip.y - 10,
+              background: '#1a1a1a',
+              border: '1px solid rgba(254,92,53,0.3)',
+              borderRadius: '4px',
+              padding: '0.4rem 0.65rem',
+              pointerEvents: isPinned ? 'auto' : 'none',
+              cursor: isPinned ? 'pointer' : 'default',
+              whiteSpace: 'nowrap',
+              zIndex: 20,
+              boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+            }}
+            onClick={() => {
+              if (isPinned) {
+                window.location.href = `/photo/?location=${encodeURIComponent(tip.group.country || tip.group.name)}`;
+              }
             }}
           >
-            {hovered.group.country || 'Unknown'}
+            <div
+              style={{
+                fontSize: '0.8rem',
+                color: 'rgba(255,255,255,0.8)',
+                fontFamily: "'Lato', sans-serif",
+                fontWeight: 300,
+              }}
+            >
+              {tip.group.country || 'Unknown'}
+            </div>
+            <div
+              style={{
+                fontSize: '0.7rem',
+                color: 'rgba(255,255,255,0.5)',
+                fontFamily: "'IBM Plex Mono', monospace",
+                marginTop: '1px',
+              }}
+            >
+              {tip.group.lat.toFixed(4)}, {tip.group.lng.toFixed(4)}
+            </div>
+            <div
+              style={{
+                fontSize: '0.7rem',
+                color: 'var(--accent)',
+                fontFamily: "'IBM Plex Mono', monospace",
+                marginTop: '2px',
+              }}
+            >
+              {isPinned
+                ? 'View →'
+                : `${tip.group.photos.length} photo${tip.group.photos.length !== 1 ? 's' : ''}`}
+            </div>
           </div>
-          <div
-            style={{
-              fontSize: '0.7rem',
-              color: 'rgba(255,255,255,0.5)',
-              fontFamily: "'IBM Plex Mono', monospace",
-              marginTop: '1px',
-            }}
-          >
-            {hovered.group.lat.toFixed(4)}, {hovered.group.lng.toFixed(4)}
-          </div>
-          <div
-            style={{
-              fontSize: '0.7rem',
-              color: 'var(--accent)',
-              fontFamily: "'IBM Plex Mono', monospace",
-              marginTop: '2px',
-            }}
-          >
-            {hovered.group.photos.length} photo{hovered.group.photos.length !== 1 ? 's' : ''}
-          </div>
-        </div>
-      )}
+        );
+      })()}
     </div>
   );
 }
