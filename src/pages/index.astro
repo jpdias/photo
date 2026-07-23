@@ -3,11 +3,13 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import photos from '../data/photos.json';
+import { imageUrl } from '../utils/images';
 
 const sorted = [...photos].reverse();
+const defaultImage = sorted[0]?.fullsize ? imageUrl(sorted[0].fullsize) : '';
 ---
 
-<Base title="Photos">
+<Base title="Photos" image={defaultImage} description="Photo portfolio by jpdias">
   <Header currentPage="home" />
   <main>
     <PhotoGrid photos={sorted} />

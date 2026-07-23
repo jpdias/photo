@@ -8,6 +8,7 @@ export interface Props {
 
 const { title, description, image, url } = Astro.props;
 const siteUrl = 'https://jpdias.github.io/photo';
+const ogImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : '';
 ---
 
 <!DOCTYPE html>
@@ -20,13 +21,13 @@ const siteUrl = 'https://jpdias.github.io/photo';
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} — ./jpdias/photo`} />
     <meta property="og:description" content={description ?? "Photo portfolio"} />
-    {image && <meta property="og:image" content={image} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
     {url && <meta property="og:url" content={`${siteUrl}${url}`} />}
     <meta property="og:site_name" content="./jpdias/photo" />
-    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={`${title} — ./jpdias/photo`} />
     <meta name="twitter:description" content={description ?? "Photo portfolio"} />
-    {image && <meta name="twitter:image" content={image} />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
