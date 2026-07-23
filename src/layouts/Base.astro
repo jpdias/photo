@@ -16,17 +16,17 @@ const ogImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} — ./jpdias/photo</title>
-    <meta name="description" content={description ?? "Photo portfolio"} />
+    <title>./jpdias/photo</title>
+    <meta name="description" content={description ?? "jpdias photo portfolio"} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={`${title} — ./jpdias/photo`} />
-    <meta property="og:description" content={description ?? "Photo portfolio"} />
+    <meta property="og:title" content={`./jpdias/photo`} />
+    <meta property="og:description" content={description ?? "jpdias photo portfolio"} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     {url && <meta property="og:url" content={`${siteUrl}${url}`} />}
     <meta property="og:site_name" content="./jpdias/photo" />
     <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
-    <meta name="twitter:title" content={`${title} — ./jpdias/photo`} />
-    <meta name="twitter:description" content={description ?? "Photo portfolio"} />
+    <meta name="twitter:title" content={`./jpdias/photo`} />
+    <meta name="twitter:description" content={description ?? "jpdias photo portfolio"} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
