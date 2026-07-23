@@ -1,7 +1,6 @@
 export interface PhotoLocation {
   lat: number;
   lng: number;
-  name: string;
 }
 
 export interface Photo {

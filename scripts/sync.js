@@ -64,10 +64,6 @@ function parseFilename(name) {
   return { title: null, date: null };
 }
 
-function isCoordString(s) {
-  return /^-?\d+\.\d+/.test(s);
-}
-
 function formatShutterSpeed(expTime) {
   if (expTime == null) return null;
   if (expTime < 1) {
@@ -170,6 +166,27 @@ async function validateJPGs(files) {
 
   console.log(`\n  ${valid} valid, ${invalid} invalid\n`);
   return { valid, invalid };
+}
+
+async function reverseGeocode(lat, lng) {
+  const https = await import('node:https');
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=3`;
+  return new Promise(resolve => {
+    https
+      .get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, res => {
+        let data = '';
+        res.on('data', c => (data += c));
+        res.on('end', () => {
+          try {
+            const parsed = JSON.parse(data);
+            resolve(parsed?.address?.country || null);
+          } catch {
+            resolve(null);
+          }
+        });
+      })
+      .on('error', () => resolve(null));
+  });
 }
 
 async function geocodePlace(query) {
@@ -476,12 +493,12 @@ async function main() {
 
       let location = null;
       if (lat != null && lng != null) {
-        const prevName = prev.location?.name;
-        if (prevName && !isCoordString(prevName)) {
-          location = { name: prevName, lat, lng };
-        } else {
-          location = { name: `${lat.toFixed(4)}, ${lng.toFixed(4)}`, lat, lng };
-        }
+        location = { lat, lng };
+      }
+
+      let country = prev.country ?? null;
+      if (isNew && lat != null && lng != null && !country) {
+        country = await reverseGeocode(lat, lng);
       }
 
       const entry = { ...prev };
@@ -501,7 +518,7 @@ async function main() {
       entry.aperture = aperture;
       entry.focalLength = focalLength;
       entry.shutterSpeed = shutterSpeed;
-      entry.country = prev.country ?? null;
+      entry.country = country;
       photos.push(entry);
 
       const status = [];

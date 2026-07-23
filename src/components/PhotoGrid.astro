@@ -46,7 +46,6 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         data-fullsize={imageUrl(photo.fullsize)}
         data-title={photo.title}
         data-desc={photo.description}
-        data-location-name={photo.location?.name ?? ''}
         data-country={photo.country ?? ''}
         data-date={photo.date}
         data-camera={photo.camera}
@@ -68,7 +67,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         />
         <div class="overlay">
           <span class="overlay-title">{photo.title}</span>
-          {photo.location && <span class="overlay-location">{photo.location.name}</span>}
+          {photo.location && <span class="overlay-location">{photo.location.lat.toFixed(4)}, {photo.location.lng.toFixed(4)}</span>}
         </div>
       </div>
     ))}
@@ -346,7 +345,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     }
 
     const rows: string[] = [];
-    if (el.dataset.locationName) rows.push(detailRow('location', el.dataset.locationName));
+    const locationName = el.dataset.lat && el.dataset.lng ? `${parseFloat(el.dataset.lat).toFixed(4)}, ${parseFloat(el.dataset.lng).toFixed(4)}` : '';
+    if (locationName) rows.push(detailRow('location', locationName));
     if (el.dataset.country) rows.push(detailRow('country', el.dataset.country));
     if (el.dataset.date) rows.push(detailRow('date', el.dataset.date));
     if (el.dataset.camera) rows.push(detailRow('camera', el.dataset.camera));
