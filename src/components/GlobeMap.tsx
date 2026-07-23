@@ -67,7 +67,6 @@ export default function GlobeMap({ photos }: Props) {
     null,
   );
   const [zoom, setZoom] = useState(1);
-  const [selected, setSelected] = useState<LocationGroup | null>(null);
 
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -171,7 +170,6 @@ export default function GlobeMap({ photos }: Props) {
     };
     autoSpinRef.current = false;
     setHovered(null);
-    setSelected(null);
   }
 
   function handlePointerMove(e: React.PointerEvent<SVGSVGElement>) {
@@ -254,7 +252,7 @@ export default function GlobeMap({ photos }: Props) {
 
         {visibleGroups.map(({ g, dist, coords }, i) => {
           const [cx, cy] = coords!;
-          const isActive = hovered?.group === g || selected === g;
+          const isActive = hovered?.group === g;
           const edgeFade = 1 - Math.pow(dist / (Math.PI / 2), 6) * 0.6;
           return (
             <g key={i} style={{ opacity: edgeFade }}>
@@ -283,13 +281,9 @@ export default function GlobeMap({ photos }: Props) {
                 r={14}
                 fill="transparent"
                 style={{ cursor: 'pointer' }}
-                onClick={() => {
-                  if (selected === g) {
-                    window.location.href = `/photo/?location=${encodeURIComponent(g.country || g.name)}`;
-                  } else {
-                    setSelected(g);
-                    autoSpinRef.current = false;
-                  }
+                onDoubleClick={e => {
+                  e.stopPropagation();
+                  window.location.href = `/photo/?location=${encodeURIComponent(g.country || g.name)}`;
                 }}
                 onMouseEnter={() => {
                   hoveredRef.current = true;
@@ -316,16 +310,11 @@ export default function GlobeMap({ photos }: Props) {
             border: '1px solid rgba(254,92,53,0.3)',
             borderRadius: '4px',
             padding: '0.4rem 0.65rem',
-            pointerEvents: selected === hovered.group ? 'auto' : 'none',
-            cursor: selected === hovered.group ? 'pointer' : 'default',
+            pointerEvents: 'none',
+            cursor: 'default',
             whiteSpace: 'nowrap',
             zIndex: 20,
             boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
-          }}
-          onClick={() => {
-            if (selected === hovered.group) {
-              window.location.href = `/photo/?location=${encodeURIComponent(hovered.group.country || hovered.group.name)}`;
-            }
           }}
         >
           <div
@@ -356,9 +345,7 @@ export default function GlobeMap({ photos }: Props) {
               marginTop: '2px',
             }}
           >
-            {selected === hovered.group
-              ? 'View →'
-              : `${hovered.group.photos.length} photo${hovered.group.photos.length !== 1 ? 's' : ''}`}
+            {hovered.group.photos.length} photo{hovered.group.photos.length !== 1 ? 's' : ''}
           </div>
         </div>
       )}
