@@ -675,9 +675,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   .modal-content {
     position: relative;
-    width: 90vw;
-    max-width: 1000px;
-    max-height: 95vh;
+    width: min(92vw, 1400px);
+    max-height: min(96vh, 1100px);
     display: flex;
     flex-direction: column;
     transform: scale(0.96) translateY(6px);
