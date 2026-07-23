@@ -943,7 +943,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     .modal-controls {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: space-between;
       flex-shrink: 0;
       padding: 0.3rem 0.5rem;
     }
@@ -984,6 +984,12 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       z-index: 15;
       display: flex;
       flex-direction: column;
+      pointer-events: none;
+    }
+
+    .modal-toggle-btn,
+    .modal.info-open .modal-collapsible {
+      pointer-events: auto;
     }
 
     .modal-collapsible {
@@ -1002,12 +1008,13 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
+      align-self: center;
+      width: auto;
       background: none;
       border: none;
       color: rgba(255, 255, 255, 0.5);
       cursor: pointer;
-      padding: 0.35rem 0;
+      padding: 0.35rem 0.6rem;
     }
 
     .modal-header {
