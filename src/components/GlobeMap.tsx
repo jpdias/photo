@@ -356,7 +356,9 @@ export default function GlobeMap({ photos }: Props) {
               marginTop: '2px',
             }}
           >
-            {selected === hovered.group ? 'View →' : `${hovered.group.photos.length} photo${hovered.group.photos.length !== 1 ? 's' : ''}`}
+            {selected === hovered.group
+              ? 'View →'
+              : `${hovered.group.photos.length} photo${hovered.group.photos.length !== 1 ? 's' : ''}`}
           </div>
         </div>
       )}
