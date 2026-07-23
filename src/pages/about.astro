@@ -1,6 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
+import about from '../data/about.json';
+import photos from '../data/photos.json';
+import { imageUrl } from '../utils/images';
+
+const photosBySlug = new Map(photos.map(p => [p.slug, p]));
 ---
 
 <Base title="About" description="Photographer, explorer, visual storyteller.">
@@ -10,82 +15,75 @@ import Header from '../components/Header.astro';
       <h1>about</h1>
 
       <div class="bio">
-        <p>
-          Based in Porto, Portugal. Engineer by day, photographer whenever I can get out.
-          I shoot landscapes, urban — whatever catches my eye.
-        </p>
-        <p>Canon shooter since 2018 (EOS R7). Edited in Lightroom.</p>
+        {about.bio.map(line => <p>{line}</p>)}
       </div>
 
       <section class="section">
         <h2>gear</h2>
         <div class="gear-grid">
-          <div class="gear-item">
-            <span class="gear-label">camera</span>
-            <span class="gear-value">Canon EOS R7</span>
-          </div>
-          <div class="gear-item">
-            <span class="gear-label">lens</span>
-            <span class="gear-value">RF-S 18-150mm f/3.5-6.3</span>
-          </div>
-          <div class="gear-item">
-            <span class="gear-label">lens</span>
-            <span class="gear-value">RF 24mm f/1.8</span>
-          </div>
-          <div class="gear-item">
-            <span class="gear-label">lens</span>
-            <span class="gear-value">EF-S 55-250mm f/4-5.6</span>
-          </div>
-          <div class="gear-item">
-            <span class="gear-label">lens</span>
-            <span class="gear-value">EF 50mm f/1.8</span>
-          </div>
-          <div class="gear-item">
-            <span class="gear-label">edit</span>
-            <span class="gear-value">Lightroom</span>
-          </div>
+          {about.gear.map(item => (
+            <div class="gear-item">
+              <span class="gear-label">{item.label}</span>
+              <span class="gear-value">{item.value}</span>
+            </div>
+          ))}
         </div>
       </section>
 
       <section class="section">
         <h2>achievements</h2>
         <ul class="list">
-          <li>
-            <span class="list-year">2025</span>
-            <span>2nd place — <em>Photography Contest — U.Porto Alumni around the World</em>, by University of Porto</span>
-          </li>
-          <li>
-            <span class="list-year">2024</span>
-            <span>Winner — <em>2nd Photography Contest — Earth Week at FEUP</em>, by Faculty of Engineering, University of Porto</span>
-          </li>
-          <li>
-            <span class="list-year">2020</span>
-            <span>Winner — <em>Landscapes from Above</em> quest, by 500px</span>
-          </li>
-          <li>
-            <span class="list-year">2019</span>
-            <span>One of the 50 best pictures — <em>#MySocialEurope</em> photo competition, by the European Commission</span>
-          </li>
-          <li>
-            <span class="list-year">2018</span>
-            <span>Finalist — <em>Norte Multimédia Contest</em>, Photography Category, promoted by CCDR-N; exhibited at Trindade Metro Station, Porto</span>
-          </li>
-          <li>
-            <span class="list-year">2018</span>
-            <span>Finalist — <em>PORTUGAL NUM ISQUEIRO BIC Contest</em>, by BIC Portugal</span>
-          </li>
-          <li>
-            <span class="list-year">2010</span>
-            <span>Exposition — <em>Movimento d'Artes</em>, Cooperativa Cultural Vinha das Artes</span>
-          </li>
+          {about.achievements.map(a => {
+            const slugs = a.photoSlugs?.filter(Boolean) ?? [];
+            return (
+              <li>
+                <span class="list-year">{a.year}</span>
+                {slugs.length > 0 ? (
+                  <details class="ach-details">
+                    <summary class="ach-summary">
+                      <span>
+                        {a.result} — <em>{a.title}</em>
+                        {a.organization && <span>, {a.organization}</span>}
+                        {a.note && <span> — {a.note}</span>}
+                      </span>
+                      <span class="ach-arrow">↓</span>
+                    </summary>
+                    <div class="ach-thumbs">
+                      {slugs.map(slug => {
+                        const p = photosBySlug.get(slug);
+                        if (!p) return null;
+                        return (
+                            <a href={`/photo/?slug=${slug}`} class="ach-thumb-link">
+                            <img
+                              class="ach-thumb"
+                              src={imageUrl(p.thumbnail)}
+                              alt={p.title}
+                                width={160}
+                                height={120}
+                            />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </details>
+                ) : (
+                  <span>
+                    {a.result} — <em>{a.title}</em>
+                    {a.organization && <span>, {a.organization}</span>}
+                    {a.note && <span> — {a.note}</span>}
+                  </span>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </section>
 
       <section class="section">
         <h2>contact</h2>
         <div class="contact-links">
-          <a href="mailto:jpdias@pm.me">jpdias@pm.me</a>
-          <a href="https://github.com/jpdias" target="_blank" rel="noopener">github</a>
+          <a href={`mailto:${about.contact.email}`}>{about.contact.email}</a>
+          <a href={`https://github.com/${about.contact.github}`} target="_blank" rel="noopener">github</a>
         </div>
       </section>
     </section>
@@ -175,7 +173,8 @@ import Header from '../components/Header.astro';
 
   .list li {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid var(--border);
     font-size: 0.85rem;
@@ -198,6 +197,57 @@ import Header from '../components/Header.astro';
   .list em {
     color: var(--text);
     font-style: normal;
+  }
+
+  .ach-details {
+    flex: 1;
+  }
+
+  .ach-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .ach-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ach-arrow {
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  .ach-details[open] .ach-arrow {
+    transform: rotate(180deg);
+  }
+
+  .ach-thumbs {
+    display: flex;
+    gap: 4px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ach-thumb-link {
+    line-height: 0;
+  }
+
+  .ach-thumb {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 2px;
+    transition: opacity 0.15s;
+  }
+
+  .ach-thumb:hover {
+    opacity: 0.8;
   }
 
   .contact-links {

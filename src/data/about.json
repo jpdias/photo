@@ -1,0 +1,70 @@
+{
+  "bio": [
+    "Based in Porto, Portugal. Engineer by profession, hiker and photographer by passion. For me, photography and hiking belong together — the best images often come after a long walk, a steep climb, or simply taking the time to explore a place quietly. I’m drawn to landscapes, nature, and peaceful scenes, usually far from crowds, always chasing good light.",
+    "Canon shooter since 2018 (EOS R7). Edited in Lightroom."
+  ],
+  "gear": [
+    { "label": "camera", "value": "Canon EOS R7" },
+    { "label": "lens", "value": "RF 18-150mm f/3.5-6.3" },
+    { "label": "lens", "value": "EF 24mm f/2.8" },
+    { "label": "lens", "value": "EF 55-250mm f/4-5.6" },
+    { "label": "lens", "value": "EF 50mm f/1.8" },
+    { "label": "edit", "value": "Lightroom" }
+  ],
+  "achievements": [
+    {
+      "year": 2025,
+      "result": "2nd place",
+      "title": "Photography Contest — U.Porto Alumni around the World",
+      "organization": "by University of Porto",
+      "photoSlugs": ["northen-red-veil-05-10-2024"]
+    },
+    {
+      "year": 2024,
+      "result": "Winner",
+      "title": "2nd Photography Contest — Earth Week at FEUP",
+      "organization": "by Faculty of Engineering, University of Porto",
+      "photoSlugs": ["a-game-of-reflections-02-03-2019"]
+    },
+    {
+      "year": 2020,
+      "result": "Winner",
+      "title": "Landscapes from Above quest",
+      "organization": "by 500px",
+      "photoSlugs": ["moutain-roadway-22-08-2018"]
+    },
+    {
+      "year": 2019,
+      "result": "One of the 50 best pictures",
+      "title": "#MySocialEurope photo competition",
+      "organization": "by the European Commission",
+      "photoSlugs": ["walking-the-line-05-02-2011"]
+    },
+    {
+      "year": 2018,
+      "result": "Finalist",
+      "title": "Norte Multimédia Contest, Photography Category",
+      "organization": "promoted by CCDR-N",
+      "note": "exhibited at Trindade Metro Station, Porto",
+      "photoSlugs": ["arrabida-27-01-2018"]
+    },
+    {
+      "year": 2018,
+      "result": "Finalist",
+      "title": "PORTUGAL NUM ISQUEIRO BIC Contest",
+      "organization": "by BIC Portugal",
+      "photoSlugs": ["porto-city-04-09-2015"]
+    },
+    {
+      "year": 2010,
+      "result": "Exposition",
+      "title": "Movimento d'Artes",
+      "organization": "Cooperativa Cultural Vinha das Artes",
+      "photoSlugs": []
+    }
+  ],
+  "contact": {
+    "email": "jpdias@pm.me",
+    "github": "jpdias"
+  }
+}
