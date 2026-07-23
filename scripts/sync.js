@@ -8,7 +8,6 @@ import { createInterface } from 'node:readline';
 import {
   S3Client,
   PutObjectCommand,
-  HeadObjectCommand,
   ListObjectsV2Command,
 } from '@aws-sdk/client-s3';
 import sharp from 'sharp';
@@ -229,7 +228,7 @@ async function writeExif(filePath, updates) {
   }
   args.push(filePath);
   return new Promise(resolve => {
-    execFile('exiftool', args, (err, stdout, stderr) => {
+    execFile('exiftool', args, (err) => {
       if (err) resolve(false);
       else resolve(true);
     });

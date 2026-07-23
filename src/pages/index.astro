@@ -4,8 +4,9 @@ import Header from '../components/Header.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import photos from '../data/photos.json';
 import { imageUrl } from '../utils/images';
+import type { Photo } from '../types';
 
-const sorted = [...photos].reverse();
+const sorted = ([...photos] as Photo[]).reverse();
 const defaultImage = sorted[0]?.fullsize ? imageUrl(sorted[0].fullsize) : '';
 ---
 

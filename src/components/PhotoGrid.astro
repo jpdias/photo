@@ -137,8 +137,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     tech.innerHTML = rows.join('');
   }
 
-  const chips = document.querySelectorAll('.chip');
-  const tagChips = document.querySelectorAll('.tag-chip');
+  const chips = document.querySelectorAll<HTMLElement>('.chip');
+  const tagChips = document.querySelectorAll<HTMLElement>('.tag-chip');
   const items = document.querySelectorAll<HTMLElement>('.grid-item');
 
   let activeCategory = 'all';
@@ -304,6 +304,8 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     pageContent?.setAttribute('aria-hidden', 'true');
     previouslyFocused = document.activeElement as HTMLElement | null;
     modalCloseBtn.focus({ preventScroll: true });
+    viewportHandler = () => { if (getZoom() >= ZOOM_THRESHOLD) resetSwipe(); };
+    window.visualViewport?.addEventListener('resize', viewportHandler);
     requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add('show')));
     const slug = el.dataset.slug;
     if (slug) {
@@ -318,6 +320,11 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     document.body.style.overflow = '';
     pageContent?.removeAttribute('inert');
     pageContent?.removeAttribute('aria-hidden');
+    if (viewportHandler) {
+      window.visualViewport?.removeEventListener('resize', viewportHandler);
+      viewportHandler = null;
+    }
+    resetSwipe();
     currentIndex = -1;
     closeTimer = setTimeout(() => modal.classList.remove('open'), 220);
     const closeUrl = new URL(window.location.href);
@@ -385,6 +392,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     const visible = getVisibleItems();
     const el = visible[currentIndex];
     const slug = el?.dataset.slug;
+    if (!slug) return;
     const shareUrl = new URL(window.location.href);
     shareUrl.searchParams.set('slug', slug);
     const url = shareUrl.toString();
@@ -428,13 +436,29 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   // fights with scrolling inside the details panel. Only takes over for
   // single-finger horizontal drags; a second finger (pinch-to-zoom) is
   // left alone via touch-action in CSS and the length checks below.
+  // Anything that involves the browser's native page zoom is also left
+  // alone — when scale > 1, the user's drag should pan inside the
+  // zoomed image rather than swap photos, otherwise the gesture fights
+  // the browser and neither wins. We re-check on touchmove + every
+  // visualViewport resize so a zoom-in mid-swipe cleanly aborts.
+  const getZoom = () => window.visualViewport?.scale ?? 1;
+  const ZOOM_THRESHOLD = 1.05;
+  let viewportHandler: (() => void) | null = null;
   let touchStartX = 0;
   let touchStartY = 0;
   let touchDeltaX = 0;
   let isSwiping = false;
 
+  const resetSwipe = () => {
+    if (!isSwiping) return;
+    isSwiping = false;
+    modalImage.style.transform = '';
+    touchDeltaX = 0;
+  };
+
   modalImageWrap.addEventListener('touchstart', (e) => {
     if (e.touches.length !== 1) return;
+    if (getZoom() >= ZOOM_THRESHOLD) return;
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
     touchDeltaX = 0;
@@ -444,6 +468,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   modalImageWrap.addEventListener('touchmove', (e) => {
     if (!isSwiping || e.touches.length !== 1) return;
+    if (getZoom() >= ZOOM_THRESHOLD) { resetSwipe(); return; }
     const dx = e.touches[0].clientX - touchStartX;
     const dy = e.touches[0].clientY - touchStartY;
     if (Math.abs(dx) > Math.abs(dy)) {

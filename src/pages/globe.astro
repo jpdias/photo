@@ -3,12 +3,15 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import GlobeMap from '../components/GlobeMap.tsx';
 import photos from '../data/photos.json';
+import type { Photo } from '../types';
+
+const photoList = photos as Photo[];
 ---
 
 <Base title="Map">
   <Header currentPage="globe" />
   <main>
-    <GlobeMap photos={photos} client:only="react" />
+    <GlobeMap photos={photoList} client:only="react" />
   </main>
 </Base>
 

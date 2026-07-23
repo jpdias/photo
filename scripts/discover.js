@@ -164,10 +164,6 @@ async function main() {
   console.log('🔍 Listing photos in R2...');
 
   const photoKeys = await listAllObjects(PHOTO_PREFIX);
-  const thumbKeys = await listAllObjects(THUMB_PREFIX);
-
-  // Build a set of existing thumbnail slugs for quick lookup
-  const existingThumbSlugs = new Set(thumbKeys.map(k => slugify(k.replace(THUMB_PREFIX, ''))));
 
   // Filter to supported image files in photos/
   const imageKeys = photoKeys.filter(k => SUPPORTED_EXT.some(ext => k.toLowerCase().endsWith(ext)));

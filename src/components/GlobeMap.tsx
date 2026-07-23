@@ -76,7 +76,7 @@ export default function GlobeMap({ photos }: Props) {
   const rotationRef = useRef(rotation);
   const autoSpinRef = useRef(true); // whether idle auto-rotation should be running
   const hoveredRef = useRef(false);
-  const rafRef = useRef<number>();
+  const rafRef = useRef<number | undefined>(undefined);
   const lastRef = useRef<number | null>(null);
 
   // drag state

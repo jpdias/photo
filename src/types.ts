@@ -17,10 +17,10 @@ export interface Photo {
   fullsize: string;
   width: number;
   height: number;
-  iso?: number;
-  aperture?: string;
-  focalLength?: string;
-  shutterSpeed?: string;
+  iso?: number | null;
+  aperture?: string | null;
+  focalLength?: string | null;
+  shutterSpeed?: string | null;
 }
 
 export interface PhotoManifest {

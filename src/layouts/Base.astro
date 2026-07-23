@@ -6,7 +6,7 @@ export interface Props {
   url?: string;
 }
 
-const { title, description, image, url } = Astro.props;
+const { description, image, url } = Astro.props;
 const siteUrl = 'https://jpdias.github.io/photo';
 const ogImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : '';
 ---
@@ -16,6 +16,9 @@ const ogImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#202020" />
     <title>./jpdias/photo</title>
     <meta name="description" content={description ?? "jpdias photo portfolio"} />
     <meta property="og:type" content="website" />
