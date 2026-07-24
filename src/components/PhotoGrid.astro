@@ -10,9 +10,9 @@ const { photos } = Astro.props;
 
 const categories = [...new Set(photos.map(p => p.category))].sort();
 
-const tagCounts = new Map<string, number>();
-for (const p of photos) for (const t of p.tags) tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
-const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b)).slice(0, 20).map(([t]) => t);
+const yearTags = [...new Set(photos.flatMap(p => p.tags))]
+  .filter(t => /^\d{4}$/.test(t))
+  .sort((a, b) => Number(a) - Number(b));
 ---
 
 <div class="container">
@@ -27,10 +27,10 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
         <button class="chip" data-filter={cat}>{cat}</button>
       ))}
     </div>
-    {topTags.length > 0 && (
+    {yearTags.length > 0 && (
       <div class="tags">
-        {topTags.map(tag => (
-          <button class="tag-chip" data-tag={tag}>#{tag}</button>
+        {yearTags.map(tag => (
+          <button class="tag-chip" data-tag={tag} data-year={tag}>#{tag}</button>
         ))}
       </div>
     )}
@@ -143,6 +143,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
 
   let activeCategory = 'all';
   let activeTag: string | null = null;
+  let activeYear: string | null = null;
   let activeLocation: string | null = null;
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -168,6 +169,7 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   const tagParam = urlParams.get('tag');
   if (tagParam) {
     activeTag = tagParam;
+    activeYear = tagParam;
     tagChips.forEach(b => {
       b.classList.toggle('active', b.dataset.tag === tagParam);
     });
@@ -227,33 +229,91 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     });
   }
 
+  // Compute which category and year chips have at least one photo
+  // reachable under the current filters, projecting out the chip's own
+  // axis so users can still toggle between related options.
+  function getAvailability() {
+    const catsWithMatches = new Set<string>();
+    const yearsWithMatches = new Set<string>();
+
+    for (const item of items) {
+      const cat = item.dataset.category;
+      const tags = (item.dataset.tags ?? '').split(',');
+      const years = tags.filter(t => /^\d{4}$/.test(t));
+      const loc = item.dataset.location;
+
+      const matchTag = !activeTag || tags.includes(activeTag);
+      const matchLoc = !activeLocation || loc === activeLocation;
+
+      if (matchTag && matchLoc) catsWithMatches.add(cat);
+
+      const matchCatNoAxis = activeCategory === 'all' || cat === activeCategory;
+      if (matchCatNoAxis && matchLoc) for (const y of years) yearsWithMatches.add(y);
+    }
+
+    return { catsWithMatches, yearsWithMatches };
+  }
+
+  function updateAvailability() {
+    const { catsWithMatches, yearsWithMatches } = getAvailability();
+
+    chips.forEach(btn => {
+      const f = btn.dataset.filter!;
+      const enabled = f === 'all' || catsWithMatches.has(f);
+      btn.disabled = !enabled;
+      btn.classList.toggle('is-disabled', !enabled);
+      btn.setAttribute('aria-disabled', String(!enabled));
+    });
+
+    tagChips.forEach(btn => {
+      const y = btn.dataset.tag!;
+      const enabled = yearsWithMatches.has(y);
+      btn.disabled = !enabled;
+      btn.classList.toggle('is-disabled', !enabled);
+      btn.setAttribute('aria-disabled', String(!enabled));
+    });
+  }
+
   chips.forEach(btn => {
     btn.addEventListener('click', () => {
-      chips.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCategory = btn.dataset.filter!;
+      if (btn.disabled) return;
+      const filter = btn.dataset.filter!;
+      if (filter !== 'all' && activeCategory === filter) {
+        activeCategory = 'all';
+        chips.forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+      } else {
+        activeCategory = filter;
+        chips.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
       applyFilters();
+      updateAvailability();
       updateURL();
     });
   });
 
   tagChips.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (btn.disabled) return;
       const tag = btn.dataset.tag!;
       if (activeTag === tag) {
         activeTag = null;
+        activeYear = null;
         tagChips.forEach(b => b.classList.remove('active'));
       } else {
         activeTag = tag;
+        activeYear = tag;
         tagChips.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       }
       applyFilters();
+      updateAvailability();
       updateURL();
     });
   });
 
   applyFilters();
+  updateAvailability();
 
   // -----------------------------------------------------------------
   // Modal
@@ -560,6 +620,19 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
     background: transparent;
   }
 
+  .chip:disabled,
+  .chip.is-disabled {
+    opacity: 0.25;
+    cursor: default;
+    color: var(--text-muted);
+  }
+
+  .chip:disabled:hover,
+  .chip.is-disabled:hover {
+    color: var(--text-muted);
+    background: transparent;
+  }
+
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -581,6 +654,18 @@ const topTags = [...tagCounts.entries()].sort(([a], [b]) => Number(a) - Number(b
   .tag-chip:hover,
   .tag-chip.active {
     color: var(--accent);
+  }
+
+  .tag-chip:disabled,
+  .tag-chip.is-disabled {
+    opacity: 0.25;
+    cursor: default;
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .tag-chip:disabled:hover,
+  .tag-chip.is-disabled:hover {
+    color: rgba(255, 255, 255, 0.25);
   }
 
   .grid {
