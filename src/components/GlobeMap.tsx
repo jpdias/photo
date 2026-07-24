@@ -239,7 +239,7 @@ export default function GlobeMap({ photos }: Props) {
         <circle
           cx={W / 2}
           cy={H / 2}
-          r={W / 2.15}
+          r={BASE_SCALE * zoom}
           fill="rgba(255,255,255,0.03)"
           stroke="rgba(255,255,255,0.08)"
           strokeWidth={0.75}
