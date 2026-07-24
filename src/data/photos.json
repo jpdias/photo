@@ -8710,5 +8710,77 @@
     "aperture": "f/6.3",
     "focalLength": "150 mm",
     "shutterSpeed": "1/250"
+  },
+  {
+    "slug": "night-watch-12-07-2026",
+    "title": "Night Watch",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 41.20788620001735,
+      "lng": -8.33323209997817
+    },
+    "date": "2026-07-12",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/night-watch-12-07-2026.webp",
+    "fullsize": "/photo/photos/night-watch-12-07-2026.webp",
+    "width": 4973,
+    "height": 3108,
+    "category": "fauna",
+    "iso": 6400,
+    "aperture": "f/5.6",
+    "focalLength": "250 mm",
+    "shutterSpeed": "1/125",
+    "country": "Portugal"
+  },
+  {
+    "slug": "firefly-on-frame-21-07-2026",
+    "title": "Firefly On Frame",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 41.20788620001735,
+      "lng": -8.33323209997817
+    },
+    "date": "2026-07-21",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/firefly-on-frame-21-07-2026.webp",
+    "fullsize": "/photo/photos/firefly-on-frame-21-07-2026.webp",
+    "width": 5135,
+    "height": 3209,
+    "category": "fauna",
+    "iso": 2500,
+    "aperture": "f/6.3",
+    "focalLength": "115 mm",
+    "shutterSpeed": "1/200",
+    "country": "Portugal"
+  },
+  {
+    "slug": "old-forest-tales-and-trails-21-07-2026",
+    "title": "Old Forest Tales And Trails",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 41.20788620001735,
+      "lng": -8.33323209997817
+    },
+    "date": "2026-07-21",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/old-forest-tales-and-trails-21-07-2026.webp",
+    "fullsize": "/photo/photos/old-forest-tales-and-trails-21-07-2026.webp",
+    "width": 6833,
+    "height": 4271,
+    "category": "nature",
+    "iso": 4000,
+    "aperture": "f/20",
+    "focalLength": "41 mm",
+    "shutterSpeed": "1/5",
+    "country": "Portugal"
   }
 ]
