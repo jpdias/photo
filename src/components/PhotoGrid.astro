@@ -137,13 +137,12 @@ const yearTags = [...new Set(photos.flatMap(p => p.tags))]
     tech.innerHTML = rows.join('');
   }
 
-  const chips = document.querySelectorAll<HTMLElement>('.chip');
-  const tagChips = document.querySelectorAll<HTMLElement>('.tag-chip');
+  const chips = document.querySelectorAll<HTMLButtonElement>('.chip');
+  const tagChips = document.querySelectorAll<HTMLButtonElement>('.tag-chip');
   const items = document.querySelectorAll<HTMLElement>('.grid-item');
 
   let activeCategory = 'all';
   let activeTag: string | null = null;
-  let activeYear: string | null = null;
   let activeLocation: string | null = null;
 
   const urlParams = new URLSearchParams(window.location.search);
@@ -169,7 +168,6 @@ const yearTags = [...new Set(photos.flatMap(p => p.tags))]
   const tagParam = urlParams.get('tag');
   if (tagParam) {
     activeTag = tagParam;
-    activeYear = tagParam;
     tagChips.forEach(b => {
       b.classList.toggle('active', b.dataset.tag === tagParam);
     });
@@ -237,7 +235,7 @@ const yearTags = [...new Set(photos.flatMap(p => p.tags))]
     const yearsWithMatches = new Set<string>();
 
     for (const item of items) {
-      const cat = item.dataset.category;
+      const cat = item.dataset.category ?? '';
       const tags = (item.dataset.tags ?? '').split(',');
       const years = tags.filter(t => /^\d{4}$/.test(t));
       const loc = item.dataset.location;
@@ -298,11 +296,9 @@ const yearTags = [...new Set(photos.flatMap(p => p.tags))]
       const tag = btn.dataset.tag!;
       if (activeTag === tag) {
         activeTag = null;
-        activeYear = null;
         tagChips.forEach(b => b.classList.remove('active'));
       } else {
         activeTag = tag;
-        activeYear = tag;
         tagChips.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       }
