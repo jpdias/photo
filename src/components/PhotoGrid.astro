@@ -789,7 +789,7 @@ const yearTags = [...new Set(photos.flatMap(p => p.tags))]
     overflow: hidden;
     flex-shrink: 1;
     min-height: 0;
-    touch-action: none;
+    touch-action: pan-y pinch-zoom;
     overscroll-behavior: contain;
   }
 
