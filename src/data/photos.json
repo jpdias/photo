@@ -8782,5 +8782,29 @@
     "focalLength": "41 mm",
     "shutterSpeed": "1/5",
     "country": "Portugal"
+  },
+  {
+    "slug": "monochrome-on-twig-22-08-2026",
+    "title": "Monochrome On Twig",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 41.206189199983186,
+      "lng": -8.285565299980265
+    },
+    "date": "2026-08-22",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/monochrome-on-twig-22-08-2026.webp",
+    "fullsize": "/photo/photos/monochrome-on-twig-22-08-2026.webp",
+    "width": 5699,
+    "height": 3562,
+    "category": "fauna",
+    "iso": 125,
+    "aperture": "f/10",
+    "focalLength": "150 mm",
+    "shutterSpeed": "1/125",
+    "country": "Portugal"
   }
 ]
