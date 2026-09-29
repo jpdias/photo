@@ -8806,5 +8806,53 @@
     "focalLength": "150 mm",
     "shutterSpeed": "1/125",
     "country": "Portugal"
+  },
+  {
+    "slug": "amagerbanen-29-08-2026",
+    "title": "Amagerbanen",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 55.6342308,
+      "lng": 12.597892600033484
+    },
+    "date": "2026-08-29",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/amagerbanen-29-08-2026.webp",
+    "fullsize": "/photo/photos/amagerbanen-29-08-2026.webp",
+    "width": 6879,
+    "height": 4299,
+    "category": "landscape",
+    "iso": 100,
+    "aperture": "f/13",
+    "focalLength": "64 mm",
+    "shutterSpeed": "1/30",
+    "country": "Danmark"
+  },
+  {
+    "slug": "fiskehejre-29-08-2026",
+    "title": "Fiskehejre",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 55.686724299990104,
+      "lng": 12.570072400014663
+    },
+    "date": "2026-08-29",
+    "camera": "Canon Canon EOS R7",
+    "thumbnail": "/photo/thumbnails/fiskehejre-29-08-2026.webp",
+    "fullsize": "/photo/photos/fiskehejre-29-08-2026.webp",
+    "width": 5247,
+    "height": 3279,
+    "category": "fauna",
+    "iso": 1000,
+    "aperture": "f/6.3",
+    "focalLength": "150 mm",
+    "shutterSpeed": "1/320",
+    "country": "Danmark"
   }
 ]
