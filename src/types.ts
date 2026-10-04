@@ -21,6 +21,8 @@ export interface Photo {
   aperture?: string | null;
   focalLength?: string | null;
   shutterSpeed?: string | null;
+  /** Fingerprint of the source JPG this entry was generated from, used by sync to detect replacements. */
+  sourceHash?: string;
 }
 
 export interface PhotoManifest {

@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 
 import { readFile, writeFile, readdir, mkdir, unlink, rename } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import { join, parse } from 'node:path';
+import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { createInterface } from 'node:readline';
-import { S3Client, PutObjectCommand, ListObjectsV2Command } from '@aws-sdk/client-s3';
+import {
+  S3Client,
+  PutObjectCommand,
+  ListObjectsV2Command,
+  DeleteObjectsCommand,
+} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import exifr from 'exifr';
 import 'dotenv/config';
@@ -20,6 +26,13 @@ const R2_THUMB_PREFIX = 'thumbnails/';
 const VALIDATE_ONLY = process.argv.includes('--validate-only');
 const NO_UPLOAD = process.argv.includes('--no-upload');
 const FORCE = process.argv.includes('--force');
+const NO_COMMIT = process.argv.includes('--no-commit');
+const NO_PRUNE = process.argv.includes('--no-prune');
+const FORCE_PRUNE = process.argv.includes('--force-prune');
+
+// Deleting from the bucket is irreversible, so anything above this many objects has
+// to be confirmed explicitly rather than pruned on a hunch.
+const MAX_PRUNE = 100;
 
 const rl = createInterface({ input: process.stdin, output: process.stdout });
 const ask = q => new Promise(r => rl.question(q, r));
@@ -84,7 +97,7 @@ function getR2Client() {
 }
 
 async function listR2Objects(prefix) {
-  const keys = [];
+  const objects = new Map();
   let token;
   do {
     const res = await getR2Client().send(
@@ -94,10 +107,10 @@ async function listR2Objects(prefix) {
         ContinuationToken: token,
       }),
     );
-    for (const obj of res.Contents || []) keys.push(obj.Key);
+    for (const obj of res.Contents || []) objects.set(obj.Key, obj.Size ?? null);
     token = res.IsTruncated ? res.NextContinuationToken : undefined;
   } while (token);
-  return keys;
+  return objects;
 }
 
 async function uploadToR2(filePath, key) {
@@ -110,6 +123,49 @@ async function uploadToR2(filePath, key) {
       ContentType: 'image/webp',
     }),
   );
+}
+
+async function deleteFromR2(keys) {
+  let deleted = 0;
+  for (let i = 0; i < keys.length; i += 1000) {
+    const chunk = keys.slice(i, i + 1000);
+    const res = await getR2Client().send(
+      new DeleteObjectsCommand({
+        Bucket: process.env.R2_BUCKET_NAME,
+        Delete: { Objects: chunk.map(Key => ({ Key })), Quiet: true },
+      }),
+    );
+    for (const err of res.Errors || []) console.warn(`    ✗ ${err.Key}: ${err.Message}`);
+    deleted += chunk.length - (res.Errors?.length || 0);
+  }
+  return deleted;
+}
+
+// Objects under our two prefixes that no longer correspond to a photo in the manifest.
+async function pruneR2(manifestSlugs, r2Photos, r2Thumbs) {
+  const orphaned = objects =>
+    [...objects.keys()].filter(key => key.endsWith('.webp') && !manifestSlugs.has(parse(key).name));
+
+  const keys = [...orphaned(r2Photos), ...orphaned(r2Thumbs)];
+
+  if (!keys.length) {
+    console.log('\nNothing to prune on R2.');
+    return;
+  }
+
+  console.log(`\nPruning ${keys.length} orphaned object(s) from R2:`);
+  for (const key of keys) console.log(`  - ${key}`);
+
+  if (keys.length > MAX_PRUNE && !FORCE_PRUNE) {
+    console.warn(
+      `\nRefusing to delete ${keys.length} objects (limit is ${MAX_PRUNE}). ` +
+        `Re-run with --force-prune if this is expected.`,
+    );
+    return;
+  }
+
+  const deleted = await deleteFromR2(keys);
+  console.log(`\nDeleted ${deleted} object(s) from R2.`);
 }
 
 async function validateJPGs(files) {
@@ -231,6 +287,79 @@ async function writeExif(filePath, updates) {
   });
 }
 
+async function hashFile(filePath) {
+  const buf = await readFile(filePath);
+  return createHash('sha256').update(buf).digest('hex').slice(0, 16);
+}
+
+function fileSize(filePath) {
+  try {
+    return statSync(filePath).size;
+  } catch {
+    return null;
+  }
+}
+
+// True when the object on R2 is missing or doesn't match what we just generated.
+function staleRemote(localPath, key, remoteObjects) {
+  if (!remoteObjects.has(key)) return true;
+  const localSize = fileSize(localPath);
+  const remoteSize = remoteObjects.get(key);
+  if (localSize == null || remoteSize == null) return false;
+  return localSize !== remoteSize;
+}
+
+// Recording or refreshing the source hash isn't a change to the photo itself, so it
+// shouldn't count as an update in the summary.
+const photoFields = ({ sourceHash, ...rest }) => JSON.stringify(rest);
+
+function execGit(args) {
+  return new Promise(resolve => {
+    execFile('git', args, { cwd: process.cwd() }, (err, stdout, stderr) => {
+      resolve({
+        code: err ? (err.code ?? 1) : 0,
+        stdout: stdout.trim(),
+        stderr: stderr.trim(),
+      });
+    });
+  });
+}
+
+async function commitManifest({ newCount, changedCount, updatedCount }) {
+  const manifest = 'src/data/photos.json';
+
+  if (NO_COMMIT) {
+    console.log('\nSkipping commit (--no-commit).');
+    return;
+  }
+
+  const status = await execGit(['status', '--porcelain', '--', manifest]);
+  if (status.code !== 0) {
+    console.warn(`\nCould not read git status, skipping commit: ${status.stderr}`);
+    return;
+  }
+  if (!status.stdout) {
+    console.log('\nManifest unchanged, nothing to commit.');
+    return;
+  }
+
+  const parts = [];
+  if (newCount) parts.push(`${newCount} new`);
+  if (changedCount) parts.push(`${changedCount} changed`);
+  if (updatedCount) parts.push(`${updatedCount} updated`);
+  const summary = parts.length ? ` (${parts.join(', ')})` : '';
+  const message = `chore(photos): sync photo manifest${summary}`;
+
+  const commit = await execGit(['commit', '-m', message, '--', manifest]);
+  if (commit.code !== 0) {
+    console.warn(`\nCommit failed, changes left unstaged: ${commit.stderr || commit.stdout}`);
+    return;
+  }
+
+  const head = await execGit(['log', '-1', '--format=%h %s']);
+  console.log(`\nCommitted ${manifest} → ${head.stdout}`);
+}
+
 async function promptForMissing(filePath, slug, exif) {
   console.log(`\n  ⚠ ${slug} is missing required EXIF data\n`);
 
@@ -325,17 +454,17 @@ async function main() {
     console.warn(`${invalid} file(s) have issues — will prompt for missing data\n`);
   }
 
-  let r2Photos = new Set();
-  let r2Thumbs = new Set();
+  let r2Photos = new Map();
+  let r2Thumbs = new Map();
   const upload = !NO_UPLOAD;
   if (upload) {
     console.log('Listing existing R2 objects for diff...');
-    const [photoKeys, thumbKeys] = await Promise.all([
+    const [photoObjects, thumbObjects] = await Promise.all([
       listR2Objects(R2_PHOTO_PREFIX),
       listR2Objects(R2_THUMB_PREFIX),
     ]);
-    r2Photos = new Set(photoKeys);
-    r2Thumbs = new Set(thumbKeys);
+    r2Photos = photoObjects;
+    r2Thumbs = thumbObjects;
     console.log(`  ${r2Photos.size} photos, ${r2Thumbs.size} thumbnails on R2\n`);
   }
 
@@ -368,7 +497,10 @@ async function main() {
   const photos = [];
   let generated = 0,
     uploaded = 0,
-    skipped = 0;
+    skipped = 0,
+    newCount = 0,
+    changedCount = 0,
+    updatedCount = 0;
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
@@ -444,6 +576,10 @@ async function main() {
     }
 
     try {
+      // Fingerprint the source before anything else. exiftool may have rewritten it
+      // during the prompt above, so this has to happen after that, not before.
+      const sourceHash = await hashFile(filePath);
+
       const image = sharp(filePath);
       const meta = await image.metadata();
       const imgWidth = exif?.ExifImageWidth || meta.width || 0;
@@ -451,8 +587,27 @@ async function main() {
 
       const fullPath = join(process.cwd(), PUBLIC_PHOTOS, `${slug}.webp`);
       const thumbPath = join(process.cwd(), PUBLIC_THUMBS, `${slug}.webp`);
-      const needsFull = !existsSync(fullPath);
-      const needsThumb = !existsSync(thumbPath);
+
+      // A source can be swapped in place, or deleted and re-added under the same
+      // name — the slug stays put, so file existence proves nothing. Compare the
+      // hash recorded when this manifest entry was written instead.
+      let sourceChanged;
+      if (isNew) {
+        sourceChanged = true;
+      } else if (prev.sourceHash) {
+        sourceChanged = prev.sourceHash !== sourceHash;
+      } else {
+        // Entry predates sourceHash. Fall back to comparing the local WebP against
+        // the object already on R2 — if they disagree the remote copy is stale.
+        const [localSize, remoteSize] = [
+          fileSize(fullPath),
+          r2Photos.get(`${R2_PHOTO_PREFIX}${slug}.webp`) ?? null,
+        ];
+        sourceChanged = localSize != null && remoteSize != null && localSize !== remoteSize;
+      }
+
+      const needsFull = !existsSync(fullPath) || sourceChanged;
+      const needsThumb = !existsSync(thumbPath) || sourceChanged;
 
       if (needsFull) {
         await image
@@ -472,18 +627,18 @@ async function main() {
         generated++;
       }
 
-      if (upload) {
-        const photoKey = `${R2_PHOTO_PREFIX}${slug}.webp`;
-        const thumbKey = `${R2_THUMB_PREFIX}${slug}.webp`;
+      const photoKey = `${R2_PHOTO_PREFIX}${slug}.webp`;
+      const thumbKey = `${R2_THUMB_PREFIX}${slug}.webp`;
+      const photoStale = staleRemote(fullPath, photoKey, r2Photos);
+      const thumbStale = staleRemote(thumbPath, thumbKey, r2Thumbs);
 
-        if (FORCE || !r2Photos.has(photoKey)) {
-          await uploadToR2(fullPath, photoKey);
-          uploaded++;
-        }
-        if (FORCE || !r2Thumbs.has(thumbKey)) {
-          await uploadToR2(thumbPath, thumbKey);
-          uploaded++;
-        }
+      if (upload && (FORCE || photoStale)) {
+        await uploadToR2(fullPath, photoKey);
+        uploaded++;
+      }
+      if (upload && (FORCE || thumbStale)) {
+        await uploadToR2(thumbPath, thumbKey);
+        uploaded++;
       }
 
       let location = null;
@@ -514,14 +669,20 @@ async function main() {
       entry.focalLength = focalLength;
       entry.shutterSpeed = shutterSpeed;
       entry.country = country;
+      entry.sourceHash = sourceHash;
       photos.push(entry);
+
+      if (isNew) newCount++;
+      else if (sourceChanged) changedCount++;
+      else if (photoFields(entry) !== photoFields(prev)) updatedCount++;
 
       const status = [];
       if (isNew) status.push('new');
+      else if (sourceChanged) status.push('changed');
       if (needsFull) status.push('fullsize');
       if (needsThumb) status.push('thumb');
-      if (upload && (FORCE || !r2Photos.has(`${R2_PHOTO_PREFIX}${slug}.webp`)))
-        status.push('uploaded');
+      if (upload && photoStale) status.push('uploaded');
+      if (upload && thumbStale) status.push('thumb uploaded');
       console.log(
         `  ${idx} ${status.length ? '→' : '✓'} ${slug}${status.length ? ` (${status.join(', ')})` : ''}`,
       );
@@ -537,6 +698,22 @@ async function main() {
   console.log(
     `\nDone: ${photos.length} in manifest, ${generated} generated, ${uploaded} uploaded to R2, ${skipped} skipped`,
   );
+
+  if (upload) {
+    if (NO_PRUNE) {
+      console.log('\nSkipping R2 prune (--no-prune).');
+    } else {
+      const manifestSlugs = new Set(photos.map(p => p.slug));
+      try {
+        await pruneR2(manifestSlugs, r2Photos, r2Thumbs);
+      } catch (err) {
+        console.warn(`\nPrune failed, nothing deleted: ${err.message}`);
+      }
+    }
+  }
+
+  await commitManifest({ newCount, changedCount, updatedCount });
+
   rl.close();
 }
 

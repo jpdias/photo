@@ -27,7 +27,34 @@ npm run sync -- --no-upload
 
 # force re-upload even if file exists on R2
 npm run sync -- --force
+
+# generate + upload but don't auto-commit the manifest
+npm run sync -- --no-commit
 ```
+
+After a successful run, `sync` commits the updated `src/data/photos.json` (the only tracked file it writes) with a `chore(photos): sync photo manifest (N new, M changed)` message. The commit is path-scoped, so any other staged changes are left alone, and it's skipped entirely when the manifest is unchanged.
+
+### replacing a photo
+
+A source JPG can be deleted and re-added under the same name, or swapped in place. The slug stays the same either way, so `sync` cannot rely on filenames or file existence to notice. Instead it stores a `sourceHash` of each source in the manifest, and treats a changed hash as a reason to regenerate the WebPs and re-upload both the fullsize and thumbnail to R2 (overwriting the existing objects). It also compares the local WebP size against the size of the object on R2, which catches drift on entries written before `sourceHash` existed.
+
+```bash
+npm run sync   # re-upload whatever no longer matches its source
+```
+
+The same run also prunes objects that no longer correspond to a source photo — see below.
+
+### pruning R2
+
+When a source photo is removed, its objects on R2 are no longer referenced by the manifest. `sync` deletes them (both the fullsize and the thumbnail), so the bucket doesn't accumulate orphans.
+
+```bash
+npm run sync                  # upload, then prune orphans
+npm run sync -- --no-prune    # upload but keep orphaned objects
+npm run sync -- --no-upload   # local only — never touches R2, so never prunes
+```
+
+The delete is scoped defensively: only `.webp` keys under the `photography/` and `thumbnails/` prefixes whose slug is absent from the new manifest are eligible, and the whole step is skipped on local-only runs. Because deletion is irreversible, more than 100 objects in one run is refused unless you pass `--force-prune` — a guard against a bad source directory wiping the bucket.
 
 ### `npm run sync` (interactive)
 
