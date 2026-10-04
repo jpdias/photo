@@ -21,7 +21,8 @@
     "aperture": "f/2.8",
     "focalLength": "8 mm",
     "shutterSpeed": "1/160",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "22afd773a2ccee95"
   },
   {
     "slug": "horse-race-1-07-02-2010",
@@ -45,7 +46,8 @@
     "iso": 100,
     "aperture": "f/5.6",
     "focalLength": "42 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "eaf22ae6259414f1"
   },
   {
     "slug": "mosca-30-04-2010",
@@ -69,7 +71,8 @@
     "iso": 200,
     "aperture": "f/7.1",
     "focalLength": "55 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "621f501ff2806406"
   },
   {
     "slug": "red-rose-01-05-2010",
@@ -93,7 +96,8 @@
     "iso": 400,
     "aperture": "f/7.1",
     "focalLength": "27 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "f901ff506b837fe7"
   },
   {
     "slug": "spider-attack-09-05-2010",
@@ -117,7 +121,8 @@
     "aperture": "f/5.6",
     "focalLength": "55 mm",
     "shutterSpeed": "1/250",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "d6dab43b20d0490c"
   },
   {
     "slug": "orange-butterfly-10-06-2010",
@@ -141,7 +146,8 @@
     "aperture": "f/9",
     "focalLength": "55 mm",
     "shutterSpeed": "1/125",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "0134793e87889d27"
   },
   {
     "slug": "red-sunflower-15-07-2010",
@@ -165,7 +171,8 @@
     "aperture": "f/6.3",
     "focalLength": "55 mm",
     "shutterSpeed": "1/200",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "76296b1a44a6422a"
   },
   {
     "slug": "landscape-17-07-2010",
@@ -189,7 +196,8 @@
     "aperture": "f/11",
     "focalLength": "18 mm",
     "shutterSpeed": "1/320",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "51acc2a0d579c2e7"
   },
   {
     "slug": "ice-purple-26-09-2010",
@@ -213,7 +221,8 @@
     "iso": 400,
     "aperture": "f/5.6",
     "focalLength": "55 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "a63f40ec4021d44d"
   },
   {
     "slug": "mushroom-land-22-10-2010",
@@ -237,7 +246,8 @@
     "iso": 800,
     "aperture": "f/5",
     "focalLength": "131 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "fafafeb6f0826256"
   },
   {
     "slug": "walking-the-line-05-02-2011",
@@ -261,7 +271,8 @@
     "aperture": "f/5.6",
     "focalLength": "250 mm",
     "shutterSpeed": "1/200",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "212bf86251191f1a"
   },
   {
     "slug": "watching-frog-19-02-2011",
@@ -285,7 +296,8 @@
     "iso": 800,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "b375fea1685049d9"
   },
   {
     "slug": "bee-at-work-01-03-2011",
@@ -309,7 +321,8 @@
     "iso": 200,
     "aperture": "f/8",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/640"
+    "shutterSpeed": "1/640",
+    "sourceHash": "b15b3c6c2a952ac4"
   },
   {
     "slug": "old-stairs-05-03-2011",
@@ -333,7 +346,8 @@
     "aperture": "f/2",
     "focalLength": "50 mm",
     "shutterSpeed": "1/50",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "669d7b048e2f57f9"
   },
   {
     "slug": "flower-in-the-wild-23-03-2011",
@@ -357,7 +371,8 @@
     "iso": 125,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/3200"
+    "shutterSpeed": "1/3200",
+    "sourceHash": "55327c91ec9517dc"
   },
   {
     "slug": "butterfly-couple-31-03-2011",
@@ -381,7 +396,8 @@
     "iso": 200,
     "aperture": "f/6.3",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "a4ff29a242ce92ad"
   },
   {
     "slug": "trunk-spider-02-09-2012",
@@ -405,7 +421,8 @@
     "aperture": "f/5.6",
     "focalLength": "214 mm",
     "shutterSpeed": "1/250",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "2f5ee4f788c12754"
   },
   {
     "slug": "pollen-09-09-2012",
@@ -429,7 +446,8 @@
     "iso": 400,
     "aperture": "f/5.6",
     "focalLength": "179 mm",
-    "shutterSpeed": "1/500"
+    "shutterSpeed": "1/500",
+    "sourceHash": "16ef22127a995917"
   },
   {
     "slug": "young-pine-30-01-2013",
@@ -453,7 +471,8 @@
     "aperture": "f/5.6",
     "focalLength": "154 mm",
     "shutterSpeed": "1/200",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "a9ad3ce97f5ff282"
   },
   {
     "slug": "red-carpet-01-08-2013",
@@ -477,7 +496,8 @@
     "iso": 800,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "4f7c4a138269cc30"
   },
   {
     "slug": "going-down-05-08-2013",
@@ -501,7 +521,8 @@
     "iso": 200,
     "aperture": "f/6.3",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "b0b4d7e133e3a684"
   },
   {
     "slug": "lay-down-26-08-2013",
@@ -525,7 +546,8 @@
     "iso": 200,
     "aperture": "f/5.6",
     "focalLength": "109 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "f5bbedbc519620ec"
   },
   {
     "slug": "little-cat-05-09-2013",
@@ -549,7 +571,8 @@
     "iso": 400,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "fccefd9d2b5102ef"
   },
   {
     "slug": "gaia-from-porto-29-12-2013",
@@ -573,7 +596,8 @@
     "aperture": null,
     "focalLength": null,
     "shutterSpeed": null,
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "e9d49f9269acbbef"
   },
   {
     "slug": "porto-1-29-12-2013",
@@ -597,7 +621,8 @@
     "iso": null,
     "aperture": null,
     "focalLength": null,
-    "shutterSpeed": null
+    "shutterSpeed": null,
+    "sourceHash": "764b980f0b7149af"
   },
   {
     "slug": "porto-sunset-29-12-2013",
@@ -621,7 +646,8 @@
     "aperture": null,
     "focalLength": null,
     "shutterSpeed": null,
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "3b81c55bfa17c5ea"
   },
   {
     "slug": "sao-bento-symmetry-04-04-2014",
@@ -645,7 +671,8 @@
     "aperture": "f/3.5",
     "focalLength": "18 mm",
     "shutterSpeed": "1/400",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "cba4eb5875e8767e"
   },
   {
     "slug": "bee-close-20-04-2014",
@@ -669,7 +696,8 @@
     "iso": 640,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "6942091edaabb468"
   },
   {
     "slug": "olive-17-05-2014",
@@ -693,7 +721,8 @@
     "iso": 200,
     "aperture": "f/3.5",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "9a17b6bd4b534cfd"
   },
   {
     "slug": "yellow-focus-17-05-2014",
@@ -717,7 +746,8 @@
     "iso": 200,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "d17c960d081defd4"
   },
   {
     "slug": "pink-07-06-2014",
@@ -741,7 +771,8 @@
     "iso": 200,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/2000"
+    "shutterSpeed": "1/2000",
+    "sourceHash": "995288ffd3d07d9d"
   },
   {
     "slug": "moonlight-09-09-2014",
@@ -765,7 +796,8 @@
     "iso": 800,
     "aperture": "f/5",
     "focalLength": "100 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "328b8dbf2edb2ec7"
   },
   {
     "slug": "lisbon-subway-03-04-2015",
@@ -789,7 +821,8 @@
     "aperture": "f/3.5",
     "focalLength": "18 mm",
     "shutterSpeed": "1/13",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "21aede05026fd1cf"
   },
   {
     "slug": "turn-around-to-fire-26-07-2015",
@@ -813,7 +846,8 @@
     "aperture": "f/8",
     "focalLength": "250 mm",
     "shutterSpeed": "1/500",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "646de8845e9005bb"
   },
   {
     "slug": "red-skies-08-08-2015",
@@ -837,7 +871,8 @@
     "aperture": "f/10",
     "focalLength": "250 mm",
     "shutterSpeed": "8s",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "b75ddbbac32c2052"
   },
   {
     "slug": "red-parrot-20-08-2015",
@@ -861,7 +896,8 @@
     "iso": 800,
     "aperture": "f/5.6",
     "focalLength": "235 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "e00fa6533bbcd4ac"
   },
   {
     "slug": "up-and-high-20-08-2015",
@@ -885,7 +921,8 @@
     "iso": 200,
     "aperture": "f/7.1",
     "focalLength": "220 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "f48d2e0bda9878ae"
   },
   {
     "slug": "acorn-22-08-2015",
@@ -909,7 +946,8 @@
     "iso": 200,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "55f550854a9637d0"
   },
   {
     "slug": "dead-flower-22-08-2015",
@@ -933,7 +971,8 @@
     "aperture": "f/1.8",
     "focalLength": "50 mm",
     "shutterSpeed": "1/1600",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "61c5f6dd84814dc5"
   },
   {
     "slug": "porto-city-04-09-2015",
@@ -957,7 +996,8 @@
     "iso": 200,
     "aperture": "f/10",
     "focalLength": "34 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "4c9ddfe90be4f41b"
   },
   {
     "slug": "sunset-on-the-horizon-08-09-2015",
@@ -981,7 +1021,8 @@
     "iso": null,
     "aperture": null,
     "focalLength": null,
-    "shutterSpeed": null
+    "shutterSpeed": null,
+    "sourceHash": "57faa5974fe368d6"
   },
   {
     "slug": "alone-in-the-sky-29-09-2015",
@@ -1005,7 +1046,8 @@
     "iso": 100,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "118d5d56b10c0d5a"
   },
   {
     "slug": "keep-butterflying-22-05-2016",
@@ -1029,7 +1071,8 @@
     "iso": 400,
     "aperture": "f/6.3",
     "focalLength": "55 mm",
-    "shutterSpeed": "1/640"
+    "shutterSpeed": "1/640",
+    "sourceHash": "53ad65a2daf15af2"
   },
   {
     "slug": "pine-of-caos-23-05-2016",
@@ -1053,7 +1096,8 @@
     "iso": 250,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "83f94d6494f8ee31"
   },
   {
     "slug": "juvenile-bird-10-06-2016",
@@ -1077,7 +1121,8 @@
     "aperture": "f/5.6",
     "focalLength": "250 mm",
     "shutterSpeed": "1/50",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "ebfd19e1193187f5"
   },
   {
     "slug": "pink-flower-11-06-2016",
@@ -1101,7 +1146,8 @@
     "iso": 800,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "862411112c5cd571"
   },
   {
     "slug": "fire-08-08-2016",
@@ -1125,7 +1171,8 @@
     "aperture": "f/20",
     "focalLength": "250 mm",
     "shutterSpeed": "30s",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "7f75d27adfe542d4"
   },
   {
     "slug": "look-the-earth-is-moving-19-09-2016",
@@ -1149,7 +1196,8 @@
     "iso": null,
     "aperture": null,
     "focalLength": null,
-    "shutterSpeed": null
+    "shutterSpeed": null,
+    "sourceHash": "c6bf6a366b0b745a"
   },
   {
     "slug": "on-leaves-29-10-2016",
@@ -1173,7 +1221,8 @@
     "iso": 400,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "ce8f06d3bf5cac78"
   },
   {
     "slug": "mirrors-11-12-2016",
@@ -1197,7 +1246,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "5171f97ee71d4b70"
   },
   {
     "slug": "porto-by-night-28-12-2016",
@@ -1221,7 +1271,8 @@
     "aperture": "f/3.5",
     "focalLength": "18 mm",
     "shutterSpeed": "1/8",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "220a33c1a3372955"
   },
   {
     "slug": "grow-little-tree-22-01-2017",
@@ -1245,7 +1296,8 @@
     "iso": 200,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "1e5f289176523de1"
   },
   {
     "slug": "here-i-stay-22-01-2017",
@@ -1269,7 +1321,8 @@
     "iso": 800,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "848ab087da961772"
   },
   {
     "slug": "lost-in-the-forest-05-03-2017",
@@ -1293,7 +1346,8 @@
     "iso": 400,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "3c383a1fe47b60ac"
   },
   {
     "slug": "shroom-born-05-03-2017",
@@ -1317,7 +1371,8 @@
     "iso": 320,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "ba22295dd8eff4b8"
   },
   {
     "slug": "feup-lines-20-04-2017",
@@ -1341,7 +1396,8 @@
     "aperture": "f/3.5",
     "focalLength": "18 mm",
     "shutterSpeed": "1/4",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "1b8c4b486876ef69"
   },
   {
     "slug": "skystars-01-07-2017",
@@ -1365,7 +1421,8 @@
     "aperture": null,
     "focalLength": null,
     "shutterSpeed": null,
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "b16d97f6b3fbbacf"
   },
   {
     "slug": "purple-mist-08-07-2017",
@@ -1389,7 +1446,8 @@
     "iso": 400,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "935be771e2d86bab"
   },
   {
     "slug": "spiral-08-07-2017",
@@ -1413,7 +1471,8 @@
     "iso": 400,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "1a7342fc2e50b19e"
   },
   {
     "slug": "firefighters-05-08-2017",
@@ -1437,7 +1496,8 @@
     "aperture": "f/5",
     "focalLength": "58 mm",
     "shutterSpeed": "1/200",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "4c4cb6231d0c2c94"
   },
   {
     "slug": "through-fire-and-ashes-05-08-2017",
@@ -1461,7 +1521,8 @@
     "iso": 800,
     "aperture": "f/5.6",
     "focalLength": "154 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "2543a0f267cf99c1"
   },
   {
     "slug": "little-bungalows-09-09-2017",
@@ -1485,7 +1546,8 @@
     "iso": 400,
     "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "4s"
+    "shutterSpeed": "4s",
+    "sourceHash": "e663b5a85f38f77a"
   },
   {
     "slug": "ocean-of-green-09-09-2017",
@@ -1509,7 +1571,8 @@
     "iso": 200,
     "aperture": "f/5.6",
     "focalLength": "21 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "052dd470a122bdb3"
   },
   {
     "slug": "among-giants-10-09-2017",
@@ -1533,7 +1596,8 @@
     "iso": 200,
     "aperture": "f/5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "85a764a5820b8563"
   },
   {
     "slug": "natura-itineris-10-09-2017",
@@ -1557,7 +1621,8 @@
     "iso": 200,
     "aperture": "f/4",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "feb5c3fe0c82c26a"
   },
   {
     "slug": "wild-horse-10-09-2017",
@@ -1581,7 +1646,8 @@
     "iso": 200,
     "aperture": "f/5.6",
     "focalLength": "52 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "411e405d139fe680"
   },
   {
     "slug": "autumn-by-the-beach-22-10-2017",
@@ -1605,7 +1671,8 @@
     "iso": 200,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "5c4bbd6673c76aa4"
   },
   {
     "slug": "float-on-22-10-2017",
@@ -1629,7 +1696,8 @@
     "iso": 200,
     "aperture": "f/7.1",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "46d61add530095e1"
   },
   {
     "slug": "lost-into-the-wild-22-10-2017",
@@ -1653,7 +1721,8 @@
     "iso": 200,
     "aperture": "f/4",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "a8f0375b58787650"
   },
   {
     "slug": "safe-upon-the-shore-22-10-2017",
@@ -1677,7 +1746,8 @@
     "iso": 200,
     "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "254a27e06b6276c6"
   },
   {
     "slug": "the-house-in-the-woods-22-10-2017",
@@ -1701,7 +1771,8 @@
     "iso": 200,
     "aperture": "f/7.1",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "c0f85521e4acd3fb"
   },
   {
     "slug": "vancouver-mirrors-22-10-2017",
@@ -1725,7 +1796,8 @@
     "iso": 200,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "af908ed9127c4228"
   },
   {
     "slug": "wandering-in-vancouver-22-10-2017",
@@ -1749,7 +1821,8 @@
     "iso": 800,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "62e52e127d3d2fa4"
   },
   {
     "slug": "postcards-from-vancouver-23-10-2017",
@@ -1773,7 +1846,8 @@
     "iso": 200,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "78c96e69471fc325"
   },
   {
     "slug": "birding-at-you-04-11-2017",
@@ -1797,7 +1871,8 @@
     "iso": 800,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "ebe53322e41a31a3"
   },
   {
     "slug": "otters-04-11-2017",
@@ -1821,7 +1896,8 @@
     "iso": 800,
     "aperture": "f/5.6",
     "focalLength": "145 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "6500d72e106ffac4"
   },
   {
     "slug": "the-lisbon-cathedral-05-11-2017",
@@ -1845,7 +1921,8 @@
     "iso": 200,
     "aperture": "f/11",
     "focalLength": "88 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "b5fc07ca5af25e1b"
   },
   {
     "slug": "looking-around-16-12-2017",
@@ -1869,7 +1946,8 @@
     "iso": 800,
     "aperture": "f/6.3",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "922680ca8de01935"
   },
   {
     "slug": "debod-sunset-18-12-2017",
@@ -1893,7 +1971,8 @@
     "iso": 400,
     "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "38a5602bc63b80e8"
   },
   {
     "slug": "go-around-and-around-18-12-2017",
@@ -1917,7 +1996,8 @@
     "iso": 400,
     "aperture": "f/5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/13"
+    "shutterSpeed": "1/13",
+    "sourceHash": "4c5ee0f46cee2b9e"
   },
   {
     "slug": "temple-of-debod-18-12-2017",
@@ -1941,7 +2021,8 @@
     "iso": 400,
     "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "299991767b1e5048"
   },
   {
     "slug": "cozy-spot-14-01-2018",
@@ -1965,7 +2046,8 @@
     "iso": 800,
     "aperture": "f/3.5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "a1ab682cb33a5495"
   },
   {
     "slug": "misty-hills-21-01-2018",
@@ -1989,7 +2071,8 @@
     "iso": 100,
     "aperture": "f/5",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "650b606281fc13c6"
   },
   {
     "slug": "waterdrop-21-01-2018",
@@ -2013,7 +2096,8 @@
     "iso": 1000,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "3074c4260f6ac6fd"
   },
   {
     "slug": "arrabida-27-01-2018",
@@ -2037,7 +2121,8 @@
     "iso": 125,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/8"
+    "shutterSpeed": "1/8",
+    "sourceHash": "a71f1558e2cfc99a"
   },
   {
     "slug": "stopped-in-movement-02-02-2018",
@@ -2061,7 +2146,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "4s"
+    "shutterSpeed": "4s",
+    "sourceHash": "961de390d827694d"
   },
   {
     "slug": "symmetry-03-02-2018",
@@ -2085,7 +2171,8 @@
     "iso": 800,
     "aperture": "f/11",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "8522c07359077a01"
   },
   {
     "slug": "wild-river-11-02-2018",
@@ -2109,7 +2196,8 @@
     "iso": 320,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "416248611b24d2c5"
   },
   {
     "slug": "wilderness-11-02-2018",
@@ -2133,7 +2221,8 @@
     "iso": 640,
     "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "93986102e220642c"
   },
   {
     "slug": "sundown-12-02-2018",
@@ -2157,7 +2246,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "5f04e15cdc2d0f60"
   },
   {
     "slug": "against-the-lighthouse-11-03-2018",
@@ -2181,7 +2271,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "100 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "fc06897864f98026"
   },
   {
     "slug": "against-the-tide-11-03-2018",
@@ -2205,7 +2296,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "5671ca3ca6bcab8f"
   },
   {
     "slug": "city-flow-26-03-2018",
@@ -2229,7 +2321,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "0d542b222435b6b4"
   },
   {
     "slug": "frankfurtscape-26-03-2018",
@@ -2253,7 +2346,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "6283eeefe1df34e9"
   },
   {
     "slug": "looking-down-28-03-2018",
@@ -2277,7 +2371,8 @@
     "iso": 125,
     "aperture": "f/5.6",
     "focalLength": "76 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "f6d784455e6a64aa"
   },
   {
     "slug": "arriving-to-koln-30-03-2018",
@@ -2301,7 +2396,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "a1e794feb49f4317"
   },
   {
     "slug": "silent-pathways-22-04-2018",
@@ -2325,7 +2421,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "a00789a845d52f1d"
   },
   {
     "slug": "stone-house-22-04-2018",
@@ -2349,7 +2446,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "129 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "946eb2019dab51bd"
   },
   {
     "slug": "waterfall-22-04-2018",
@@ -2373,7 +2471,8 @@
     "iso": 200,
     "aperture": "f/16",
     "focalLength": "42 mm",
-    "shutterSpeed": "1/6"
+    "shutterSpeed": "1/6",
+    "sourceHash": "695e59a0ae46cecf"
   },
   {
     "slug": "wind-harvesting-22-04-2018",
@@ -2397,7 +2496,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "f7247c84f5404939"
   },
   {
     "slug": "kastelsmllen-08-05-2018",
@@ -2421,7 +2521,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "93e2528c655d9069"
   },
   {
     "slug": "nyhavn-08-05-2018",
@@ -2445,7 +2546,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "d5d65982596e3b48"
   },
   {
     "slug": "elsinore-09-05-2018",
@@ -2469,7 +2571,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "a4835840e6831a16"
   },
   {
     "slug": "meadow-03-06-2018",
@@ -2493,7 +2596,8 @@
     "iso": 100,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/3200"
+    "shutterSpeed": "1/3200",
+    "sourceHash": "22393ba79d46a094"
   },
   {
     "slug": "wild-rose-03-06-2018",
@@ -2517,7 +2621,8 @@
     "iso": 100,
     "aperture": "f/2",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/2000"
+    "shutterSpeed": "1/2000",
+    "sourceHash": "9f6c366bafd4b067"
   },
   {
     "slug": "black-looking-30-06-2018",
@@ -2541,7 +2646,8 @@
     "iso": 3200,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "f0b6796b6c873a49"
   },
   {
     "slug": "shore-30-06-2018",
@@ -2565,7 +2671,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "22 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "885ab567b1a14de7"
   },
   {
     "slug": "among-giants-14-07-2018",
@@ -2589,7 +2696,8 @@
     "iso": 250,
     "aperture": "f/10",
     "focalLength": "30 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "f7651379eee09fac"
   },
   {
     "slug": "donkeys-14-07-2018",
@@ -2613,7 +2721,8 @@
     "iso": 250,
     "aperture": "f/7.1",
     "focalLength": "111 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "dd67d81900c252c0"
   },
   {
     "slug": "fisgas-de-ermelo-14-07-2018",
@@ -2637,7 +2746,8 @@
     "iso": 250,
     "aperture": "f/9",
     "focalLength": "29 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "485c394dcf5b206a"
   },
   {
     "slug": "goats-hike-14-07-2018",
@@ -2661,7 +2771,8 @@
     "iso": 250,
     "aperture": "f/8",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "f1196f1372fddaae"
   },
   {
     "slug": "hot-land-14-07-2018",
@@ -2685,7 +2796,8 @@
     "iso": 250,
     "aperture": "f/22",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "bca149357dd2c2c1"
   },
   {
     "slug": "lightway-14-07-2018",
@@ -2709,7 +2821,8 @@
     "iso": 250,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/13"
+    "shutterSpeed": "1/13",
+    "sourceHash": "0911c5c4ebcc52a5"
   },
   {
     "slug": "lucanus-cervus-14-07-2018",
@@ -2733,7 +2846,8 @@
     "iso": 250,
     "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "935ebb2a85848875"
   },
   {
     "slug": "the-woods-14-07-2018",
@@ -2757,7 +2871,8 @@
     "iso": 250,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "b79775750ff206a6"
   },
   {
     "slug": "through-the-rocks-14-07-2018",
@@ -2781,7 +2896,8 @@
     "iso": 250,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "70b1dab3d18c8582"
   },
   {
     "slug": "to-somewhere-14-07-2018",
@@ -2805,7 +2921,8 @@
     "iso": 160,
     "aperture": "f/13",
     "focalLength": "176 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "17e1156d7d887b85"
   },
   {
     "slug": "way-home-14-07-2018",
@@ -2829,7 +2946,8 @@
     "iso": 250,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "559a4d75e72a4bff"
   },
   {
     "slug": "wild-lagoon-14-07-2018",
@@ -2853,7 +2971,8 @@
     "iso": 250,
     "aperture": "f/14",
     "focalLength": "73 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "d306728733557379"
   },
   {
     "slug": "old-fly-21-07-2018",
@@ -2877,7 +2996,8 @@
     "iso": 250,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "7e2c2ec2e59ed682"
   },
   {
     "slug": "orange-and-spikes-21-07-2018",
@@ -2901,7 +3021,8 @@
     "iso": 250,
     "aperture": "f/7.1",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "7038398bd63d8d37"
   },
   {
     "slug": "pathway-21-07-2018",
@@ -2925,7 +3046,8 @@
     "iso": 250,
     "aperture": "f/11",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "4d6a8ab16677badf"
   },
   {
     "slug": "juvenile-frog-28-07-2018",
@@ -2949,7 +3071,8 @@
     "iso": 250,
     "aperture": "f/5.6",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "cc3e0a956d1889d1"
   },
   {
     "slug": "high-castle-02-08-2018",
@@ -2973,7 +3096,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "92 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "f912f262d267ff6e"
   },
   {
     "slug": "lost-boat-03-08-2018",
@@ -2997,7 +3121,8 @@
     "iso": 640,
     "aperture": "f/5.6",
     "focalLength": "68 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "8feae6a24c242a15"
   },
   {
     "slug": "orange-horizon-03-08-2018",
@@ -3021,7 +3146,8 @@
     "iso": 640,
     "aperture": "f/8",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "1e3fbbe91c5d9c94"
   },
   {
     "slug": "porto-coastline-03-08-2018",
@@ -3045,7 +3171,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "28 mm",
-    "shutterSpeed": "13s"
+    "shutterSpeed": "13s",
+    "sourceHash": "2c9c99fb28f7f212"
   },
   {
     "slug": "mountain-windmill-10-08-2018",
@@ -3069,7 +3196,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "48 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "9b4b1101b70b4683"
   },
   {
     "slug": "among-mounains-11-08-2018",
@@ -3093,7 +3221,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "28 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "c1524a8497b2c83c"
   },
   {
     "slug": "farming-shelter-11-08-2018",
@@ -3117,7 +3246,8 @@
     "iso": 100,
     "aperture": "f/16",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "0acde8eb2de0d0ee"
   },
   {
     "slug": "sunscape-11-08-2018",
@@ -3141,7 +3271,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "61 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "785c165e542c4abc"
   },
   {
     "slug": "castle-of-lousa-18-08-2018",
@@ -3165,7 +3296,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "63 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "9fe3b30b0e6d8c7c"
   },
   {
     "slug": "sly-looking-fox-18-08-2018",
@@ -3189,7 +3321,8 @@
     "iso": 100,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "b752604824fe0354"
   },
   {
     "slug": "lost-in-time-19-08-2018",
@@ -3213,7 +3346,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "30 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "ce9b85dbcbf55943"
   },
   {
     "slug": "schist-alley-19-08-2018",
@@ -3237,7 +3371,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "ef610ff42c2d8fbd"
   },
   {
     "slug": "schist-village-19-08-2018",
@@ -3261,7 +3396,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "b44b2c5c13b15431"
   },
   {
     "slug": "shining-grasshopper-19-08-2018",
@@ -3285,7 +3421,8 @@
     "iso": 200,
     "aperture": "f/6.3",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "e405d0d1b9e12950"
   },
   {
     "slug": "into-the-storm-22-08-2018",
@@ -3309,7 +3446,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "567cd9f0f5812e4c"
   },
   {
     "slug": "moutain-roadway-22-08-2018",
@@ -3333,7 +3471,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "44 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "bca81c682a7ea737"
   },
   {
     "slug": "road-to-the-other-side-22-08-2018",
@@ -3357,7 +3496,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "8af30315c904406d"
   },
   {
     "slug": "the-mountains-are-calling-22-08-2018",
@@ -3381,7 +3521,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "923629682730e676"
   },
   {
     "slug": "castle-of-sortelha-23-08-2018",
@@ -3405,7 +3546,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "29 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "348ed599c049cfd8"
   },
   {
     "slug": "centum-cellas-23-08-2018",
@@ -3429,7 +3571,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "6d60219db336a07e"
   },
   {
     "slug": "monarch-23-08-2018",
@@ -3453,7 +3596,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "307da7035e1d4afc"
   },
   {
     "slug": "moutain-valley-24-08-2018",
@@ -3477,7 +3621,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "45 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "aa127369d9f0d6d0"
   },
   {
     "slug": "nature-reflections-24-08-2018",
@@ -3501,7 +3646,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "766de9304973ee98"
   },
   {
     "slug": "red-firefly-24-08-2018",
@@ -3525,7 +3671,8 @@
     "iso": 400,
     "aperture": "f/9",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/500"
+    "shutterSpeed": "1/500",
+    "sourceHash": "9497fa622a87bcbd"
   },
   {
     "slug": "forgotten-in-time-25-08-2018",
@@ -3549,7 +3696,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "94103aa23ee0b524"
   },
   {
     "slug": "layers-25-08-2018",
@@ -3573,7 +3721,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "123 mm",
-    "shutterSpeed": "1/800"
+    "shutterSpeed": "1/800",
+    "sourceHash": "163e38756328986a"
   },
   {
     "slug": "summer-trails-26-08-2018",
@@ -3597,7 +3746,8 @@
     "iso": 1600,
     "aperture": "f/22",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "916d45d52af69407"
   },
   {
     "slug": "hoverbee-09-09-2018",
@@ -3621,7 +3771,8 @@
     "iso": 400,
     "aperture": "f/9",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "ab12c94615b01b8d"
   },
   {
     "slug": "wallflower-30-09-2018",
@@ -3645,7 +3796,8 @@
     "iso": 160,
     "aperture": "f/5.6",
     "focalLength": "96 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "760e71957a541196"
   },
   {
     "slug": "falling-in-bokeh-14-10-2018",
@@ -3669,7 +3821,8 @@
     "iso": 800,
     "aperture": "f/5",
     "focalLength": "61 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "ea854f74f0e28aea"
   },
   {
     "slug": "among-the-fallen-28-10-2018",
@@ -3693,7 +3846,8 @@
     "iso": 500,
     "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "5f0e6e87e679b11b"
   },
   {
     "slug": "fallset-01-11-2018",
@@ -3717,7 +3871,8 @@
     "iso": 250,
     "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "c3fd093beef032e9"
   },
   {
     "slug": "golden-reflections-01-11-2018",
@@ -3741,7 +3896,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "d9b0d248a6e702af"
   },
   {
     "slug": "lights-and-shadows-01-11-2018",
@@ -3765,7 +3921,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "6e23575b938130f2"
   },
   {
     "slug": "root-squirrel-01-11-2018",
@@ -3789,7 +3946,8 @@
     "iso": 2500,
     "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "c5cf569cba411a32"
   },
   {
     "slug": "flowing-through-the-woods-03-11-2018",
@@ -3813,7 +3971,8 @@
     "iso": 640,
     "aperture": "f/10",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "09aab404f33a20db"
   },
   {
     "slug": "autumn-mushrooms-25-11-2018",
@@ -3837,7 +3996,8 @@
     "iso": 100,
     "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "dfda6f0e2b275987"
   },
   {
     "slug": "rainy-days-25-11-2018",
@@ -3861,7 +4021,8 @@
     "iso": 100,
     "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "0271e7ab8e69d8ad"
   },
   {
     "slug": "forgotten-railway-27-12-2018",
@@ -3885,7 +4046,8 @@
     "iso": 100,
     "aperture": "f/32",
     "focalLength": "48 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "d6755bf5d2286082"
   },
   {
     "slug": "alps-landscapes-03-01-2019",
@@ -3909,7 +4071,8 @@
     "iso": 200,
     "aperture": "f/20",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "3c89c21c08e7548f"
   },
   {
     "slug": "alpsee-03-01-2019",
@@ -3933,7 +4096,8 @@
     "iso": 100,
     "aperture": "f/25",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "72144f334fac2689"
   },
   {
     "slug": "high-peak-03-01-2019",
@@ -3957,7 +4121,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "123 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "5172190976f4fd30"
   },
   {
     "slug": "lost-in-white-03-01-2019",
@@ -3981,7 +4146,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "36af73d3e4b1f1fe"
   },
   {
     "slug": "neuschwanstein-castle-03-01-2019",
@@ -4005,7 +4171,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "88 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "a036d7255e469d3e"
   },
   {
     "slug": "snow-in-the-high-mountains-03-01-2019",
@@ -4029,7 +4196,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "087904fa7abca900"
   },
   {
     "slug": "the-old-harbor-03-01-2019",
@@ -4053,7 +4221,8 @@
     "iso": 640,
     "aperture": "f/25",
     "focalLength": "46 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "2e872f8dfd1261b4"
   },
   {
     "slug": "the-small-cabin-in-the-snow-03-01-2019",
@@ -4077,7 +4246,8 @@
     "iso": null,
     "aperture": null,
     "focalLength": null,
-    "shutterSpeed": null
+    "shutterSpeed": null,
+    "sourceHash": "0bcc6b77f05e1919"
   },
   {
     "slug": "spring-creek-23-02-2019",
@@ -4101,7 +4271,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "21 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "f97c7b63a0514684"
   },
   {
     "slug": "a-game-of-reflections-02-03-2019",
@@ -4125,7 +4296,8 @@
     "iso": 1000,
     "aperture": "f/22",
     "focalLength": "36 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "6c7f0a72c7291e14"
   },
   {
     "slug": "between-forests-and-mountains-02-03-2019",
@@ -4149,7 +4321,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "b2fc4a13f23fb3a4"
   },
   {
     "slug": "foggy-peaks-02-03-2019",
@@ -4173,7 +4346,8 @@
     "iso": 320,
     "aperture": "f/16",
     "focalLength": "111 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "ee9dd4f81396abca"
   },
   {
     "slug": "go-with-the-flow-02-03-2019",
@@ -4197,7 +4371,8 @@
     "iso": 125,
     "aperture": "f/16",
     "focalLength": "20 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "ad70f9c8e6575429"
   },
   {
     "slug": "silent-alps-02-03-2019",
@@ -4221,7 +4396,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "30 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "ddd542cd3861fbb2"
   },
   {
     "slug": "st-bartholomew-02-03-2019",
@@ -4245,7 +4421,8 @@
     "iso": 160,
     "aperture": "f/10",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "5cc78553ed412d49"
   },
   {
     "slug": "winter-tales-02-03-2019",
@@ -4269,7 +4446,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "aaecb4709d253837"
   },
   {
     "slug": "red-tower-03-03-2019",
@@ -4293,7 +4471,8 @@
     "iso": 250,
     "aperture": "f/18",
     "focalLength": "70 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "153b939d9174a4ca"
   },
   {
     "slug": "dear-deers-06-03-2019",
@@ -4317,7 +4496,8 @@
     "iso": 640,
     "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "27a0799bbeebf99e"
   },
   {
     "slug": "little-spring-06-03-2019",
@@ -4341,7 +4521,8 @@
     "iso": 160,
     "aperture": "f/6",
     "focalLength": "176 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "372f1ba165143c7d"
   },
   {
     "slug": "spring-land-06-03-2019",
@@ -4365,7 +4546,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "105 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "160e0412560a3aa3"
   },
   {
     "slug": "westpark-06-03-2019",
@@ -4389,7 +4571,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "aab5f50f7776b640"
   },
   {
     "slug": "foggy-waves-13-04-2019",
@@ -4413,7 +4596,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "42 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "2adfe65ca843f438"
   },
   {
     "slug": "hidden-frog-19-04-2019",
@@ -4437,7 +4621,8 @@
     "iso": 2000,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "a64f98290251d5ab"
   },
   {
     "slug": "high-mountains-of-portugal-19-04-2019",
@@ -4461,7 +4646,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "154 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "2268600a5b651821"
   },
   {
     "slug": "sheep-farm-19-04-2019",
@@ -4485,7 +4671,8 @@
     "iso": 100,
     "aperture": "f/5.6",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "ecd48ee4271dc39c"
   },
   {
     "slug": "spring-trails-19-04-2019",
@@ -4509,7 +4696,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "38 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "46faeac3f7da0ebe"
   },
   {
     "slug": "wild-roaming-19-04-2019",
@@ -4533,7 +4721,8 @@
     "iso": 125,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "982686db771b9188"
   },
   {
     "slug": "knossoos-04-05-2019",
@@ -4557,7 +4746,8 @@
     "iso": 125,
     "aperture": "f/32",
     "focalLength": "44 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "129628fc7efdab7a"
   },
   {
     "slug": "orange-contrasts-04-05-2019",
@@ -4581,7 +4771,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "0c30f17f75f6a121"
   },
   {
     "slug": "wild-complexity-04-05-2019",
@@ -4605,7 +4796,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "e888287a2449689c"
   },
   {
     "slug": "dark-orange-05-05-2019",
@@ -4629,7 +4821,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "140 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "3e551d67fa5a68fd"
   },
   {
     "slug": "lizard-05-05-2019",
@@ -4653,7 +4846,8 @@
     "iso": 500,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "c374cb00637a9ec8"
   },
   {
     "slug": "olive-valley-05-05-2019",
@@ -4677,7 +4871,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "46 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "7a097727773f6b36"
   },
   {
     "slug": "lost-in-the-valley-11-05-2019",
@@ -4701,7 +4896,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "f2d12d943ca75fd1"
   },
   {
     "slug": "oak-trail-11-05-2019",
@@ -4725,7 +4921,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "50fee13189a50a9e"
   },
   {
     "slug": "bee-takeoff-15-06-2019",
@@ -4749,7 +4946,8 @@
     "iso": 125,
     "aperture": "f/1",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "de13668fcba08edf"
   },
   {
     "slug": "flying-in-chaos-15-06-2019",
@@ -4773,7 +4971,8 @@
     "iso": 125,
     "aperture": "f/1.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/1250"
+    "shutterSpeed": "1/1250",
+    "sourceHash": "757b56fd078fcfe0"
   },
   {
     "slug": "the-old-monastery-15-06-2019",
@@ -4797,7 +4996,8 @@
     "iso": 100,
     "aperture": "f/2.8",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/2000"
+    "shutterSpeed": "1/2000",
+    "sourceHash": "ba27b09689b5cc2c"
   },
   {
     "slug": "felgueiras-lighthouse-24-06-2019",
@@ -4821,7 +5021,8 @@
     "iso": 100,
     "aperture": "f/16",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/Infinity"
+    "shutterSpeed": "1/Infinity",
+    "sourceHash": "f32b21b46dd53995"
   },
   {
     "slug": "bokeh-dragonfly-25-07-2019",
@@ -4845,7 +5046,8 @@
     "iso": 200,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "c62afbd0fbae8bdb"
   },
   {
     "slug": "summer-thunderstorms-26-07-2019",
@@ -4869,7 +5071,8 @@
     "iso": 250,
     "aperture": "f/22",
     "focalLength": "30 mm",
-    "shutterSpeed": "30s"
+    "shutterSpeed": "30s",
+    "sourceHash": "eb994ac68cc3b04b"
   },
   {
     "slug": "safe-harbor-03-08-2019",
@@ -4893,7 +5096,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "96 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "71d44b69ff58c91d"
   },
   {
     "slug": "mountains-and-castles-09-08-2019",
@@ -4917,7 +5121,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "21 mm",
-    "shutterSpeed": "1/14"
+    "shutterSpeed": "1/14",
+    "sourceHash": "2df6d274f8b95e69"
   },
   {
     "slug": "green-palette-10-08-2019",
@@ -4941,7 +5146,8 @@
     "iso": 200,
     "aperture": "f/10",
     "focalLength": "56 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "1a5df7ff7cfccc21"
   },
   {
     "slug": "high-in-the-cloud-10-08-2019",
@@ -4965,7 +5171,8 @@
     "iso": 200,
     "aperture": "f/10",
     "focalLength": "88 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "a8878a8a957b0687"
   },
   {
     "slug": "mist-among-giants-10-08-2019",
@@ -4989,7 +5196,8 @@
     "iso": 200,
     "aperture": "f/10",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/640"
+    "shutterSpeed": "1/640",
+    "sourceHash": "e3e55ae5168e383f"
   },
   {
     "slug": "neuschwanstein-lands-10-08-2019",
@@ -5013,7 +5221,8 @@
     "iso": 400,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "b570135aef1988b4"
   },
   {
     "slug": "yellow-castle-in-the-mist-10-08-2019",
@@ -5037,7 +5246,8 @@
     "iso": 320,
     "aperture": "f/5.6",
     "focalLength": "111 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "5652d1df5e0133d1"
   },
   {
     "slug": "looking-back-11-08-2019",
@@ -5061,7 +5271,8 @@
     "iso": 1250,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "86dac77924bf5f63"
   },
   {
     "slug": "tree-squirrel-14-08-2019",
@@ -5085,7 +5296,8 @@
     "iso": 1600,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "1c5f2954e667e78f"
   },
   {
     "slug": "winding-trail-14-08-2019",
@@ -5109,7 +5321,8 @@
     "iso": 500,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "a4ea51f2ec48bfb6"
   },
   {
     "slug": "enchanted-trails-15-08-2019",
@@ -5133,7 +5346,8 @@
     "iso": 800,
     "aperture": "f/16",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "b3fc20ed017d8682"
   },
   {
     "slug": "the-old-barn-15-08-2019",
@@ -5157,7 +5371,8 @@
     "iso": 200,
     "aperture": "f/10",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/640"
+    "shutterSpeed": "1/640",
+    "sourceHash": "43bcb3a7a5f32e2a"
   },
   {
     "slug": "webmaker-16-08-2019",
@@ -5181,7 +5396,8 @@
     "iso": 200,
     "aperture": "f/11",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/800"
+    "shutterSpeed": "1/800",
+    "sourceHash": "f06995eec5726336"
   },
   {
     "slug": "summer-dragonfly-17-08-2019",
@@ -5205,7 +5421,8 @@
     "iso": 125,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "c18ccd6bd6916355"
   },
   {
     "slug": "zurich-from-above-21-08-2019",
@@ -5229,7 +5446,8 @@
     "iso": 100,
     "aperture": "f/16",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/31"
+    "shutterSpeed": "1/31",
+    "sourceHash": "3b0980ce3f402755"
   },
   {
     "slug": "water-trees-and-mountains-23-08-2019",
@@ -5253,7 +5471,8 @@
     "iso": 400,
     "aperture": "f/16",
     "focalLength": "35 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "378932f9ce410997"
   },
   {
     "slug": "flow-24-08-2019",
@@ -5277,7 +5496,8 @@
     "iso": 1000,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/6"
+    "shutterSpeed": "1/6",
+    "sourceHash": "656b85707ebdd9ce"
   },
   {
     "slug": "frozen-water-24-08-2019",
@@ -5301,7 +5521,8 @@
     "iso": 1000,
     "aperture": "f/7.1",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "1eff281391dc79ba"
   },
   {
     "slug": "giants-reflection-24-08-2019",
@@ -5325,7 +5546,8 @@
     "iso": 250,
     "aperture": "f/11",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "13967adc04707844"
   },
   {
     "slug": "high-mountains-of-germany-24-08-2019",
@@ -5349,7 +5571,8 @@
     "iso": 400,
     "aperture": "f/13",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "94d2f1b83801c3f8"
   },
   {
     "slug": "in-between-24-08-2019",
@@ -5373,7 +5596,8 @@
     "iso": 1000,
     "aperture": "f/7.1",
     "focalLength": "30 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "40250f6f65cc08ae"
   },
   {
     "slug": "little-one-24-08-2019",
@@ -5397,7 +5621,8 @@
     "iso": 400,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "d1e86da5040aa52f"
   },
   {
     "slug": "teal-and-woods-24-08-2019",
@@ -5421,7 +5646,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "46 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "55d9c50d24bf0f25"
   },
   {
     "slug": "down-we-go-23-02-2020",
@@ -5445,7 +5671,8 @@
     "iso": 500,
     "aperture": "f/16",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "ed7a867d83f5d038"
   },
   {
     "slug": "a-game-of-light-and-shadows-24-02-2020",
@@ -5469,7 +5696,8 @@
     "iso": 160,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "1e7d79cf6c223b7d"
   },
   {
     "slug": "little-waterfall-24-02-2020",
@@ -5493,7 +5721,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "97bce0f4c8494e38"
   },
   {
     "slug": "sunshine-24-02-2020",
@@ -5517,7 +5746,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "f7f624dc529e70c5"
   },
   {
     "slug": "follow-the-wind-09-06-2020",
@@ -5541,7 +5771,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "56 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "052012c902df26a2"
   },
   {
     "slug": "red-sun-09-06-2020",
@@ -5565,7 +5796,8 @@
     "iso": 800,
     "aperture": "f/8",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/500"
+    "shutterSpeed": "1/500",
+    "sourceHash": "cf0df5e35c1f57d3"
   },
   {
     "slug": "sunset-glow-09-06-2020",
@@ -5589,7 +5821,8 @@
     "iso": 125,
     "aperture": "f/11",
     "focalLength": "117 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "9b04ac11aac5d12c"
   },
   {
     "slug": "the-old-windmill-13-08-2020",
@@ -5613,7 +5846,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "c00114cb6c57f37e"
   },
   {
     "slug": "obidos-14-08-2020",
@@ -5637,7 +5871,8 @@
     "iso": 100,
     "aperture": "f/6.3",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "8287518f680bdfad"
   },
   {
     "slug": "red-dragonfly-14-08-2020",
@@ -5661,7 +5896,8 @@
     "iso": 640,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/3200"
+    "shutterSpeed": "1/3200",
+    "sourceHash": "31597f20581cf1fa"
   },
   {
     "slug": "alone-olive-15-08-2020",
@@ -5685,7 +5921,8 @@
     "iso": 200,
     "aperture": "f/7.1",
     "focalLength": "117 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "37a9aa6bd71fc4e8"
   },
   {
     "slug": "black-on-yellow-15-08-2020",
@@ -5709,7 +5946,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "3ff4bf4db517e3d5"
   },
   {
     "slug": "fornea-amphitheatre-15-08-2020",
@@ -5733,7 +5971,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "1ef8bd36895af5b9"
   },
   {
     "slug": "fields-of-contrast-16-08-2020",
@@ -5757,7 +5996,8 @@
     "iso": 100,
     "aperture": "f/29",
     "focalLength": "65 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "03332690792c9c21"
   },
   {
     "slug": "tones-of-brown-16-08-2020",
@@ -5781,7 +6021,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "d0003a1bcec426c2"
   },
   {
     "slug": "autumn-reflections-22-08-2020",
@@ -5805,7 +6046,8 @@
     "iso": 640,
     "aperture": "f/10",
     "focalLength": "20 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "ccc5161ddaa13a68"
   },
   {
     "slug": "brook-bridge-22-08-2020",
@@ -5829,7 +6071,8 @@
     "iso": 640,
     "aperture": "f/14",
     "focalLength": "28 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "8a164d3eb3c4cfbe"
   },
   {
     "slug": "last-days-of-summer-22-08-2020",
@@ -5853,7 +6096,8 @@
     "iso": 320,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "44889401cf129ea8"
   },
   {
     "slug": "horses-05-09-2020",
@@ -5877,7 +6121,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "e63b65907c4b224e"
   },
   {
     "slug": "mountains-of-yellow-and-purple-10-04-2021",
@@ -5901,7 +6146,8 @@
     "iso": 100,
     "aperture": "f/16",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "fc17e0c4c59596c9"
   },
   {
     "slug": "brown-and-white-18-04-2021",
@@ -5925,7 +6171,8 @@
     "iso": 160,
     "aperture": "f/5.6",
     "focalLength": "96 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "11939e4f2e18ebe2"
   },
   {
     "slug": "walk-by-the-mist-18-04-2021",
@@ -5949,7 +6196,8 @@
     "iso": 125,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "744027ccf182f95d"
   },
   {
     "slug": "wings-wide-open-18-04-2021",
@@ -5973,7 +6221,8 @@
     "iso": 100,
     "aperture": "f/6.3",
     "focalLength": "190 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "58c8f7e3440e22dd"
   },
   {
     "slug": "asphalt-serpentine-23-04-2021",
@@ -5997,7 +6246,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "181 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "26e1407621334e5b"
   },
   {
     "slug": "fields-of-gold-23-04-2021",
@@ -6021,7 +6271,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "70 mm",
-    "shutterSpeed": "1/31"
+    "shutterSpeed": "1/31",
+    "sourceHash": "1bcc8be31b38c30f"
   },
   {
     "slug": "weathers-changing-23-04-2021",
@@ -6045,7 +6296,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "218cb640b6f6f0ee"
   },
   {
     "slug": "yellow-rain-roads-and-mountains-23-04-2021",
@@ -6069,7 +6321,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "22 mm",
-    "shutterSpeed": "1/14"
+    "shutterSpeed": "1/14",
+    "sourceHash": "7a4f0c5fe4d67906"
   },
   {
     "slug": "illuminated-waterfall-24-04-2021",
@@ -6093,7 +6346,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "3eb43cc560267bd8"
   },
   {
     "slug": "foggy-woods-25-04-2021",
@@ -6117,7 +6371,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "3f81a08f29163b00"
   },
   {
     "slug": "mountain-reflections-25-04-2021",
@@ -6141,7 +6396,8 @@
     "iso": 100,
     "aperture": "f/10.99",
     "focalLength": "20 mm",
-    "shutterSpeed": "1/9"
+    "shutterSpeed": "1/9",
+    "sourceHash": "18bc27ca5592f538"
   },
   {
     "slug": "moving-clouds-25-04-2021",
@@ -6165,7 +6421,8 @@
     "iso": 320,
     "aperture": "f/9",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "33c6de6006e252d2"
   },
   {
     "slug": "the-big-fall-25-04-2021",
@@ -6189,7 +6446,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "32 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "f53f031ea0a582a1"
   },
   {
     "slug": "woodland-mist-25-04-2021",
@@ -6213,7 +6471,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "19 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "eb48f9264bee4f8d"
   },
   {
     "slug": "minimal-wheat-04-07-2021",
@@ -6237,7 +6496,8 @@
     "iso": 100,
     "aperture": "f/33191",
     "focalLength": "123 mm",
-    "shutterSpeed": "1/199"
+    "shutterSpeed": "1/199",
+    "sourceHash": "e86caf9c73d3f8d0"
   },
   {
     "slug": "rabbit-rabbit-rabbit-22-08-2021",
@@ -6261,7 +6521,8 @@
     "iso": 160,
     "aperture": "f/11",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "1837df72fa5ef537"
   },
   {
     "slug": "the-village-in-the-castle-24-08-2021",
@@ -6285,7 +6546,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "29 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "139cc5736d1c3467"
   },
   {
     "slug": "waves-of-gold-24-08-2021",
@@ -6309,7 +6571,8 @@
     "iso": 100,
     "aperture": "f/10.99",
     "focalLength": "176 mm",
-    "shutterSpeed": "1/249"
+    "shutterSpeed": "1/249",
+    "sourceHash": "e48ac672df146059"
   },
   {
     "slug": "iberian-wolf-28-08-2021",
@@ -6333,7 +6596,8 @@
     "iso": 800,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "94eaad48b58001ec"
   },
   {
     "slug": "the-old-streets-of-spain-28-08-2021",
@@ -6357,7 +6621,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "de22cd075b049104"
   },
   {
     "slug": "first-colors-of-fall-18-09-2021",
@@ -6381,7 +6646,8 @@
     "iso": 800,
     "aperture": "f/14",
     "focalLength": "105 mm",
-    "shutterSpeed": "1/61"
+    "shutterSpeed": "1/61",
+    "sourceHash": "36f72503a1da688b"
   },
   {
     "slug": "lights-and-giants-18-09-2021",
@@ -6405,7 +6671,8 @@
     "iso": 160,
     "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/7"
+    "shutterSpeed": "1/7",
+    "sourceHash": "7901e1c38ca87259"
   },
   {
     "slug": "pineland-18-09-2021",
@@ -6429,7 +6696,8 @@
     "iso": 800,
     "aperture": "f/7.1",
     "focalLength": "117 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "85813461e981428d"
   },
   {
     "slug": "rest-in-the-mountains-18-09-2021",
@@ -6453,7 +6721,8 @@
     "iso": 800,
     "aperture": "f/9",
     "focalLength": "61 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "2e960c4a4ce3190c"
   },
   {
     "slug": "tunnel-in-the-rock-18-09-2021",
@@ -6477,7 +6746,8 @@
     "iso": 800,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "16bc1223b40a09d1"
   },
   {
     "slug": "red-mushroom-03-10-2021",
@@ -6501,7 +6771,8 @@
     "iso": 100,
     "aperture": "f/4",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "ee07a11e0e05fa5f"
   },
   {
     "slug": "shroom-shelter-07-10-2021",
@@ -6525,7 +6796,8 @@
     "iso": null,
     "aperture": null,
     "focalLength": null,
-    "shutterSpeed": null
+    "shutterSpeed": null,
+    "sourceHash": "ce91c339c2bd1d85"
   },
   {
     "slug": "autumn-versus-winter-10-10-2021",
@@ -6549,7 +6821,8 @@
     "iso": 320,
     "aperture": "f/9.999",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "2ed7ae99f4a73a0d"
   },
   {
     "slug": "last-train-home-13-11-2021",
@@ -6573,7 +6846,8 @@
     "iso": 100,
     "focalLength": "96 mm",
     "shutterSpeed": "1/125",
-    "aperture": null
+    "aperture": null,
+    "sourceHash": "a20268a34cf6a31e"
   },
   {
     "slug": "sundown-bridge-13-11-2021",
@@ -6597,7 +6871,8 @@
     "iso": 100,
     "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/39"
+    "shutterSpeed": "1/39",
+    "sourceHash": "5e79b707b33ac076"
   },
   {
     "slug": "down-the-hill-12-12-2021",
@@ -6621,7 +6896,8 @@
     "iso": 100,
     "aperture": "f/9.999",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "631f736aa8d4d2e6"
   },
   {
     "slug": "firewatch-01-01-2022",
@@ -6645,7 +6921,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "56 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "5d33274da651aed6"
   },
   {
     "slug": "all-around-mountains-12-02-2022",
@@ -6669,7 +6946,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "468a2517cdcb00ff"
   },
   {
     "slug": "high-mountains-of-portugal-12-02-2022",
@@ -6693,7 +6971,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "5119bffd2b469fa2"
   },
   {
     "slug": "mountain-watcher-12-02-2022",
@@ -6717,7 +6996,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "29 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "90f013074204512b"
   },
   {
     "slug": "the-forest-of-old-12-02-2022",
@@ -6741,7 +7021,8 @@
     "iso": 100,
     "aperture": "f/16",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/14"
+    "shutterSpeed": "1/14",
+    "sourceHash": "9041f7da8d5373c5"
   },
   {
     "slug": "from-above-13-02-2022",
@@ -6765,7 +7046,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "76 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "8caca6d29660d912"
   },
   {
     "slug": "flowing-among-giants-05-03-2022",
@@ -6789,7 +7071,8 @@
     "iso": 125,
     "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/3"
+    "shutterSpeed": "1/3",
+    "sourceHash": "a0bd08c9df3b12eb"
   },
   {
     "slug": "wild-road-23-04-2022",
@@ -6813,7 +7096,8 @@
     "iso": 200,
     "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/3"
+    "shutterSpeed": "1/3",
+    "sourceHash": "90c60b302e217f97"
   },
   {
     "slug": "summer-days-30-04-2022",
@@ -6837,7 +7121,8 @@
     "iso": 250,
     "aperture": "f/6.3",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/249"
+    "shutterSpeed": "1/249",
+    "sourceHash": "62019849628d9e89"
   },
   {
     "slug": "fairytale-bridge-01-05-2022",
@@ -6861,7 +7146,8 @@
     "iso": 400,
     "aperture": "f/9.999",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "2430cee9a707ffe8"
   },
   {
     "slug": "lost-waterfall-01-05-2022",
@@ -6885,7 +7171,8 @@
     "iso": 640,
     "aperture": "f/19.99",
     "focalLength": "44 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "d1e6bd7d88c56190"
   },
   {
     "slug": "minimal-fern-01-05-2022",
@@ -6909,7 +7196,8 @@
     "iso": 3200,
     "aperture": "f/5.6",
     "focalLength": "140 mm",
-    "shutterSpeed": "1/199"
+    "shutterSpeed": "1/199",
+    "sourceHash": "ed97ec2d960af6c0"
   },
   {
     "slug": "purple-blossom-01-05-2022",
@@ -6933,7 +7221,8 @@
     "iso": 400,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "b0ad0eb764442265"
   },
   {
     "slug": "old-watcher-02-05-2022",
@@ -6957,7 +7246,8 @@
     "iso": 100,
     "aperture": "f/21.99",
     "focalLength": "22 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "8094d40804901aff"
   },
   {
     "slug": "still-waterfall-02-05-2022",
@@ -6981,7 +7271,8 @@
     "iso": 100,
     "aperture": "f/10.99",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/3"
+    "shutterSpeed": "1/3",
+    "sourceHash": "fde85f8d61610177"
   },
   {
     "slug": "the-big-fall-03-05-2022",
@@ -7005,7 +7296,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/19"
+    "shutterSpeed": "1/19",
+    "sourceHash": "390614812ecbcfc0"
   },
   {
     "slug": "over-the-edge-05-05-2022",
@@ -7029,7 +7321,8 @@
     "iso": 100,
     "aperture": "f/10.99",
     "focalLength": "50 mm",
-    "shutterSpeed": "1/99"
+    "shutterSpeed": "1/99",
+    "sourceHash": "cad712f76ad3ad90"
   },
   {
     "slug": "overwatching-the-atlantic-05-05-2022",
@@ -7053,7 +7346,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/60"
+    "shutterSpeed": "1/60",
+    "sourceHash": "895f0e114f741f89"
   },
   {
     "slug": "the-moo-05-05-2022",
@@ -7077,7 +7371,8 @@
     "iso": 125,
     "aperture": "f/5.6",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/199"
+    "shutterSpeed": "1/199",
+    "sourceHash": "834688395746d0b5"
   },
   {
     "slug": "where-the-mountains-meet-the-sea-05-05-2022",
@@ -7101,7 +7396,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "27 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "2f0f96d96a8ea8e5"
   },
   {
     "slug": "mountains-skyline-21-01-2023",
@@ -7125,7 +7421,8 @@
     "iso": 100,
     "aperture": "f/20",
     "focalLength": "100 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "01df498800715192"
   },
   {
     "slug": "living-on-the-waterfall-22-01-2023",
@@ -7149,7 +7446,8 @@
     "iso": 100,
     "aperture": "f/29",
     "focalLength": "63 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "f01715bed6092310"
   },
   {
     "slug": "the-woods-19-02-2023",
@@ -7173,7 +7471,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "29 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "9d9d3f0138dc996b"
   },
   {
     "slug": "stream-flow-09-07-2023",
@@ -7197,7 +7496,8 @@
     "iso": 160,
     "aperture": "f/22",
     "focalLength": "19 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "09909a1fce12e75f"
   },
   {
     "slug": "the-river-wall-15-07-2023",
@@ -7221,7 +7521,8 @@
     "iso": 160,
     "aperture": "f/20",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "cc5a7ec8cdc3a3f1"
   },
   {
     "slug": "woodwalking-15-07-2023",
@@ -7245,7 +7546,8 @@
     "iso": 160,
     "aperture": "f/6",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "afe4e0f00025a4f8"
   },
   {
     "slug": "door-to-the-world-19-08-2023",
@@ -7269,7 +7571,8 @@
     "iso": 160,
     "aperture": "f/20",
     "focalLength": "27 mm",
-    "shutterSpeed": "1/125"
+    "shutterSpeed": "1/125",
+    "sourceHash": "8c81266003ce4b0b"
   },
   {
     "slug": "down-the-slope-19-08-2023",
@@ -7293,7 +7596,8 @@
     "iso": 160,
     "aperture": "f/22",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/2"
+    "shutterSpeed": "1/2",
+    "sourceHash": "5b96a7878f8339de"
   },
   {
     "slug": "moody-water-on-rocks-19-08-2023",
@@ -7317,7 +7621,8 @@
     "iso": 160,
     "aperture": "f/29",
     "focalLength": "40 mm",
-    "shutterSpeed": "1/13"
+    "shutterSpeed": "1/13",
+    "sourceHash": "ff954d33a7a63807"
   },
   {
     "slug": "the-village-on-the-riverbed-18-12-2023",
@@ -7341,7 +7646,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "61 mm",
-    "shutterSpeed": "1/6"
+    "shutterSpeed": "1/6",
+    "sourceHash": "28014d56576af82c"
   },
   {
     "slug": "flooded-23-12-2023",
@@ -7365,7 +7671,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "25 mm",
-    "shutterSpeed": "1s"
+    "shutterSpeed": "1s",
+    "sourceHash": "1b477f6f59510aa5"
   },
   {
     "slug": "follow-the-light-23-12-2023",
@@ -7389,7 +7696,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/6"
+    "shutterSpeed": "1/6",
+    "sourceHash": "4dd5e2e4a46d0262"
   },
   {
     "slug": "standing-tall-23-12-2023",
@@ -7413,7 +7721,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "36 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "6764ec7ccc5fb196"
   },
   {
     "slug": "the-chapel-on-the-hill-23-12-2023",
@@ -7437,7 +7746,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "22 mm",
-    "shutterSpeed": "1/50"
+    "shutterSpeed": "1/50",
+    "sourceHash": "f600d2743ea50bbd"
   },
   {
     "slug": "the-bench-on-the-mountain-27-12-2023",
@@ -7461,7 +7771,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "3b36508c6eaf8e70"
   },
   {
     "slug": "the-house-by-the-lake-27-12-2023",
@@ -7485,7 +7796,8 @@
     "iso": 640,
     "aperture": "f/10",
     "focalLength": "129 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "cad42675bee986db"
   },
   {
     "slug": "water-thunder-27-12-2023",
@@ -7509,7 +7821,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "e5ba46ccceec5eb6"
   },
   {
     "slug": "the-little-squirrel-by-the-stump-01-02-2024",
@@ -7533,7 +7846,8 @@
     "iso": 6400,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "e4877f8a5e24a480"
   },
   {
     "slug": "holding-on-02-02-2024",
@@ -7557,7 +7871,8 @@
     "iso": 200,
     "aperture": "f/6.3",
     "focalLength": "176 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "1a326ca7ceb26eb0"
   },
   {
     "slug": "dark-london-pier-03-02-2024",
@@ -7581,7 +7896,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/8"
+    "shutterSpeed": "1/8",
+    "sourceHash": "b43579377b55de96"
   },
   {
     "slug": "the-deer-is-watching-06-02-2024",
@@ -7605,7 +7921,8 @@
     "iso": 400,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "641908d5fe30f6b1"
   },
   {
     "slug": "follow-the-river-south-31-05-2024",
@@ -7629,7 +7946,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "96b4b75f0130be15"
   },
   {
     "slug": "in-spiral-caterpillar-01-06-2024",
@@ -7653,7 +7971,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "a47bf00fd20f20bf"
   },
   {
     "slug": "the-cow-and-the-tree-01-06-2024",
@@ -7677,7 +7996,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "68 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "ff18cf3a1406646f"
   },
   {
     "slug": "tree-on-the-horizon-01-06-2024",
@@ -7701,7 +8021,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "70 mm",
-    "shutterSpeed": "1/100"
+    "shutterSpeed": "1/100",
+    "sourceHash": "cf787659b61eae0b"
   },
   {
     "slug": "the-prey-13-07-2024",
@@ -7725,7 +8046,8 @@
     "iso": 640,
     "aperture": "f/7.1",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "4b3d3cf3d77bdecb"
   },
   {
     "slug": "ready-to-fly-25-08-2024",
@@ -7749,7 +8071,8 @@
     "iso": 100,
     "aperture": "f/7.1",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "ab05174cf3c94809"
   },
   {
     "slug": "ice-water-19-09-2024",
@@ -7773,7 +8096,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "41 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "663818be2991925f"
   },
   {
     "slug": "ice-wall-21-09-2024",
@@ -7797,7 +8121,8 @@
     "iso": 100,
     "aperture": "f/18",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/30"
+    "shutterSpeed": "1/30",
+    "sourceHash": "83f7746bb5cac5f6"
   },
   {
     "slug": "sailing-to-nowhere-21-09-2024",
@@ -7821,7 +8146,8 @@
     "iso": 320,
     "aperture": "f/6",
     "focalLength": "96 mm",
-    "shutterSpeed": "1/80"
+    "shutterSpeed": "1/80",
+    "sourceHash": "55e49e37b7c1b1bc"
   },
   {
     "slug": "the-high-peak-21-09-2024",
@@ -7845,7 +8171,8 @@
     "iso": 200,
     "aperture": "f/6",
     "focalLength": "186 mm",
-    "shutterSpeed": "1/200"
+    "shutterSpeed": "1/200",
+    "sourceHash": "571cf372709999b0"
   },
   {
     "slug": "the-glacier-22-09-2024",
@@ -7869,7 +8196,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "58 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "51b59c8422b6893b"
   },
   {
     "slug": "sailing-on-ice-24-09-2024",
@@ -7893,7 +8221,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "4688230efee28146"
   },
   {
     "slug": "the-ice-land-27-09-2024",
@@ -7917,7 +8246,8 @@
     "iso": 100,
     "aperture": "f/14",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "d9535105e82f02b6"
   },
   {
     "slug": "houses-of-the-artic-28-09-2024",
@@ -7941,7 +8271,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "912a163d55457404"
   },
   {
     "slug": "ice-coast-line-01-10-2024",
@@ -7965,7 +8296,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "18 mm",
-    "shutterSpeed": "Infinitys"
+    "shutterSpeed": "Infinitys",
+    "sourceHash": "0fb169fd5a5cb070"
   },
   {
     "slug": "ice-line-01-10-2024",
@@ -7989,7 +8321,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "4e216c7710f8833f"
   },
   {
     "slug": "of-ice-and-fire-01-10-2024",
@@ -8013,7 +8346,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "25 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "dfe140d14d2e4147"
   },
   {
     "slug": "the-house-on-ice-01-10-2024",
@@ -8037,7 +8371,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "186 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "c9e65a4ef62b7bdc"
   },
   {
     "slug": "little-houses-on-the-hill-05-10-2024",
@@ -8061,7 +8396,8 @@
     "iso": 160,
     "aperture": "f/8",
     "focalLength": "88 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "5a1e329085c6c096"
   },
   {
     "slug": "northen-red-veil-05-10-2024",
@@ -8085,7 +8421,8 @@
     "aperture": "f/3.2",
     "focalLength": "24 mm",
     "shutterSpeed": "10s",
-    "country": "Svalbard"
+    "country": "Svalbard",
+    "sourceHash": "67b1d4fb2dc21c59"
   },
   {
     "slug": "ice-fall-06-10-2024",
@@ -8109,7 +8446,8 @@
     "iso": 100,
     "aperture": "f/6",
     "focalLength": "24 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "2b3ec699849b86d0"
   },
   {
     "slug": "lost-in-the-fog-21-10-2024",
@@ -8133,7 +8471,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "23 mm",
-    "shutterSpeed": "1/4"
+    "shutterSpeed": "1/4",
+    "sourceHash": "4e7128cd4b3bfbaa"
   },
   {
     "slug": "golden-reflections-of-upcoming-dark-season-22-10-2024",
@@ -8157,7 +8496,8 @@
     "iso": 100,
     "aperture": "f/22",
     "focalLength": "38 mm",
-    "shutterSpeed": "1/5"
+    "shutterSpeed": "1/5",
+    "sourceHash": "cd47bc095a295016"
   },
   {
     "slug": "shouting-at-the-wind-22-10-2024",
@@ -8181,7 +8521,8 @@
     "iso": 5000,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "b1457843c98d4f6d"
   },
   {
     "slug": "lights-in-the-sky-24-10-2024",
@@ -8205,7 +8546,8 @@
     "iso": 4000,
     "aperture": "f/2.8",
     "focalLength": "24 mm",
-    "shutterSpeed": "Infinitys"
+    "shutterSpeed": "Infinitys",
+    "sourceHash": "0da3082ea825d21d"
   },
   {
     "slug": "cold-reflections-25-10-2024",
@@ -8229,7 +8571,8 @@
     "iso": 100,
     "aperture": "f/11",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/6"
+    "shutterSpeed": "1/6",
+    "sourceHash": "fcc4a00cf04cf34e"
   },
   {
     "slug": "resting-25-10-2024",
@@ -8253,7 +8596,8 @@
     "iso": 4000,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "edd180d33ede16d0"
   },
   {
     "slug": "floating-in-ice-15-12-2024",
@@ -8277,7 +8621,8 @@
     "iso": 160,
     "aperture": "f/7.1",
     "focalLength": "48 mm",
-    "shutterSpeed": "1/40"
+    "shutterSpeed": "1/40",
+    "sourceHash": "1978631dd92143de"
   },
   {
     "slug": "lighthouse-reflections-15-12-2024",
@@ -8301,7 +8646,8 @@
     "iso": 250,
     "aperture": "f/11",
     "focalLength": "56 mm",
-    "shutterSpeed": "1/15"
+    "shutterSpeed": "1/15",
+    "sourceHash": "d539dc01555230c2"
   },
   {
     "slug": "nazare-waters-22-02-2025",
@@ -8325,7 +8671,8 @@
     "iso": 100,
     "aperture": "f/13",
     "focalLength": "36 mm",
-    "shutterSpeed": "1/400"
+    "shutterSpeed": "1/400",
+    "sourceHash": "b872db7342a0bcb0"
   },
   {
     "slug": "up-the-tree-02-03-2025",
@@ -8349,7 +8696,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/25"
+    "shutterSpeed": "1/25",
+    "sourceHash": "d2885023a38a6c63"
   },
   {
     "slug": "yellow-field-roaming-02-05-2025",
@@ -8373,7 +8721,8 @@
     "iso": 400,
     "aperture": "f/5.6",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "0c46193950a9ff1f"
   },
   {
     "slug": "juvenile-bird-05-06-2025",
@@ -8397,7 +8746,8 @@
     "iso": 500,
     "aperture": "f/6.3",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "574a2d3439af2b4f"
   },
   {
     "slug": "321-take-off-10-06-2025",
@@ -8421,7 +8771,8 @@
     "iso": 160,
     "aperture": "f/6.3",
     "focalLength": "250 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "8a517fd9e2871820"
   },
   {
     "slug": "water-line-30-07-2025",
@@ -8445,7 +8796,8 @@
     "aperture": "f/6.3",
     "focalLength": "200 mm",
     "shutterSpeed": "1/250",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "8318e47c94413a6b"
   },
   {
     "slug": "water-vs-fire-30-07-2025",
@@ -8469,7 +8821,8 @@
     "aperture": "f/9",
     "focalLength": "58 mm",
     "shutterSpeed": "1/250",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "7e2be22e820fa025"
   },
   {
     "slug": "lighting-the-way-11-08-2025",
@@ -8493,7 +8846,8 @@
     "iso": 100,
     "aperture": "f/10",
     "focalLength": "56 mm",
-    "shutterSpeed": "1/20"
+    "shutterSpeed": "1/20",
+    "sourceHash": "872b7fc1f6e93fa7"
   },
   {
     "slug": "fishing-in-the-rocks-13-08-2025",
@@ -8517,7 +8871,8 @@
     "iso": 100,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "0b32b0f5b1fbe0c5"
   },
   {
     "slug": "african-sunset-14-08-2025",
@@ -8541,7 +8896,8 @@
     "iso": 100,
     "aperture": "f/9",
     "focalLength": "172 mm",
-    "shutterSpeed": "1/500"
+    "shutterSpeed": "1/500",
+    "sourceHash": "be030a7460fb6a88"
   },
   {
     "slug": "clouds-high-14-08-2025",
@@ -8565,7 +8921,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "28 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "4f72adfd6077b6eb"
   },
   {
     "slug": "departing-to-autumn-20-10-2025",
@@ -8589,7 +8946,8 @@
     "iso": 125,
     "aperture": "f/6.3",
     "focalLength": "186 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "4fb71856515f1d08"
   },
   {
     "slug": "colorful-mist-25-10-2025",
@@ -8613,7 +8971,8 @@
     "iso": 100,
     "aperture": "f/6.3",
     "focalLength": "200 mm",
-    "shutterSpeed": "1/320"
+    "shutterSpeed": "1/320",
+    "sourceHash": "e6f1f168d5dd8b32"
   },
   {
     "slug": "old-oak-lichen-14-02-2026",
@@ -8637,7 +8996,8 @@
     "iso": 320,
     "aperture": "f/6.3",
     "focalLength": "89 mm",
-    "shutterSpeed": "1/160"
+    "shutterSpeed": "1/160",
+    "sourceHash": "78ece4ef8c0689ec"
   },
   {
     "slug": "the-old-pathways-14-02-2026",
@@ -8661,7 +9021,8 @@
     "iso": 100,
     "aperture": "f/8",
     "focalLength": "18 mm",
-    "shutterSpeed": "1/10"
+    "shutterSpeed": "1/10",
+    "sourceHash": "3489beabc86ae4e7"
   },
   {
     "slug": "the-frog-16-04-2026",
@@ -8685,7 +9046,8 @@
     "iso": 160,
     "aperture": "f/5.6",
     "focalLength": "187 mm",
-    "shutterSpeed": "1/500"
+    "shutterSpeed": "1/500",
+    "sourceHash": "7a0734fe6efb7079"
   },
   {
     "slug": "sitting-on-a-branch-03-05-2026",
@@ -8709,7 +9071,8 @@
     "iso": 1600,
     "aperture": "f/6.3",
     "focalLength": "150 mm",
-    "shutterSpeed": "1/250"
+    "shutterSpeed": "1/250",
+    "sourceHash": "205ec3ae623a450b"
   },
   {
     "slug": "night-watch-12-07-2026",
@@ -8733,7 +9096,8 @@
     "aperture": "f/5.6",
     "focalLength": "250 mm",
     "shutterSpeed": "1/125",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "b0e6b7b69c4c79b9"
   },
   {
     "slug": "firefly-on-frame-21-07-2026",
@@ -8757,7 +9121,8 @@
     "aperture": "f/6.3",
     "focalLength": "115 mm",
     "shutterSpeed": "1/200",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "d2f1acfc1fa8242d"
   },
   {
     "slug": "old-forest-tales-and-trails-21-07-2026",
@@ -8781,7 +9146,8 @@
     "aperture": "f/20",
     "focalLength": "41 mm",
     "shutterSpeed": "1/5",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "29c1d0f651cd2080"
   },
   {
     "slug": "monochrome-on-twig-22-08-2026",
@@ -8805,7 +9171,8 @@
     "aperture": "f/10",
     "focalLength": "150 mm",
     "shutterSpeed": "1/125",
-    "country": "Portugal"
+    "country": "Portugal",
+    "sourceHash": "a761de32df23413e"
   },
   {
     "slug": "amagerbanen-29-08-2026",
@@ -8829,7 +9196,8 @@
     "aperture": "f/13",
     "focalLength": "64 mm",
     "shutterSpeed": "1/30",
-    "country": "Danmark"
+    "country": "Danmark",
+    "sourceHash": "52ddcba9d6d88abb"
   },
   {
     "slug": "fiskehejre-29-08-2026",
@@ -8853,7 +9221,8 @@
     "aperture": "f/6.3",
     "focalLength": "150 mm",
     "shutterSpeed": "1/320",
-    "country": "Danmark"
+    "country": "Danmark",
+    "sourceHash": "891115f93316fb59"
   },
   {
     "slug": "stromboli-in-orange-09-09-2026",
@@ -8877,6 +9246,7 @@
     "aperture": "f/11",
     "focalLength": "45 mm",
     "shutterSpeed": "1/40",
-    "country": "Italia"
+    "country": "Italia",
+    "sourceHash": "374aadc0d059e38c"
   }
 ]
