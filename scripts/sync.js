@@ -193,7 +193,8 @@ async function validateJPGs(files) {
 
     const lat = exif?.latitude;
     const lng = exif?.longitude;
-    if (lat == null || lng == null) issues.push('missing GPS');
+    const isNullIsland = lat != null && lng != null && Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001;
+    if (lat == null || lng == null || isNullIsland) issues.push('missing GPS');
 
     const make = exif?.Make || '';
     const model = exif?.Model || '';
@@ -569,7 +570,9 @@ async function main() {
     const focalLength = exif?.FocalLength != null ? `${Math.round(exif.FocalLength)} mm` : null;
     const shutterSpeed = formatShutterSpeed(exif?.ExposureTime);
 
-    if (isNew && (!date || lat == null || lng == null || !camera)) {
+    const hasValidGps = lat != null && lng != null && !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
+
+    if (isNew && (!date || !hasValidGps || !camera)) {
       console.log(`  ${idx} ✗ ${slug} — still missing required data after prompt, skipping`);
       skipped++;
       continue;
@@ -642,12 +645,12 @@ async function main() {
       }
 
       let location = null;
-      if (lat != null && lng != null) {
+      if (hasValidGps) {
         location = { lat, lng };
       }
 
       let country = prev.country ?? null;
-      if (isNew && lat != null && lng != null && !country) {
+      if (isNew && hasValidGps && !country) {
         country = await reverseGeocode(lat, lng);
       }
 

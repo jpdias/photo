@@ -200,14 +200,19 @@ async function main() {
     const lat = exif.lat;
     const lng = exif.lng;
 
+    const hasValidLocation =
+      lat != null &&
+      lng != null &&
+      !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
+
     // Reverse geocode GPS only if no previous location or coords changed
     let locationName = null;
     const coordsChanged =
-      prev?.location && (prev.location.lat !== lat || prev.location.lng !== lng);
-    const noPrevLocation = !prev?.location && lat != null && lng != null;
+      prev?.location && hasValidLocation && (prev.location.lat !== lat || prev.location.lng !== lng);
+    const noPrevLocation = !prev?.location && hasValidLocation;
 
     if (coordsChanged || noPrevLocation) {
-      if (lat != null && lng != null) {
+      if (hasValidLocation) {
         console.log(`  🌍 reverse geocoding ${lat.toFixed(4)}, ${lng.toFixed(4)}...`);
         locationName = await reverseGeocode(lat, lng);
         await sleep(1100); // Nominatim rate limit: 1 req/s
@@ -223,14 +228,13 @@ async function main() {
       description: prev?.description || '',
       category: prev?.category || 'uncategorized',
       tags: prev?.tags || [],
-      location:
-        lat != null && lng != null
-          ? {
-              name: locationName || prev?.location?.name || `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
-              lat,
-              lng,
-            }
-          : null,
+      location: hasValidLocation
+        ? {
+            name: locationName || prev?.location?.name || `${lat.toFixed(4)}, ${lng.toFixed(4)}`,
+            lat,
+            lng,
+          }
+        : null,
       date: exif.date || prev?.date || null,
       camera: exif.camera || prev?.camera || null,
       thumbnail: `${R2_PUBLIC_URL.replace(/\/$/, '')}/${THUMB_PREFIX}${slug}.webp`,
