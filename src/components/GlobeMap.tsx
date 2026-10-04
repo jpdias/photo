@@ -17,8 +17,8 @@ interface LocationGroup {
 
 const COUNTRY_CENTROIDS: Record<string, [number, number]> = {
   Austria: [47.594, 14.1246],
-  'Österreich': [47.594, 14.1246],
-  'Osterreich': [47.594, 14.1246],
+  Österreich: [47.594, 14.1246],
+  Osterreich: [47.594, 14.1246],
   Canada: [61.0667, -107.9917],
   'Cape Verde': [16.0001, -24.0084],
   Czechia: [49.7439, 15.3381],
@@ -37,7 +37,7 @@ const COUNTRY_CENTROIDS: Record<string, [number, number]> = {
   Portugal: [39.6622, -8.1354],
   Spain: [39.3261, -4.838],
   Espana: [39.3261, -4.838],
-  'España': [39.3261, -4.838],
+  España: [39.3261, -4.838],
   Svalbard: [78.7199, 20.3493],
   Switzerland: [46.7986, 8.232],
   Schweiz: [46.7986, 8.232],
