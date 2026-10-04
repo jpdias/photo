@@ -193,7 +193,8 @@ async function validateJPGs(files) {
 
     const lat = exif?.latitude;
     const lng = exif?.longitude;
-    const isNullIsland = lat != null && lng != null && Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001;
+    const isNullIsland =
+      lat != null && lng != null && Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001;
     if (lat == null || lng == null || isNullIsland) issues.push('missing GPS');
 
     const make = exif?.Make || '';
@@ -570,7 +571,8 @@ async function main() {
     const focalLength = exif?.FocalLength != null ? `${Math.round(exif.FocalLength)} mm` : null;
     const shutterSpeed = formatShutterSpeed(exif?.ExposureTime);
 
-    const hasValidGps = lat != null && lng != null && !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
+    const hasValidGps =
+      lat != null && lng != null && !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
 
     if (isNew && (!date || !hasValidGps || !camera)) {
       console.log(`  ${idx} ✗ ${slug} — still missing required data after prompt, skipping`);

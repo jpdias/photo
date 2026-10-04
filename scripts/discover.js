@@ -201,14 +201,14 @@ async function main() {
     const lng = exif.lng;
 
     const hasValidLocation =
-      lat != null &&
-      lng != null &&
-      !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
+      lat != null && lng != null && !(Math.abs(lat) < 0.0001 && Math.abs(lng) < 0.0001);
 
     // Reverse geocode GPS only if no previous location or coords changed
     let locationName = null;
     const coordsChanged =
-      prev?.location && hasValidLocation && (prev.location.lat !== lat || prev.location.lng !== lng);
+      prev?.location &&
+      hasValidLocation &&
+      (prev.location.lat !== lat || prev.location.lng !== lng);
     const noPrevLocation = !prev?.location && hasValidLocation;
 
     if (coordsChanged || noPrevLocation) {
