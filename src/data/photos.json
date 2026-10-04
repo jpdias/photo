@@ -8846,13 +8846,37 @@
     "camera": "Canon Canon EOS R7",
     "thumbnail": "/photo/thumbnails/fiskehejre-29-08-2026.webp",
     "fullsize": "/photo/photos/fiskehejre-29-08-2026.webp",
-    "width": 5247,
-    "height": 3279,
+    "width": 5285,
+    "height": 3303,
     "category": "fauna",
     "iso": 1000,
     "aperture": "f/6.3",
     "focalLength": "150 mm",
     "shutterSpeed": "1/320",
     "country": "Danmark"
+  },
+  {
+    "slug": "stromboli-in-orange-09-09-2026",
+    "title": "Stromboli In Orange",
+    "description": "",
+    "tags": [
+      "2026"
+    ],
+    "location": {
+      "lat": 38.67526740002767,
+      "lng": 15.894850699982278
+    },
+    "date": "2026-09-09",
+    "camera": "Canon Canon EOS M50",
+    "thumbnail": "/photo/thumbnails/stromboli-in-orange-09-09-2026.webp",
+    "fullsize": "/photo/photos/stromboli-in-orange-09-09-2026.webp",
+    "width": 4079,
+    "height": 2549,
+    "category": "landscape",
+    "iso": 100,
+    "aperture": "f/11",
+    "focalLength": "45 mm",
+    "shutterSpeed": "1/40",
+    "country": "Italia"
   }
 ]
