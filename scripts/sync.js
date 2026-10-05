@@ -81,6 +81,14 @@ function formatShutterSpeed(expTime) {
   return `${expTime}s`;
 }
 
+// Some bodies repeat the make inside the model ("Canon" + "Canon EOS 70D").
+function formatCamera(make, model) {
+  const m = (make || '').trim();
+  const d = (model || '').trim();
+  if (m && d.toLowerCase().startsWith(`${m.toLowerCase()} `)) return d;
+  return [m, d].filter(Boolean).join(' ');
+}
+
 let r2Client = null;
 function getR2Client() {
   if (!r2Client) {
@@ -375,7 +383,7 @@ async function promptForMissing(filePath, slug, exif) {
 
   const make = exif?.Make || '';
   const model = exif?.Model || '';
-  const camera = [make, model].filter(Boolean).join(' ').trim();
+  const camera = formatCamera(make, model);
 
   const parsed = parseFilename(parse(filePath).name);
   let date = parsed.date;
@@ -562,7 +570,7 @@ async function main() {
     const parsed = parseFilename(filePath);
     const make = exif?.Make || '';
     const model = exif?.Model || '';
-    const camera = [make, model].filter(Boolean).join(' ').trim() || null;
+    const camera = formatCamera(make, model) || null;
 
     let date = parsed.date;
     if (!date && exif?.DateTimeOriginal) {

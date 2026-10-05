@@ -67,6 +67,14 @@ function titleFromSlug(slug) {
     .join(' ');
 }
 
+// Some bodies repeat the make inside the model ("Canon" + "Canon EOS 70D").
+function formatCamera(make, model) {
+  const m = (make || '').trim();
+  const d = (model || '').trim();
+  if (m && d.toLowerCase().startsWith(`${m.toLowerCase()} `)) return d;
+  return [m, d].filter(Boolean).join(' ');
+}
+
 async function listAllObjects(prefix) {
   const keys = [];
   let continuationToken = undefined;
@@ -147,7 +155,7 @@ async function extractExif(buffer) {
       date: exif.DateTimeOriginal
         ? new Date(exif.DateTimeOriginal).toISOString().split('T')[0]
         : null,
-      camera: [exif.Make, exif.Model].filter(Boolean).join(' ').trim() || null,
+      camera: formatCamera(exif.Make, exif.Model) || null,
       lat: lat ?? null,
       lng: lng ?? null,
       width: exif.ExifImageWidth || exif.ImageWidth || null,
