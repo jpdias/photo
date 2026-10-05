@@ -226,18 +226,22 @@ async function reverseGeocode(lat, lng) {
   const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=3`;
   return new Promise(resolve => {
     https
-      .get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, res => {
-        let data = '';
-        res.on('data', c => (data += c));
-        res.on('end', () => {
-          try {
-            const parsed = JSON.parse(data);
-            resolve(parsed?.address?.country || null);
-          } catch {
-            resolve(null);
-          }
-        });
-      })
+      .get(
+        url,
+        { headers: { 'User-Agent': 'portfolio-process/1.0', 'Accept-Language': 'en' } },
+        res => {
+          let data = '';
+          res.on('data', c => (data += c));
+          res.on('end', () => {
+            try {
+              const parsed = JSON.parse(data);
+              resolve(parsed?.address?.country || null);
+            } catch {
+              resolve(null);
+            }
+          });
+        },
+      )
       .on('error', () => resolve(null));
   });
 }
@@ -247,24 +251,28 @@ async function geocodePlace(query) {
   const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`;
   return new Promise(resolve => {
     https
-      .get(url, { headers: { 'User-Agent': 'portfolio-process/1.0' } }, res => {
-        let data = '';
-        res.on('data', c => (data += c));
-        res.on('end', () => {
-          try {
-            const parsed = JSON.parse(data);
-            if (parsed.length > 0)
-              resolve({
-                lat: parseFloat(parsed[0].lat),
-                lng: parseFloat(parsed[0].lon),
-                name: parsed[0].display_name,
-              });
-            else resolve(null);
-          } catch {
-            resolve(null);
-          }
-        });
-      })
+      .get(
+        url,
+        { headers: { 'User-Agent': 'portfolio-process/1.0', 'Accept-Language': 'en' } },
+        res => {
+          let data = '';
+          res.on('data', c => (data += c));
+          res.on('end', () => {
+            try {
+              const parsed = JSON.parse(data);
+              if (parsed.length > 0)
+                resolve({
+                  lat: parseFloat(parsed[0].lat),
+                  lng: parseFloat(parsed[0].lon),
+                  name: parsed[0].display_name,
+                });
+              else resolve(null);
+            } catch {
+              resolve(null);
+            }
+          });
+        },
+      )
       .on('error', () => resolve(null));
   });
 }

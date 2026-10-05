@@ -17,8 +17,6 @@ interface LocationGroup {
 
 const COUNTRY_CENTROIDS: Record<string, [number, number]> = {
   Austria: [47.594, 14.1246],
-  Österreich: [47.594, 14.1246],
-  Osterreich: [47.594, 14.1246],
   Canada: [61.0667, -107.9917],
   'Cape Verde': [16.0001, -24.0084],
   Czechia: [49.7439, 15.3381],
@@ -26,27 +24,15 @@ const COUNTRY_CENTROIDS: Record<string, [number, number]> = {
   France: [46.6034, 1.8883],
   Germany: [51.1638, 10.4478],
   Greece: [38.9954, 21.9877],
-  Grecia: [38.9954, 21.9877],
   Italy: [41.8719, 12.5674],
-  Italia: [41.8719, 12.5674],
   Luxembourg: [49.8159, 6.1297],
   Norway: [61.1529, 8.7877],
-  Norge: [61.1529, 8.7877],
   Poland: [52.2159, 19.1344],
-  Polen: [52.2159, 19.1344],
   Portugal: [39.6622, -8.1354],
   Spain: [39.3261, -4.838],
-  Espana: [39.3261, -4.838],
-  España: [39.3261, -4.838],
   Svalbard: [78.7199, 20.3493],
   Switzerland: [46.7986, 8.232],
-  Schweiz: [46.7986, 8.232],
-  Suisse: [46.7986, 8.232],
   'United Kingdom': [54.7024, -3.2766],
-  UK: [54.7024, -3.2766],
-  GB: [54.7024, -3.2766],
-  'Vereinigtes Königreich': [54.7024, -3.2766],
-  RoyaumeUni: [54.7024, -3.2766],
 };
 
 function groupByLocation(photos: Photo[]): LocationGroup[] {
@@ -58,7 +44,16 @@ function groupByLocation(photos: Photo[]): LocationGroup[] {
     groups.get(c)!.push(p);
   }
   return [...groups.entries()].map(([country, countryPhotos]) => {
-    const [lat, lng] = COUNTRY_CENTROIDS[country] || [0, 0];
+    const known = COUNTRY_CENTROIDS[country];
+    if (known)
+      return { lat: known[0], lng: known[1], name: country, country, photos: countryPhotos };
+
+    // Country names come from reverse geocoding and can be localized ("Danmark",
+    // "Italia"), so an unknown name must not fall back to [0, 0] — that drops the
+    // group in the ocean. Average the photos' own coordinates instead.
+    const located = countryPhotos.filter(p => p.location);
+    const lat = located.reduce((s, p) => s + (p.location!.lat ?? 0), 0) / (located.length || 1);
+    const lng = located.reduce((s, p) => s + (p.location!.lng ?? 0), 0) / (located.length || 1);
     return { lat, lng, name: country, country, photos: countryPhotos };
   });
 }

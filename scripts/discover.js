@@ -115,7 +115,7 @@ async function reverseGeocode(lat, lng) {
   try {
     const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=10&addressdetails=1`;
     const res = await fetch(url, {
-      headers: { 'User-Agent': 'portfolio-discover/1.0' },
+      headers: { 'User-Agent': 'portfolio-discover/1.0', 'Accept-Language': 'en' },
     });
     if (!res.ok) return null;
     const data = await res.json();
